@@ -37,12 +37,13 @@ Pendulum::Pendulum( ci::Vec2f origin, float r )
 /*
 void Pendulum::go() {
     update();
-    drag();    //for user interaction
+    drag(); 
     display();
 }*/
 
 // Function to update location
-void Pendulum::update() {
+void Pendulum::update()
+{
     // As long as we aren't dragging the pendulum, let it swing!
     if ( !mDragging ) {
 		float gravity = 0.4f;											// Arbitrary constant
@@ -52,6 +53,43 @@ void Pendulum::update() {
 		mAngle += mAVelocity;											// Increment angle
     }
 }
+
+
+
+// The methods below are for mouse interaction
+
+// This checks to see if we clicked on the pendulum ball
+void Pendulum::clicked( ci::Vec2f mousePos )
+{
+	float d = mousePos.distance( mLocation );
+	
+    if (d < mBallr)
+	{
+		mDragging = true;
+    }
+}
+
+// This tells us we are not longer clicking on the ball
+void Pendulum::stopDragging()
+{
+    mAVelocity = 0;			// No velocity once you let go
+    mDragging = false;
+}
+
+void Pendulum::drag( Vec2f mousePos )
+{
+    // If we are draging the ball, we calculate the angle between the
+    // pendulum origin and mouse location
+    // we assign that angle to the pendulum
+    if ( mDragging ) {
+		Vec2f diff = mOrigin - mousePos;									// Difference between 2 points
+		console()<< diff << endl;
+		mAngle = atan2( -1 * diff.y, diff.x ) - toRadians( 90.0f );			// Angle relative to vertical axis
+    }
+}
+
+
+
 
 void Pendulum::draw()
 {
@@ -72,35 +110,6 @@ void Pendulum::draw()
 	
 	gl::color( Color::black() );
 	gl::drawStrokedEllipse( mLocation, mBallr, mBallr );
-}
-
-
-// The methods below are for mouse interaction
-
-// This checks to see if we clicked on the pendulum ball
-void Pendulum::clicked( ci::Vec2f mousePos )
-{
-	float d = mousePos.distance( mLocation );
-    if (d < mBallr) {
-		mDragging = true;
-    }
-}
-
-// This tells us we are not longer clicking on the ball
-void Pendulum::stopDragging() {
-    mAVelocity = 0;			// No velocity once you let go
-    mDragging = false;
-}
-
-void Pendulum::drag( Vec2f mousePos )
-{
-    // If we are draging the ball, we calculate the angle between the
-    // pendulum origin and mouse location
-    // we assign that angle to the pendulum
-    if ( mDragging ) {
-		Vec2f diff = mOrigin - mousePos;									// Difference between 2 points
-		mAngle = atan2( -1 * diff.y, diff.x ) - toRadians( 90.0f );			// Angle relative to vertical axis
-    }
 }
 
 

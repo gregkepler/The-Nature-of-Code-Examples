@@ -34,12 +34,13 @@ class NOC_3_10_PendulumExampleApp : public AppBasic {
 	void prepareSettings( Settings *settings );
 	void setup();
 	void mouseDown( MouseEvent event );
-	void mouse( MouseEvent event );
 	void mouseUp( MouseEvent event );
+	void mouseDrag( MouseEvent event );
 	void update();
 	void draw();
 	
-	Pendulum mPendulum;
+	Pendulum	mPendulum;
+	Vec2f		mDragLoc;
 };
 
 void NOC_3_10_PendulumExampleApp::prepareSettings( Settings *settings )
@@ -54,7 +55,13 @@ void NOC_3_10_PendulumExampleApp::setup()
 
 void NOC_3_10_PendulumExampleApp::mouseDown( MouseEvent event )
 {
-	mPendulum.clicked( getMousePos() );
+	mDragLoc = event.getPos();
+	mPendulum.clicked( mDragLoc );
+}
+
+void NOC_3_10_PendulumExampleApp::mouseDrag( MouseEvent event )
+{
+	mDragLoc = event.getPos();
 }
 
 void NOC_3_10_PendulumExampleApp::mouseUp( MouseEvent event )
@@ -65,7 +72,7 @@ void NOC_3_10_PendulumExampleApp::mouseUp( MouseEvent event )
 void NOC_3_10_PendulumExampleApp::update()
 {
 	mPendulum.update();
-	mPendulum.drag( getMousePos() );
+	mPendulum.drag( mDragLoc );
 }
 
 void NOC_3_10_PendulumExampleApp::draw()

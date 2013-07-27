@@ -17,8 +17,11 @@ class NOC_1_3_vector_subtractionApp : public AppBasic {
   public:
 	void prepareSettings( Settings *settings);
 	void setup();
+	void mouseMove( MouseEvent event );
 	void update();
 	void draw();
+	
+	Vec2f mMousePos;
 };
 
 void NOC_1_3_vector_subtractionApp::prepareSettings( Settings *settings )
@@ -34,11 +37,16 @@ void NOC_1_3_vector_subtractionApp::update()
 {
 }
 
+void NOC_1_3_vector_subtractionApp::mouseMove( MouseEvent event )
+{
+	mMousePos = event.getPos();
+}
+
 void NOC_1_3_vector_subtractionApp::draw()
 {
 	gl::clear( Color( 1, 1, 1 ) );
 	
-	Vec2f mouse = Vec2f( getMousePos().x, getMousePos().y );
+	Vec2f mouse = mMousePos;
 	Vec2f center = Vec2f( getWindowWidth() / 2, getWindowHeight() / 2 );
 	mouse -= center;
 	
@@ -47,7 +55,7 @@ void NOC_1_3_vector_subtractionApp::draw()
 	gl::translate( getWindowWidth() / 2, getWindowHeight() / 2 );
 	glLineWidth( 2.0 );
 	gl::color( 0, 0, 0 );
-	gl::drawLine( Vec2f( 0,0 ), Vec2f( mouse.x, mouse.y ) );
+	gl::drawLine( Vec2f( 0,0 ), mouse );
 	glPopMatrix();
 }
 
