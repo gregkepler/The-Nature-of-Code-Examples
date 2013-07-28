@@ -23,11 +23,13 @@ class NOC_1_11_motion101_acceleration_arrayApp : public AppBasic {
 public:
 	void prepareSettings( Settings *settings );
 	void setup();
+	void mouseMove( MouseEvent event );
 	void update();
 	void draw();
 	
 	vector<Mover> mMovers;	// using a vector instead of an array
 	int mMoverAmt = 20;
+	Vec2f mMousePos;
 };
 
 void NOC_1_11_motion101_acceleration_arrayApp::prepareSettings( Settings *settings )
@@ -43,10 +45,16 @@ void NOC_1_11_motion101_acceleration_arrayApp::setup()
 	}
 }
 
+void NOC_1_11_motion101_acceleration_arrayApp::mouseMove( MouseEvent event )
+{
+	mMousePos = event.getPos();
+}
+
+
 void NOC_1_11_motion101_acceleration_arrayApp::update()
 {
 	for( int i = 0; i < mMovers.size(); i++ ) {
-		mMovers[i].update( getMousePos() );
+		mMovers[i].update( mMousePos );
 	}
 }
 

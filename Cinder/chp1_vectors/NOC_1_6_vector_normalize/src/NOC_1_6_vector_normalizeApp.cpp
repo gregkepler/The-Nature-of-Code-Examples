@@ -20,8 +20,11 @@ class NOC_1_6_vector_normalizeApp : public AppBasic {
 public:
 	void prepareSettings( Settings *settings);
 	void setup();
+	void mouseMove( MouseEvent event );
 	void update();
 	void draw();
+	
+	Vec2f mMousePos;
 };
 
 void NOC_1_6_vector_normalizeApp::prepareSettings( Settings *settings )
@@ -37,12 +40,17 @@ void NOC_1_6_vector_normalizeApp::update()
 {
 }
 
+void NOC_1_6_vector_normalizeApp::mouseMove( MouseEvent event )
+{
+	mMousePos = event.getPos();
+}
+
 void NOC_1_6_vector_normalizeApp::draw()
 {
 	gl::clear( Color( 1, 1, 1 ) );
 	
 	// A vector that points to the mouse location
-	Vec2f mouse = Vec2f( getMousePos().x, getMousePos().y );
+	Vec2f mouse = mMousePos;
 	// A vector that points to the center of the window
 	Vec2f center = Vec2f( getWindowWidth() / 2, getWindowHeight() / 2 );
 	// Subtract center from mouse which results in a vector that points from center to mouse

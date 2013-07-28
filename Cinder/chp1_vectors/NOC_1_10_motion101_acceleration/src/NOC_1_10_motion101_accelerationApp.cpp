@@ -23,10 +23,12 @@ class NOC_1_10_motion101_accelerationApp : public AppBasic {
 public:
 	void prepareSettings( Settings *settings );
 	void setup();
+	void mouseMove( MouseEvent event );
 	void update();
 	void draw();
 	
 	Mover *mMover;
+	Vec2f mMousePos;
 };
 
 void NOC_1_10_motion101_accelerationApp::prepareSettings( Settings *settings )
@@ -39,9 +41,15 @@ void NOC_1_10_motion101_accelerationApp::setup()
 	mMover = new Mover();
 }
 
+void NOC_1_10_motion101_accelerationApp::mouseMove( MouseEvent event )
+{
+	mMousePos = event.getPos();
+}
+
+
 void NOC_1_10_motion101_accelerationApp::update()
 {
-	mMover->update( getMousePos() );
+	mMover->update( mMousePos );
 }
 
 void NOC_1_10_motion101_accelerationApp::draw()
