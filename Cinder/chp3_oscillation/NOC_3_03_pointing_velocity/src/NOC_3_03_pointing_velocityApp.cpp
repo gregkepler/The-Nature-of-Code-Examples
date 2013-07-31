@@ -23,9 +23,11 @@ class NOC_3_03_pointing_velocityApp : public AppBasic {
 	void draw();
 	void mouseDown( MouseEvent event );
 	void mouseUp( MouseEvent event );
+	void mouseMove( MouseEvent event );
 	
 	Mover mMover;
 	bool mousePressed;
+	Vec2f mMousePos;
 };
 
 void NOC_3_03_pointing_velocityApp::prepareSettings(cinder::app::AppBasic::Settings *settings)
@@ -50,18 +52,23 @@ void NOC_3_03_pointing_velocityApp::mouseUp(cinder::app::MouseEvent event)
 	mousePressed = false;
 }
 
+void NOC_3_03_pointing_velocityApp::mouseMove( MouseEvent event )
+{
+	mMousePos = event.getPos();
+}
+
 void NOC_3_03_pointing_velocityApp::update()
 {
 	// trail version
 	if( mousePressed )
 	{
-		mMover.update( getMousePos() );
+		mMover.update( mMousePos );
 		mMover.checkEdges();
 	}
 	
 	/*
 	// no trail version
-	mMover.update( getMousePos() );
+	mMover.update( mMousePos );
 	mMover.checkEdges();*/
 }
 
