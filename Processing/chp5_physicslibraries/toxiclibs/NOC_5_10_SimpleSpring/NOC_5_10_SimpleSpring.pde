@@ -1,6 +1,6 @@
 // The Nature of Code
-// <http://www.shiffman.net/teaching/nature>
-// PBox2D example
+// Daniel Shiffman
+// http://natureofcode.com
 
 // Simple Toxiclibs Spring
 
@@ -15,9 +15,7 @@ Particle p1;
 Particle p2;
 
 void setup() {
-  size(800,200);
-  smooth();
-  frameRate(30);
+  size(640,360);
 
   // Initialize the physics
   physics=new VerletPhysics2D();
@@ -28,12 +26,12 @@ void setup() {
   
   // Make two particles
   p1 = new Particle(new Vec2D(width/2,20));
-  p2 = new Particle(new Vec2D(width,180));
+  p2 = new Particle(new Vec2D(width/2+160,20));
   // Lock one in place
   p1.lock();
 
   // Make a spring connecting both Particles
-  VerletSpring2D spring=new VerletSpring2D(p1,p2,80,0.01);
+  VerletSpring2D spring=new VerletSpring2D(p1,p2,160,0.01);
 
   // Anything we make, we have to add into the physics world
   physics.addParticle(p1);

@@ -1,11 +1,11 @@
+// The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
+
 // Genetic Algorithm, Evolving Shakespeare
-// Daniel Shiffman <http://www.shiffman.net>
 
 // A class to describe a population of virtual organisms
 // In this case, each organism is just an instance of a DNA object
-
-
-
 
 class Population {
 
@@ -15,7 +15,7 @@ class Population {
   String target;                // Target phrase
   int generations;              // Number of generations
   boolean finished;             // Are we finished evolving?
-int perfectScore;
+  int perfectScore;
 
   Population(String p, float m, int num) {
     target = p;
@@ -29,7 +29,7 @@ int perfectScore;
     finished = false;
     generations = 0;
     
-    perfectScore = int(pow(2,target.length()));
+    perfectScore = 1;
   }
 
   // Fill our fitness array with a value for every member of the population
@@ -82,7 +82,7 @@ int perfectScore;
 
   // Compute the current "most fit" member of the population
   String getBest() {
-    float worldrecord = 0.0f;
+    float worldrecord = 0.0;
     int index = 0;
     for (int i = 0; i < population.length; i++) {
       if (population[i].fitness > worldrecord) {
@@ -90,7 +90,7 @@ int perfectScore;
         worldrecord = population[i].fitness;
       }
     }
-
+    
     if (worldrecord == perfectScore ) finished = true;
     return population[index].getPhrase();
   }

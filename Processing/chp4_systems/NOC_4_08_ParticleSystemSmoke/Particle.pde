@@ -1,9 +1,6 @@
-// Simple Particle System
-// Daniel Shiffman <http://www.shiffman.net>
-
-// A simple Particle class, renders the particle as an image
-
-// Created 2 May 2005
+// The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
 
 class Particle {
   PVector loc;
@@ -14,8 +11,8 @@ class Particle {
 
   Particle(PVector l,PImage img_) {
     acc = new PVector(0,0);
-    float vx = (float) generator.nextGaussian()*0.3;
-    float vy = (float) generator.nextGaussian()*0.3 - 1.0;
+    float vx = randomGaussian()*0.3;
+    float vy = randomGaussian()*0.3 - 1.0;
     vel = new PVector(vx,vy);
     loc = l.get();
     lifespan = 100.0;
@@ -53,7 +50,7 @@ class Particle {
   }
 
   // Is the particle still useful?
-  boolean dead() {
+  boolean isDead() {
     if (lifespan <= 0.0) {
       return true;
     } else {

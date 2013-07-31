@@ -1,6 +1,7 @@
-// Daniel Shiffman
 // The Nature of Code
-// http://www.shiffman.net/teaching/nature
+// Daniel Shiffman
+// http://natureofcode.com
+
 // Simple Perceptron Example
 // See: http://en.wikipedia.org/wiki/Perceptron
 
@@ -26,7 +27,7 @@ float f(float x) {
 }
 
 void setup() {
-  size(800, 200);
+  size(640, 360);
 
   // The perceptron has 3 inputs -- x, y, and bias
   // Second value is "Learning Constant"

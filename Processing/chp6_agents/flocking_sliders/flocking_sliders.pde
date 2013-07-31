@@ -1,16 +1,14 @@
+// The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
+
 
 // Flocking
-// Daniel Shiffman <http://www.shiffman.net>
-
 // Demonstration of Craig Reynolds' "Flocking" behavior
 // See: http://www.red3d.com/cwr/
 // Rules: Cohesion, Separation, Alignment
 
 // Click mouse to add boids into the system
-
-import processing.opengl.*;
-
-
 Flock flock;
 PVector center;
 
@@ -19,7 +17,7 @@ boolean scrollbar = false;
 
 
 void setup() {
-  size(1024,768,OPENGL);
+  size(displayWidth,displayHeight,P2D);
   setupScrollbars();
   center = new PVector(width/2,height/2);
   colorMode(RGB,255,255,255,100);
@@ -35,7 +33,6 @@ void setup() {
 void draw() {
 
   background(255); 
-  smooth();
   flock.run();
   drawScrollbars();
 

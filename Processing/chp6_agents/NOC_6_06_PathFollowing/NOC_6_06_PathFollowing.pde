@@ -1,7 +1,8 @@
-// Path Following
-// Daniel Shiffman <http://www.shiffman.net>
 // The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
 
+// Path Following
 // Via Reynolds: // http://www.red3d.com/cwr/steer/PathFollow.html
 
 // Using this variable to decide whether to draw all the stuff
@@ -15,15 +16,13 @@ Vehicle car1;
 Vehicle car2;
 
 void setup() {
-  size(800, 200);
-  smooth();
-
+  size(640, 360);
   // Call a function to generate new Path object
   newPath();
 
   // Each vehicle has different maxspeed and maxforce for demo purposes
-  car1 = new Vehicle(new PVector(0, height/2), 3, 0.1);
-  car2 = new Vehicle(new PVector(0, height/2), 5, 0.2);
+  car1 = new Vehicle(new PVector(0, height/2), 2, 0.04);
+  car2 = new Vehicle(new PVector(0, height/2), 3, 0.1);
 }
 
 void draw() {
@@ -36,6 +35,9 @@ void draw() {
   // Call the generic run method (update, borders, display, etc.)
   car1.run();
   car2.run();
+  
+  car1.borders(path);
+  car2.borders(path);
 
   // Instructions
   fill(0);
@@ -46,10 +48,10 @@ void newPath() {
   // A path is a series of connected points
   // A more sophisticated path might be a curve
   path = new Path();
-  path.addPoint(0, height/2);
+  path.addPoint(-20, height/2);
   path.addPoint(random(0, width/2), random(0, height));
   path.addPoint(random(width/2, width), random(0, height));
-  path.addPoint(width, height/2);
+  path.addPoint(width+20, height/2);
 }
 
 public void keyPressed() {

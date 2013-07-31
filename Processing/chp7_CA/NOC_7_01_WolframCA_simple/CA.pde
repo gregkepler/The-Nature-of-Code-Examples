@@ -1,5 +1,7 @@
+// The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
 // Wolfram Cellular Automata
-// Daniel Shiffman <http://www.shiffman.net>
 
 // A class to manage the CA
 
@@ -36,6 +38,7 @@ class CA {
     // The current generation is the new generation
     cells = nextgen;
     generation++;
+    
   }
 
   // This is the easy part, just draw the cells, fill 255 for '1', fill 0 for '0'
@@ -47,6 +50,8 @@ class CA {
       rect(i*w, generation*w, w, w);
     }
   }
+
+
 
   // Implementing the Wolfram rules
   // Could be improved and made more concise, but here we can explicitly see what is going on for each case

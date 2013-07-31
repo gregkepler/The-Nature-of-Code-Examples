@@ -1,7 +1,8 @@
-// Flow Field Following
-// Daniel Shiffman <http://www.shiffman.net>
 // The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
 
+// Flow Field Following
 // Via Reynolds: http://www.red3d.com/cwr/steer/FlowFollow.html
 
 // Using this variable to decide whether to draw all the stuff
@@ -13,8 +14,7 @@ FlowField flowfield;
 ArrayList<Vehicle> vehicles;
 
 void setup() {
-  size(800, 200);
-  smooth();
+  size(640, 360);
   // Make a new flow field with "resolution" of 16
   flowfield = new FlowField(20);
   vehicles = new ArrayList<Vehicle>();

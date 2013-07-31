@@ -1,11 +1,10 @@
-// Daniel Shiffman
 // The Nature of Code
-// http://www.shiffman.net/teaching/nature
+// Daniel Shiffman
+// http://natureofcode.com
 
 // XOR Multi-Layered Neural Network Example
 // Neural network code is all in the "code" folder
 
-import processing.opengl.*;
 import nn.*;
 
 ArrayList inputs;  // List of training input values
@@ -18,7 +17,7 @@ PFont f;           // Font
 
 void setup() {
 
-  size(400,400,OPENGL);
+  size(400,400,P3D);
 
   // Create a landscape object
   land = new Landscape(20,300,300);
@@ -106,8 +105,7 @@ void networkStatus() {
   }
 
   float rmse = sqrt(mse/4.0);
-  DecimalFormat df = new DecimalFormat("0.000");
-  text("Root mean squared error: " + df.format(rmse), 10,60);
+  text("Root mean squared error: " + nf(rmse,1,5), 10,60);
 
 }
 

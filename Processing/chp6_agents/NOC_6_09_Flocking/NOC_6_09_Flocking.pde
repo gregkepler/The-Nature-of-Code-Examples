@@ -1,6 +1,6 @@
-// Flocking
-// Daniel Shiffman <http://www.shiffman.net>
-// The Nature of Code, Spring 2009
+// The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
 
 // Demonstration of Craig Reynolds' "Flocking" behavior
 // See: http://www.red3d.com/cwr/
@@ -11,7 +11,7 @@
 Flock flock;
 
 void setup() {
-  size(800,200);
+  size(640,360);
   flock = new Flock();
   // Add an initial set of boids into the system
   for (int i = 0; i < 200; i++) {

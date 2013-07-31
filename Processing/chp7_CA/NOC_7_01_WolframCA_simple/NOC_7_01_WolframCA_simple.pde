@@ -1,5 +1,7 @@
+// The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
 // Wolfram Cellular Automata
-// Daniel Shiffman <http://www.shiffman.net>
 
 // Simple demonstration of a Wolfram 1-dimensional cellular automata
 
@@ -17,5 +19,6 @@ void draw() {
   if (ca.generation < height/ca.w) {
     ca.generate();
   }
+  
 }
 

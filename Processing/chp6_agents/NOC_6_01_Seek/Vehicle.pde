@@ -1,5 +1,8 @@
+// The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
+
 // Seek_Arrive
-// Daniel Shiffman <http://www.shiffman.net>
 
 // The "Vehicle" class
 
@@ -42,9 +45,9 @@ class Vehicle {
   void seek(PVector target) {
     PVector desired = PVector.sub(target,location);  // A vector pointing from the location to the target
     
-    // Normalize desired and scale to maximum speed
-    desired.normalize();
-    desired.mult(maxspeed);
+    // Scale to maximum speed
+    desired.setMag(maxspeed);
+
     // Steering = Desired minus velocity
     PVector steer = PVector.sub(desired,velocity);
     steer.limit(maxforce);  // Limit to maximum steering force

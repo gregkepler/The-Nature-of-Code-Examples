@@ -1,8 +1,11 @@
+// The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
+
 Mover m;
 
 void setup() {
-  size(800,200);
-  smooth();
+  size(640,360);
   m = new Mover(); 
 }
 

@@ -1,5 +1,8 @@
+// The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
+
 // Simple Particle System
-// Daniel Shiffman <http://www.shiffman.net>
 
 // A class to describe a group of Particles
 // An ArrayList is used to manage the list of Particles 
@@ -18,13 +21,11 @@ class ParticleSystem {
   }
 
   void run() {
-    // Using the Iterator b/c we are deleting from list while iterating
-    Iterator<Particle> it = particles.iterator();
-    while (it.hasNext()) {
-      Particle p = it.next();
+    for (int i = particles.size()-1; i >= 0; i--) {
+      Particle p = particles.get(i);
       p.run();
       if (p.isDead()) {
-        it.remove();
+        particles.remove(i);
       }
     }
   }
@@ -33,20 +34,15 @@ class ParticleSystem {
     particles.add(new Particle(origin));
   }
 
-  void addParticle(Particle p) {
-    particles.add(p);
-  }
-
   // A method to test if the particle system still has particles
   boolean dead() {
     if (particles.isEmpty()) {
       return true;
-    } else {
+    } 
+    else {
       return false;
     }
   }
-
 }
-
 
 

@@ -1,11 +1,6 @@
-/**
- * Forces (Gravity and Fluid Resistence) with Vectors 
- * by Daniel Shiffman.  
- * 
- * Demonstration of multiple force acting on bodies (Mover class)
- * Bodies experience gravity continuously
- * Bodies experience fluid resistance when in "water"
- */
+// The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
  
  // Liquid class 
  class Liquid {
@@ -27,12 +22,7 @@
   // Is the Mover in the Liquid?
   boolean contains(Mover m) {
     PVector l = m.location;
-    if (l.x > x && l.x < x + w && l.y > y && l.y < y + h) {
-      return true;
-    }  
-    else {
-      return false;
-    }
+    return l.x > x && l.x < x + w && l.y > y && l.y < y + h;
   }
   
   // Calculate drag force

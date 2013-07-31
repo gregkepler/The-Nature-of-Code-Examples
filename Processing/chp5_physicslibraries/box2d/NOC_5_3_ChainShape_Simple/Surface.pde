@@ -1,7 +1,6 @@
 // The Nature of Code
-// <http://www.shiffman.net/teaching/nature>
-// Spring 2010
-// PBox2D example
+// Daniel Shiffman
+// http://natureofcode.com
 
 // An uneven surface boundary
 
@@ -14,7 +13,7 @@ class Surface {
     surface = new ArrayList<Vec2>();
     // Here we keep track of the screen coordinates of the chain
     surface.add(new Vec2(0, height/2));
-    //surface.add(new Vec2(width/2, height/2+50));
+    surface.add(new Vec2(width/2, height/2+50));
     surface.add(new Vec2(width, height/2));
 
     // This is what box2d uses to put the surface in its world

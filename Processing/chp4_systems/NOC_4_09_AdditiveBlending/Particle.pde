@@ -1,7 +1,8 @@
-// Simple Particle System
-// Daniel Shiffman <http://www.shiffman.net>
+// The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
 
-// A simple Particle class
+// Simple Particle System
 
 class Particle {
   PVector loc;
@@ -39,7 +40,7 @@ class Particle {
   }
   
   // Is the particle still useful?
-  boolean dead() {
+  boolean isDead() {
     if (lifespan <= 0.0) {
       return true;
     } else {

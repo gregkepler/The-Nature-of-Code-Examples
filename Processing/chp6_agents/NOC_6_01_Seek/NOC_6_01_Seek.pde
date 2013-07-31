@@ -1,6 +1,6 @@
-// Seek_Arrive
-// Daniel Shiffman <http://www.shiffman.net>
-// Nature of Code, Spring 2011
+// The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
 
 // Two "vehicles" follow the mouse position
 
@@ -12,9 +12,8 @@
 Vehicle v;
 
 void setup() {
-  size(800, 200);
+  size(640, 360);
   v = new Vehicle(width/2, height/2);
-  smooth();
 }
 
 void draw() {

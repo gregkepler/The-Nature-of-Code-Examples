@@ -1,12 +1,12 @@
-// Angle Between Two Vectors
-// Daniel Shiffman <http://www.shiffman.net>
 // The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
 
+// Angle Between Two Vectors
 // Using the dot product to compute the angle between two vectors
 
 void setup() {
-  size(383, 200);
-  smooth();
+  size(640, 360);
 }
 
 void draw() {

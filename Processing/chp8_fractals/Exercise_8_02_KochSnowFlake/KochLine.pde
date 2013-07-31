@@ -1,5 +1,8 @@
+// The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
+
 // Koch Curve
-// Daniel Shiffman <http://www.shiffman.net>
 
 // A class to describe one line segment in the fractal
 // Includes methods to calculate midPVectors along the line according to the Koch algorithm
@@ -19,6 +22,7 @@ class KochLine {
 
   void display() {
     stroke(0);
+    strokeWeight(2);
     line(start.x, start.y, end.x, end.y);
   }
 
