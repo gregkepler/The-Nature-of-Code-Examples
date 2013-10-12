@@ -12,6 +12,8 @@
 		00B784B40FF439BC000DE1D7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */; };
 		00B784B50FF439BC000DE1D7 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B10FF439BC000DE1D7 /* AudioUnit.framework */; };
 		00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
+		2CC0BDDC1802CA3F007EACB5 /* Spring.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CC0BDDA1802CA3F007EACB5 /* Spring.cpp */; };
+		2CC0BDDF1802CD30007EACB5 /* Bob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CC0BDDD1802CD30007EACB5 /* Bob.cpp */; };
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -29,6 +31,10 @@
 		11570D52F75142B5BFFF7E67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		2CC0BDDA1802CA3F007EACB5 /* Spring.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Spring.cpp; path = ../src/Spring.cpp; sourceTree = "<group>"; };
+		2CC0BDDB1802CA3F007EACB5 /* Spring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Spring.h; path = ../src/Spring.h; sourceTree = "<group>"; };
+		2CC0BDDD1802CD30007EACB5 /* Bob.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Bob.cpp; path = ../src/Bob.cpp; sourceTree = "<group>"; };
+		2CC0BDDE1802CD30007EACB5 /* Bob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bob.h; path = ../src/Bob.h; sourceTree = "<group>"; };
 		49CAC93F03AF4088B7BC5ABC /* NOC_3_11_springApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = NOC_3_11_springApp.cpp; path = ../src/NOC_3_11_springApp.cpp; sourceTree = "<group>"; };
 		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		5323E6B50EAFCA7E003A9687 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
@@ -68,6 +74,8 @@
 			isa = PBXGroup;
 			children = (
 				49CAC93F03AF4088B7BC5ABC /* NOC_3_11_springApp.cpp */,
+				2CC0BDDA1802CA3F007EACB5 /* Spring.cpp */,
+				2CC0BDDD1802CD30007EACB5 /* Bob.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -120,6 +128,8 @@
 		29B97315FDCFA39411CA2CEA /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				2CC0BDDE1802CD30007EACB5 /* Bob.h */,
+				2CC0BDDB1802CA3F007EACB5 /* Spring.h */,
 				9955536B79ED4A93BAF2AC29 /* Resources.h */,
 				AB2AE3A7EE0148F7BB070E15 /* NOC_3_11_spring_Prefix.pch */,
 			);
@@ -206,6 +216,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6A6D7FA028C4F2EA8FC5BC7 /* NOC_3_11_springApp.cpp in Sources */,
+				2CC0BDDC1802CA3F007EACB5 /* Spring.cpp in Sources */,
+				2CC0BDDF1802CD30007EACB5 /* Bob.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
