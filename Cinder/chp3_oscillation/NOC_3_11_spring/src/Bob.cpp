@@ -14,8 +14,7 @@ using namespace ci::app;
 using namespace std;
 
 Bob::Bob()
-{
-	
+{	
 }
 
 // Constructor
@@ -24,7 +23,7 @@ Bob::Bob( float x, float y )
 	mLocation = Vec2f( x, y );
     mVelocity = Vec2f( 0, 0 );
     mAcceleration = Vec2f( 0, 0 );
-//    dragOffset = Vec2f();
+    mDragOffset = Vec2f( 0, 0 );
 }
 
 void Bob::applyForce( Vec2f force )
@@ -43,7 +42,7 @@ void Bob::update()
 }
 
 
-// The methods below are for mouse interaction
+// --- The methods below are for mouse interaction --- \\
 
 // This checks to see if we clicked on the pendulum ball
 void Bob::clicked( ci::Vec2f mousePos )
@@ -69,8 +68,6 @@ void Bob::drag( Vec2f mousePos )
 		mLocation.y = mousePos.y + mDragOffset.y;
     }
 }
-
-
 
 void Bob::display()
 {

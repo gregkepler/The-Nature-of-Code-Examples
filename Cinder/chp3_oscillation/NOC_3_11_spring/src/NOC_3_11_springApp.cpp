@@ -8,8 +8,8 @@
 
 #include "cinder/app/AppNative.h"
 #include "cinder/gl/gl.h"
-#include "cinder/Text.h"
 #include "cinder/gl/Texture.h"
+#include "cinder/Text.h"
 #include "Spring.h"
 #include "Bob.h"
 
@@ -64,18 +64,8 @@ void NOC_3_11_springApp::mouseDrag( MouseEvent event)
 
 void NOC_3_11_springApp::update()
 {
-}
-
-void NOC_3_11_springApp::draw()
-{
-	// clear out the window with black
-	gl::clear( Color::gray( 255 ) );
-	
-	// enable alpha blending so that the text box background color will be transparent (instead of a solid white or black box)
-	gl::enableAlphaBlending();
-	
 	// Apply a gravity force to the bob
-	Vec2f gravity = Vec2f( 0.0 ,2.0 );
+	Vec2f gravity = Vec2f( 0.0, 2.0 );
 	mBob.applyForce( gravity );
 	
 	// Connect the bob to the spring (this calculates the force)
@@ -87,12 +77,23 @@ void NOC_3_11_springApp::draw()
 	mBob.update();
 	// If it's being dragged
 	mBob.drag( mousePos );
+
+}
+
+void NOC_3_11_springApp::draw()
+{
+	// clear out the window with black
+	gl::clear( Color::gray( 255 ) );
+	
+	// enable alpha blending so that the text box background color will be transparent (instead of a solid white or black box)
+	gl::enableAlphaBlending();
 	
 	// Draw everything
 	mSpring.displayLine( mBob ); // Draw a line between spring and bob
 	mBob.display();
 	mSpring.display();
 	
+	// draw the text
 	gl::color( Color::white() );
 	TextBox tbox = TextBox().alignment( TextBox::LEFT ).size( Vec2i( getWindowWidth(), TextBox::GROW ) ).text( "click on bob to drag" );
 	tbox.setColor( Color::black() );

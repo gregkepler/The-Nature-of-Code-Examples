@@ -15,7 +15,6 @@ using namespace std;
 
 Spring::Spring()
 {
-	
 }
 
 Spring::Spring(float x, float y, int l)
