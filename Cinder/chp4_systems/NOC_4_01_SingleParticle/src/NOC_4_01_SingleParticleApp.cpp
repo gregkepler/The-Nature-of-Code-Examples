@@ -18,7 +18,6 @@ class NOC_4_01_SingleParticleApp : public AppNative {
   public:
 	void prepareSettings( Settings *settings );
 	void setup();
-	void mouseDown( MouseEvent event );	
 	void update();
 	void draw();
 	
@@ -34,10 +33,6 @@ void NOC_4_01_SingleParticleApp::setup()
 {
 	p = Particle( Vec2f( getWindowWidth() / 2 , 20 ) );
 	
-}
-
-void NOC_4_01_SingleParticleApp::mouseDown( MouseEvent event )
-{
 }
 
 void NOC_4_01_SingleParticleApp::update()

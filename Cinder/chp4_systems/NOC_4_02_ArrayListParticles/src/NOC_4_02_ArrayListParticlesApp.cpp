@@ -5,6 +5,8 @@
 //  Converted from Daniel Shiffman's Processing Examples
 //  Created by Greg Kepler
 //
+//  Since ArrayList doesn't exist in C++, std::vector is used instead
+//
 
 #include "cinder/app/AppNative.h"
 #include "cinder/gl/gl.h"
@@ -19,11 +21,11 @@ class NOC_4_02_ArrayListParticlesApp : public AppNative {
   public:
 	void prepareSettings( Settings *settings );
 	void setup();
-	void mouseDown( MouseEvent event );	
+	void mouseDown( MouseEvent event );
 	void update();
 	void draw();
 	
-	ArrayList<Particle> particles;
+	vector<Particle> mParticles;
 };
 
 void NOC_4_02_ArrayListParticlesApp::prepareSettings( Settings *settings )
@@ -34,7 +36,7 @@ void NOC_4_02_ArrayListParticlesApp::prepareSettings( Settings *settings )
 
 void NOC_4_02_ArrayListParticlesApp::setup()
 {
-	particles = new ArrayList<Particle>();
+	mParticles = vector<Particle>();
 }
 
 void NOC_4_02_ArrayListParticlesApp::mouseDown( MouseEvent event )
@@ -48,7 +50,26 @@ void NOC_4_02_ArrayListParticlesApp::update()
 void NOC_4_02_ArrayListParticlesApp::draw()
 {
 	// clear out the window with black
-	gl::clear( Color( 0, 0, 0 ) ); 
+	gl::clear( Color::white() );
+	mParticles.push_back( Particle( Vec2f( getWindowWidth() / 2, 50 ) ) );
+	
+	// Looping through backwards to delete
+	/*for( int i = mParticles.size()-1; i >= 0; i-- ) {
+		Particle p = mParticles.at( i );
+		p.run();
+		if ( p.isDead() ) {
+			// must provide iterator in the erase function
+			mParticles.erase( mParticles.begin() + i );
+		}
+	}*/
+	
+	for( vector<Particle>::iterator it = mParticles.begin(); it != mParticles.end(); ++it ) {
+		it->run();
+		if ( it->isDead() ) {
+			// must provide iterator in the erase function
+			mParticles.erase( it );
+		}
+	}
 }
 
 CINDER_APP_NATIVE( NOC_4_02_ArrayListParticlesApp, RendererGl )
