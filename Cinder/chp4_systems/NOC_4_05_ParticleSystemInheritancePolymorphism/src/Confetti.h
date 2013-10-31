@@ -13,6 +13,7 @@ public:
 	Confetti();
 	Confetti( ci::Vec2f location );
 	
+	void run();
 	void display();
 
 };

@@ -15,9 +15,9 @@ public:
 	Particle();
 	Particle( ci::Vec2f location );
 	
-	void run();
+	virtual void run();
 	void update();
-	void display();
+	virtual void display();
 	bool isDead();
 
 // Changed from private to protected since Particle is extended.

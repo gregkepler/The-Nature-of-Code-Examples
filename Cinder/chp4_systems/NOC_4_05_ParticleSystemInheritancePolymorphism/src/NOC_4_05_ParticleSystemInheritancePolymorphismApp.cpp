@@ -20,8 +20,6 @@ class NOC_4_05_ParticleSystemInheritancePolymorphismApp : public AppNative {
 public:
 	void prepareSettings( Settings *settings );
 	void setup();
-	void mouseDown( MouseEvent event );
-	void update();
 	void draw();
 	
 	ParticleSystem ps;
@@ -35,15 +33,6 @@ void NOC_4_05_ParticleSystemInheritancePolymorphismApp::prepareSettings( Setting
 void NOC_4_05_ParticleSystemInheritancePolymorphismApp::setup()
 {
 	ps = ParticleSystem( Vec2f( getWindowWidth() / 2, 50 ) );
-}
-
-void NOC_4_05_ParticleSystemInheritancePolymorphismApp::mouseDown( MouseEvent event )
-{
-	
-}
-
-void NOC_4_05_ParticleSystemInheritancePolymorphismApp::update()
-{
 }
 
 void NOC_4_05_ParticleSystemInheritancePolymorphismApp::draw()

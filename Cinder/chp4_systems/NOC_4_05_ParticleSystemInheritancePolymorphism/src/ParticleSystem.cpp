@@ -23,29 +23,31 @@ ParticleSystem::ParticleSystem()
 ParticleSystem::ParticleSystem( ci::Vec2f location )
 {
 	mOrigin = location;
-	mParticles = vector<Particle>();
+	mParticles = vector<Particle*>();
 }
 
 void ParticleSystem::addParticle()
 {
-//	mParticles.push_back( Particle( mOrigin ) );
-	
 	float r = randFloat();
     if (r < 0.5) {
-		mParticles.push_back( Particle( mOrigin ) );
-    }
-    else {
-		mParticles.push_back( Confetti( mOrigin ) );
+		mParticles.insert( mParticles.begin(), new Particle( mOrigin ) ); // insert to the front of the vector so that it's drawn first
+    } else {
+		mParticles.insert( mParticles.begin(), new Confetti( mOrigin ) );
     }
 }
 
 void ParticleSystem::run()
 {
-	for( vector<Particle>::iterator it = mParticles.begin(); it != mParticles.end(); ++it ) {
-		it->run();
-		if ( it->isDead() ) {
-			// must provide iterator in the erase function
-			mParticles.erase( it );
+	// iterating through a vector (of pointers)
+	for( vector<Particle*>::iterator it = mParticles.begin(); it != mParticles.end(); ) {
+		(*it)->run();
+		if ( (*it)->isDead() ) {
+			// delete the pointer
+			delete *it;
+			// remove the pointer from the vector
+			it = mParticles.erase( it );
+		}else{
+			++it;
 		}
 	}
 }

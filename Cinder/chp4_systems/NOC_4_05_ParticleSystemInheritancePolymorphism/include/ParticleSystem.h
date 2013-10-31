@@ -19,5 +19,5 @@ public:
 	
 private:
 	ci::Vec2f mOrigin;
-	std::vector<Particle> mParticles;
+	std::vector<Particle*> mParticles;
 };
