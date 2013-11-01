@@ -12,14 +12,13 @@
 		00B784B40FF439BC000DE1D7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */; };
 		00B784B50FF439BC000DE1D7 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B10FF439BC000DE1D7 /* AudioUnit.framework */; };
 		00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
-		2C7C3A391811489800BEC797 /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C7C3A371811489800BEC797 /* Particle.cpp */; };
-		2C7C3A3A1811489800BEC797 /* ParticleSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C7C3A381811489800BEC797 /* ParticleSystem.cpp */; };
-		2C7C3A3F181149BD00BEC797 /* Confetti.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C7C3A3D181149BD00BEC797 /* Confetti.cpp */; };
+		21FAB042D285404083CCB6C5 /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 14E663B09A294A56B06D2FAE /* CinderApp.icns */; };
+		2CC1530E182454ED00955998 /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1530C182454ED00955998 /* Particle.cpp */; };
+		2CC1530F182454ED00955998 /* ParticleSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1530D182454ED00955998 /* ParticleSystem.cpp */; };
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
-		6C2A155AA52A41F5A85DEEF0 /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 88F2886322E84688B8ACC4F7 /* CinderApp.icns */; };
-		8BD6DDEF7BAB4DCC8E07ECE0 /* NOC_4_05_ParticleSystemInheritancePolymorphismApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F3CE0C4EA3046C0AA6AB116 /* NOC_4_05_ParticleSystemInheritancePolymorphismApp.cpp */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		C0473DFE8FFB49849EC8FC42 /* NOC_4_06_ParticleSystemForcesApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9600AC084BE8431AACE57079 /* NOC_4_06_ParticleSystemForcesApp.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,22 +28,20 @@
 		00B784B10FF439BC000DE1D7 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		00B784B20FF439BC000DE1D7 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		1B3B61F5C744427B9433FC3F /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
+		14E663B09A294A56B06D2FAE /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		2C7C3A371811489800BEC797 /* Particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Particle.cpp; path = ../src/Particle.cpp; sourceTree = "<group>"; };
-		2C7C3A381811489800BEC797 /* ParticleSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ParticleSystem.cpp; path = ../src/ParticleSystem.cpp; sourceTree = "<group>"; };
-		2C7C3A3B181148A300BEC797 /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Particle.h; path = ../include/Particle.h; sourceTree = "<group>"; };
-		2C7C3A3C181148A300BEC797 /* ParticleSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParticleSystem.h; path = ../include/ParticleSystem.h; sourceTree = "<group>"; };
-		2C7C3A3D181149BD00BEC797 /* Confetti.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Confetti.cpp; path = ../src/Confetti.cpp; sourceTree = "<group>"; };
-		2C7C3A3E181149BD00BEC797 /* Confetti.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Confetti.h; path = ../include/Confetti.h; sourceTree = "<group>"; };
-		2F3CE0C4EA3046C0AA6AB116 /* NOC_4_05_ParticleSystemInheritancePolymorphismApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = NOC_4_05_ParticleSystemInheritancePolymorphismApp.cpp; path = ../src/NOC_4_05_ParticleSystemInheritancePolymorphismApp.cpp; sourceTree = "<group>"; };
+		2CC1530C182454ED00955998 /* Particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Particle.cpp; path = ../src/Particle.cpp; sourceTree = "<group>"; };
+		2CC1530D182454ED00955998 /* ParticleSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ParticleSystem.cpp; path = ../src/ParticleSystem.cpp; sourceTree = "<group>"; };
+		2CC15310182454F600955998 /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Particle.h; path = ../include/Particle.h; sourceTree = "<group>"; };
+		2CC15311182454F600955998 /* ParticleSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParticleSystem.h; path = ../include/ParticleSystem.h; sourceTree = "<group>"; };
 		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		5323E6B50EAFCA7E003A9687 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
-		868A2522EF024ED293200B85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		88F2886322E84688B8ACC4F7 /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
-		8D1107320486CEB800E47090 /* NOC_4_05_ParticleSystemInheritancePolymorphism.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NOC_4_05_ParticleSystemInheritancePolymorphism.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D936768669654EBEA9C0C6E6 /* NOC_4_05_ParticleSystemInheritancePolymorphism_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = NOC_4_05_ParticleSystemInheritancePolymorphism_Prefix.pch; sourceTree = "<group>"; };
+		6A452E23FAEC402D84CA88EF /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
+		837745750CF2459B92E126A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* NOC_4_06_ParticleSystemForces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NOC_4_06_ParticleSystemForces.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9600AC084BE8431AACE57079 /* NOC_4_06_ParticleSystemForcesApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = NOC_4_06_ParticleSystemForcesApp.cpp; path = ../src/NOC_4_06_ParticleSystemForcesApp.cpp; sourceTree = "<group>"; };
+		EF1B41E8A7934F9F993C27AE /* NOC_4_06_ParticleSystemForces_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = NOC_4_06_ParticleSystemForces_Prefix.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,10 +73,9 @@
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				2F3CE0C4EA3046C0AA6AB116 /* NOC_4_05_ParticleSystemInheritancePolymorphismApp.cpp */,
-				2C7C3A371811489800BEC797 /* Particle.cpp */,
-				2C7C3A381811489800BEC797 /* ParticleSystem.cpp */,
-				2C7C3A3D181149BD00BEC797 /* Confetti.cpp */,
+				2CC1530C182454ED00955998 /* Particle.cpp */,
+				2CC1530D182454ED00955998 /* ParticleSystem.cpp */,
+				9600AC084BE8431AACE57079 /* NOC_4_06_ParticleSystemForcesApp.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -111,12 +107,12 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D1107320486CEB800E47090 /* NOC_4_05_ParticleSystemInheritancePolymorphism.app */,
+				8D1107320486CEB800E47090 /* NOC_4_06_ParticleSystemForces.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA /* NOC_4_05_ParticleSystemInheritancePolymorphism */ = {
+		29B97314FDCFA39411CA2CEA /* NOC_4_06_ParticleSystemForces */ = {
 			isa = PBXGroup;
 			children = (
 				01B97315FEAEA392516A2CEA /* Blocks */,
@@ -126,17 +122,16 @@
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
-			name = NOC_4_05_ParticleSystemInheritancePolymorphism;
+			name = NOC_4_06_ParticleSystemForces;
 			sourceTree = "<group>";
 		};
 		29B97315FDCFA39411CA2CEA /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				2C7C3A3B181148A300BEC797 /* Particle.h */,
-				2C7C3A3E181149BD00BEC797 /* Confetti.h */,
-				2C7C3A3C181148A300BEC797 /* ParticleSystem.h */,
-				1B3B61F5C744427B9433FC3F /* Resources.h */,
-				D936768669654EBEA9C0C6E6 /* NOC_4_05_ParticleSystemInheritancePolymorphism_Prefix.pch */,
+				2CC15310182454F600955998 /* Particle.h */,
+				2CC15311182454F600955998 /* ParticleSystem.h */,
+				6A452E23FAEC402D84CA88EF /* Resources.h */,
+				EF1B41E8A7934F9F993C27AE /* NOC_4_06_ParticleSystemForces_Prefix.pch */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -144,8 +139,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				88F2886322E84688B8ACC4F7 /* CinderApp.icns */,
-				868A2522EF024ED293200B85 /* Info.plist */,
+				14E663B09A294A56B06D2FAE /* CinderApp.icns */,
+				837745750CF2459B92E126A0 /* Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -162,9 +157,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D1107260486CEB800E47090 /* NOC_4_05_ParticleSystemInheritancePolymorphism */ = {
+		8D1107260486CEB800E47090 /* NOC_4_06_ParticleSystemForces */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "NOC_4_05_ParticleSystemInheritancePolymorphism" */;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "NOC_4_06_ParticleSystemForces" */;
 			buildPhases = (
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
@@ -174,10 +169,10 @@
 			);
 			dependencies = (
 			);
-			name = NOC_4_05_ParticleSystemInheritancePolymorphism;
+			name = NOC_4_06_ParticleSystemForces;
 			productInstallPath = "$(HOME)/Applications";
-			productName = NOC_4_05_ParticleSystemInheritancePolymorphism;
-			productReference = 8D1107320486CEB800E47090 /* NOC_4_05_ParticleSystemInheritancePolymorphism.app */;
+			productName = NOC_4_06_ParticleSystemForces;
+			productReference = 8D1107320486CEB800E47090 /* NOC_4_06_ParticleSystemForces.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -185,7 +180,7 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "NOC_4_05_ParticleSystemInheritancePolymorphism" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "NOC_4_06_ParticleSystemForces" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -195,11 +190,11 @@
 				French,
 				German,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA /* NOC_4_05_ParticleSystemInheritancePolymorphism */;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* NOC_4_06_ParticleSystemForces */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D1107260486CEB800E47090 /* NOC_4_05_ParticleSystemInheritancePolymorphism */,
+				8D1107260486CEB800E47090 /* NOC_4_06_ParticleSystemForces */,
 			);
 		};
 /* End PBXProject section */
@@ -209,7 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C2A155AA52A41F5A85DEEF0 /* CinderApp.icns in Resources */,
+				21FAB042D285404083CCB6C5 /* CinderApp.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,10 +215,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BD6DDEF7BAB4DCC8E07ECE0 /* NOC_4_05_ParticleSystemInheritancePolymorphismApp.cpp in Sources */,
-				2C7C3A391811489800BEC797 /* Particle.cpp in Sources */,
-				2C7C3A3A1811489800BEC797 /* ParticleSystem.cpp in Sources */,
-				2C7C3A3F181149BD00BEC797 /* Confetti.cpp in Sources */,
+				C0473DFE8FFB49849EC8FC42 /* NOC_4_06_ParticleSystemForcesApp.cpp in Sources */,
+				2CC1530E182454ED00955998 /* Particle.cpp in Sources */,
+				2CC1530F182454ED00955998 /* ParticleSystem.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,7 +234,7 @@
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = NOC_4_05_ParticleSystemInheritancePolymorphism_Prefix.pch;
+				GCC_PREFIX_HEADER = NOC_4_06_ParticleSystemForces_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -249,7 +243,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/libcinder_d.a\"";
-				PRODUCT_NAME = NOC_4_05_ParticleSystemInheritancePolymorphism;
+				PRODUCT_NAME = NOC_4_06_ParticleSystemForces;
 				SYMROOT = ./build;
 				WRAPPER_EXTENSION = app;
 			};
@@ -266,12 +260,12 @@
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = NOC_4_05_ParticleSystemInheritancePolymorphism_Prefix.pch;
+				GCC_PREFIX_HEADER = NOC_4_06_ParticleSystemForces_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/libcinder.a\"";
-				PRODUCT_NAME = NOC_4_05_ParticleSystemInheritancePolymorphism;
+				PRODUCT_NAME = NOC_4_06_ParticleSystemForces;
 				STRIP_INSTALLED_PRODUCT = YES;
 				SYMROOT = ./build;
 				WRAPPER_EXTENSION = app;
@@ -315,7 +309,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "NOC_4_05_ParticleSystemInheritancePolymorphism" */ = {
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "NOC_4_06_ParticleSystemForces" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4B08A954540054247B /* Debug */,
@@ -324,7 +318,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "NOC_4_05_ParticleSystemInheritancePolymorphism" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "NOC_4_06_ParticleSystemForces" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
