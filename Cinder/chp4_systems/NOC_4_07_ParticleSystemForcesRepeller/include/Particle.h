@@ -6,6 +6,7 @@
 //
 //
 
+#pragma once
 #include "cinder/app/AppBasic.h"
 
 class Particle {
@@ -18,6 +19,7 @@ public:
 	void update();
 	void display();
 	bool isDead();
+	ci::Vec2f getLocation(){ return mLocation; };
 	
 private:
 	ci::Vec2f mLocation;

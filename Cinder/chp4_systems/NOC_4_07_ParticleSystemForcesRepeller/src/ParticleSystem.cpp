@@ -14,8 +14,7 @@ using namespace ci::app;
 using namespace std;
 
 ParticleSystem::ParticleSystem()
-{
-	
+{	
 }
 
 ParticleSystem::ParticleSystem( ci::Vec2f location )
@@ -27,6 +26,14 @@ ParticleSystem::ParticleSystem( ci::Vec2f location )
 void ParticleSystem::applyForce( ci::Vec2f force )
 {
 	for( vector<Particle>::iterator it = mParticles.begin(); it != mParticles.end(); ++it ) {
+		it->applyForce( force );
+	}
+}
+
+void ParticleSystem::applyRepeller( Repeller r )
+{
+	for( vector<Particle>::iterator it = mParticles.begin(); it != mParticles.end(); ++it ) {
+		Vec2f force = r.repel( (*it) );
 		it->applyForce( force );
 	}
 }

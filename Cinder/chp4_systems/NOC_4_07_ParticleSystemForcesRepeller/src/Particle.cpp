@@ -38,7 +38,6 @@ void Particle::applyForce( ci::Vec2f force )
 {
 	force /= mMass;
 	mAcceleration += force;
-	console() << mAcceleration << endl;
 }
 
 // Method to update location
@@ -48,11 +47,13 @@ void Particle::update()
 	mLocation += mVelocity;
 	mAcceleration *= 0;
 	mLifespan -= 2.0;
+	if( mLifespan < 0 ) mLifespan = 0;
 }
 
 // Method to display
 void Particle::display()
 {
+	gl::enableAlphaBlending();
 	gl::color( ColorA8u( 127, 127, 127, mLifespan ) );
 	gl::drawSolidEllipse( mLocation, 6.0, 6.0 );
 	

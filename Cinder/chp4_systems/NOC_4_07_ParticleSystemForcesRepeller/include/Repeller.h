@@ -6,15 +6,20 @@
 //
 //
 
+#pragma once
+
 #include "cinder/app/AppBasic.h"
+#include "Particle.h"
 
 class Repeller {
 public:
 	Repeller();
 	Repeller( ci::Vec2f location );
 	
+	void display();
+	ci::Vec2f repel( Particle p );
+	
 private:
-	const float Gravity = 100;
+	float mGravity;
 	ci::Vec2f mLocation;
-	float r;
 };

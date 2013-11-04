@@ -8,6 +8,7 @@
 
 #include "cinder/app/AppBasic.h"
 #include "Particle.h"
+#include "Repeller.h"
 
 class ParticleSystem {
 public:
@@ -15,6 +16,7 @@ public:
 	ParticleSystem( ci::Vec2f location );
 	
 	void applyForce( ci::Vec2f force );
+	void applyRepeller( Repeller r );
 	void addParticle();
 	void run();
 	
