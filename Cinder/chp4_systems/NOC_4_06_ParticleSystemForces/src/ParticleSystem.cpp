@@ -24,6 +24,13 @@ ParticleSystem::ParticleSystem( ci::Vec2f location )
 	mParticles = vector<Particle>();
 }
 
+void ParticleSystem::applyForce( ci::Vec2f force )
+{
+	for( vector<Particle>::iterator it = mParticles.begin(); it != mParticles.end(); ++it ) {
+		it->applyForce( force );
+	}
+}
+
 void ParticleSystem::addParticle()
 {
 	mParticles.push_back( Particle( mOrigin ) );
@@ -31,7 +38,7 @@ void ParticleSystem::addParticle()
 
 void ParticleSystem::run()
 {
-	for( vector<Particle>::iterator it = mParticles.begin(); it != mParticles.end(); ++it ) {
+	for( vector<Particle>::iterator it = mParticles.end()-1; it != mParticles.begin(); --it ) {
 		it->run();
 		if ( it->isDead() ) {
 			// must provide iterator in the erase function

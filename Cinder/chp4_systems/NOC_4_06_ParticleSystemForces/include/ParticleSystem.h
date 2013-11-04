@@ -14,6 +14,7 @@ public:
 	ParticleSystem();
 	ParticleSystem( ci::Vec2f location );
 	
+	void applyForce( ci::Vec2f force );
 	void addParticle();
 	void run();
 	

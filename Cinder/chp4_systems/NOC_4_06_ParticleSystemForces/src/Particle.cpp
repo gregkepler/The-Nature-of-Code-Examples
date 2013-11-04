@@ -25,6 +25,7 @@ Particle::Particle( ci::Vec2f location )
     mVelocity = Vec2f( randFloat( -1, 1 ), randFloat( -1.0, 0.0 ) );
     mLocation = location;
     mLifespan = 255.0;
+	mMass = 1.0;
 }
 
 void Particle::run()
@@ -33,11 +34,19 @@ void Particle::run()
 	display();
 }
 
+void Particle::applyForce( ci::Vec2f force )
+{
+	force /= mMass;
+	mAcceleration += force;
+	console() << mAcceleration << endl;
+}
+
 // Method to update location
 void Particle::update()
 {
 	mVelocity += mAcceleration;
 	mLocation += mVelocity;
+	mAcceleration *= 0;
 	mLifespan -= 2.0;
 }
 
@@ -45,11 +54,11 @@ void Particle::update()
 void Particle::display()
 {
 	gl::color( ColorA8u( 127, 127, 127, mLifespan ) );
-	gl::drawSolidEllipse( mLocation, 12.0, 12.0 );
+	gl::drawSolidEllipse( mLocation, 6.0, 6.0 );
 	
 	gl::color( ColorA8u( 0, 0, 0, mLifespan ) );
 	glLineWidth( 2.0 );
-	gl::drawStrokedEllipse( mLocation, 12.0, 12.0 );	
+	gl::drawStrokedEllipse( mLocation, 6.0, 6.0 );
 }
 
 // Is the particle still useful?

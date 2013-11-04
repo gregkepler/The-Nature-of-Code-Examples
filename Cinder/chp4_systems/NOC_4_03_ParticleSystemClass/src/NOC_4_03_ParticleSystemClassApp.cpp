@@ -20,7 +20,6 @@ class NOC_4_03_ParticleSystemClassApp : public AppNative {
   public:
 	void prepareSettings( Settings *settings );
 	void setup();
-	void mouseDown( MouseEvent event );	
 	void update();
 	void draw();
 	
@@ -38,17 +37,13 @@ void NOC_4_03_ParticleSystemClassApp::setup()
 	ps = ParticleSystem( Vec2f( getWindowWidth() / 2, 50.0 ) );
 }
 
-void NOC_4_03_ParticleSystemClassApp::mouseDown( MouseEvent event )
-{
-}
-
 void NOC_4_03_ParticleSystemClassApp::update()
 {
 }
 
 void NOC_4_03_ParticleSystemClassApp::draw()
 {
-	// clear out the window with black
+	// clear out the window with white
 	gl::clear( Color::white() );
 	ps.addParticle();
 	ps.run();
