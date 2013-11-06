@@ -7,11 +7,12 @@
 //
 
 #include "cinder/app/AppBasic.h"
+#include "cinder/gl/Texture.h"
 
 class Particle {
 public:
 	Particle();
-	Particle( ci::Vec2f location );
+	Particle( ci::Vec2f location, ci::gl::Texture img );
 	
 	void run();
 	void applyForce( ci::Vec2f force );
@@ -20,9 +21,10 @@ public:
 	bool isDead();
 	
 private:
-	ci::Vec2f mLocation;
-	ci::Vec2f mAcceleration;
-	ci::Vec2f mVelocity;
-	float mMass;
-	float mLifespan;
+	ci::Vec2f			mLocation;
+	ci::Vec2f			mAcceleration;
+	ci::Vec2f			mVelocity;
+	float				mMass;
+	float				mLifespan;
+	ci::gl::Texture		mImg;
 };

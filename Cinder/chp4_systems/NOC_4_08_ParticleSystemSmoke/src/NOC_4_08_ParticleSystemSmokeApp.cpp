@@ -24,66 +24,46 @@ class NOC_4_08_ParticleSystemSmokeApp : public AppNative {
   public:
 	void prepareSettings( Settings *settings );
 	void setup();
+	void mouseMove( MouseEvent e );
 	void update();
 	void draw();
 	
 	ParticleSystem ps;
+	Vec2f mousePos;
 };
 
 void NOC_4_08_ParticleSystemSmokeApp::prepareSettings( Settings *settings )
 {
-	FILE* f;
-	
-	const char* gFile = "texture.png";
-	
-	string pathToFile = getAssetPath(fs::path( gFile )).string();
-	if(fs::exists(pathToFile))
-	{
-		
-		console() << "File Exists" << std::endl;
-		f = fopen(pathToFile.c_str(), "r");
-		
-	}else{
-		
-		console() << "File aint there buddy!" << std::endl;
-	}
-	/*
-	DataSourceRef dataSourceAsset = loadAsset("texture.png");
-	fs::path pathToFile = getAssetPath("texture.png");
-	
-	if(fs::exists(pathToFile)) {
-		console() << "File Exists = " << pathToFile << std::endl;
-	} else {
-		console() << "Cannot find file." << std::endl;
-	}
-	
-	gl::Texture mImage = gl::Texture(loadImage(dataSourceAsset));
-	
-	/*try{
-		gl::Texture img = gl::Texture( loadImage( loadAsset( "texture.png" ) ) );
-	}catch( Exception e )
-	{
-		console() << e.what() << endl;
-	}*/
 	settings->setWindowSize( 640, 360 );
 }
 
 void NOC_4_08_ParticleSystemSmokeApp::setup()
 {
-
-	ps = ParticleSystem( Vec2f( getWindowWidth() / 2, 50.0 ) );
+	gl::Texture img = gl::Texture( loadImage( loadAsset( "texture.png" ) ) );
+	ps = ParticleSystem( Vec2f( getWindowWidth() / 2, getWindowHeight() - 75 ), img );
 }
 
 void NOC_4_08_ParticleSystemSmokeApp::update()
 {
 }
 
+void NOC_4_08_ParticleSystemSmokeApp::mouseMove( MouseEvent e )
+{
+	mousePos = e.getPos();
+}
+
 void NOC_4_08_ParticleSystemSmokeApp::draw()
 {
-	gl::clear( Color::white() );
+	gl::clear( Color::black() );
 	
-	Vec2f gravity = Vec2f( 0, 0.1 );
-	ps.applyForce( gravity );
+	// Calculate a "wind" force based on mouse horizontal position
+	float dx = lmap( mousePos.x, 0.0f, float( getWindowWidth() ), -0.2f, 0.2f );
+	Vec2f wind = Vec2f( dx, 0 );
+	ps.applyForce(wind);
+	
+//	Vec2f gravity = Vec2f( 0, 0.1 );
+	
+//	ps.applyForce( gravity );
 	ps.addParticle();
 	ps.run();
 }

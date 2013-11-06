@@ -18,10 +18,11 @@ ParticleSystem::ParticleSystem()
 	
 }
 
-ParticleSystem::ParticleSystem( ci::Vec2f location )
+ParticleSystem::ParticleSystem( ci::Vec2f location, ci::gl::Texture img )
 {
 	mOrigin = location;
 	mParticles = vector<Particle>();
+	mImg = img;
 }
 
 void ParticleSystem::applyForce( ci::Vec2f force )
@@ -33,7 +34,7 @@ void ParticleSystem::applyForce( ci::Vec2f force )
 
 void ParticleSystem::addParticle()
 {
-	mParticles.push_back( Particle( mOrigin ) );
+	mParticles.push_back( Particle( mOrigin, mImg ) );
 }
 
 void ParticleSystem::run()

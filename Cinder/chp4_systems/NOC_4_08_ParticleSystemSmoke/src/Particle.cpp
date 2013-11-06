@@ -18,14 +18,15 @@ Particle::Particle()
 	
 }
 
-Particle::Particle( ci::Vec2f location )
+Particle::Particle( ci::Vec2f location, ci::gl::Texture img )
 {
 	// Fill all variables
-	mAcceleration = Vec2f( 0.0, 0.05 );
-    mVelocity = Vec2f( randFloat( -1, 1 ), randFloat( -1.0, 0.0 ) );
+	mAcceleration = Vec2f( 0.0, 0.0 );
+    mVelocity = Vec2f( randFloat( -1, 1 ), randFloat( 0.0, 1.0 ) );
     mLocation = location;
-    mLifespan = 255.0;
+    mLifespan = 100.0;
 	mMass = 1.0;
+	mImg = img;
 }
 
 void Particle::run()
@@ -53,13 +54,10 @@ void Particle::update()
 // Method to display
 void Particle::display()
 {
-	gl::enableAlphaBlending();
-	gl::color( ColorA8u( 127, 127, 127, mLifespan ) );
-	gl::drawSolidEllipse( mLocation, 6.0, 6.0 );
-	
-	gl::color( ColorA8u( 0, 0, 0, mLifespan ) );
-	glLineWidth( 2.0 );
-	gl::drawStrokedEllipse( mLocation, 6.0, 6.0 );
+	gl::enableAlphaBlending();		// allow transparency
+	gl::color( ColorA8u( 255, 255, 255, mLifespan ) );
+	gl::draw( mImg, mLocation - Vec2f(12.0, 12.0) );
+	gl::color( Color::white() );	// reset the color
 }
 
 // Is the particle still useful?
