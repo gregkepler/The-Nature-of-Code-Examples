@@ -27,6 +27,7 @@ class NOC_4_08_ParticleSystemSmokeApp : public AppNative {
 	void mouseMove( MouseEvent e );
 	void update();
 	void draw();
+	void drawVector( Vec2f v, Vec2f loc, float scale );
 	
 	ParticleSystem ps;
 	Vec2f mousePos;
@@ -60,12 +61,37 @@ void NOC_4_08_ParticleSystemSmokeApp::draw()
 	float dx = lmap( mousePos.x, 0.0f, float( getWindowWidth() ), -0.2f, 0.2f );
 	Vec2f wind = Vec2f( dx, 0 );
 	ps.applyForce(wind);
-	
-//	Vec2f gravity = Vec2f( 0, 0.1 );
-	
-//	ps.applyForce( gravity );
-	ps.addParticle();
+
+	for( int i = 0; i < 2; i++ ){
+		ps.addParticle();
+	}
 	ps.run();
+	
+	// Draw an arrow representing the wind force
+	drawVector( wind, Vec2f( getWindowWidth() / 2, 50 ), 500 );
 }
+
+// Renders a vector object 'v' as an arrow and a location 'loc'
+void NOC_4_08_ParticleSystemSmokeApp::drawVector( Vec2f v, Vec2f loc, float scale )
+{
+	/*glPushMatrix();
+	float arrowsize = 4.o;
+	// Translate to location to render vector
+	gl::translate( loc );
+//	stroke(255);
+	gl::Color( Color::white() );
+	// Call vector heading function to get direction (note that pointing up is a heading of 0) and rotate
+	gl::rotate( loc.)
+	rotate(v.heading2D());
+	// Calculate length of vector & scale it to be bigger or smaller if necessary
+	float len = v.mag()*scayl;
+	// Draw three lines to make an arrow (draw pointing up since we've rotate to the proper direction)
+	line(0,0,len,0);
+	line(len,0,len-arrowsize,+arrowsize/2);
+	line(len,0,len-arrowsize,-arrowsize/2);
+	glPopMatrix();*/
+}
+
+// TODO: add a rotation function to cinder
 
 CINDER_APP_NATIVE( NOC_4_08_ParticleSystemSmokeApp, RendererGl )

@@ -22,7 +22,7 @@ Particle::Particle( ci::Vec2f location, ci::gl::Texture img )
 {
 	// Fill all variables
 	mAcceleration = Vec2f( 0.0, 0.0 );
-    mVelocity = Vec2f( randFloat( -1, 1 ), randFloat( 0.0, 1.0 ) );
+    mVelocity = Vec2f( randGaussian() * 0.3, ( randGaussian() * 0.3 ) - 1.0 );
     mLocation = location;
     mLifespan = 100.0;
 	mMass = 1.0;
@@ -37,7 +37,7 @@ void Particle::run()
 
 void Particle::applyForce( ci::Vec2f force )
 {
-	force /= mMass;
+//	force /= mMass;
 	mAcceleration += force;
 }
 
@@ -47,7 +47,7 @@ void Particle::update()
 	mVelocity += mAcceleration;
 	mLocation += mVelocity;
 	mAcceleration *= 0;
-	mLifespan -= 2.0;
+	mLifespan -= 2.5;
 	if( mLifespan < 0 ) mLifespan = 0;
 }
 
