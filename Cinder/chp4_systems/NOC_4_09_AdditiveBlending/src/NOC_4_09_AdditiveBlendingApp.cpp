@@ -1,3 +1,16 @@
+//
+//  Example 4-9: Additive Blending
+//  The Nature of Code
+//
+//  Converted from Daniel Shiffman's Processing Examples
+//  Created by Greg Kepler
+//
+//  This example demonstrates a "glow" like effect using
+//  additive blending with a Particle system.  By playing
+//  with colors, textures, etc. you can achieve a variety
+//  of looks.
+//
+
 #include "cinder/app/AppNative.h"
 #include "cinder/gl/gl.h"
 #include "cinder/gl/Texture.h"
