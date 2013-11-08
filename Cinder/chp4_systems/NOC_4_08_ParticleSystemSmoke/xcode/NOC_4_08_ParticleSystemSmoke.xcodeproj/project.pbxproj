@@ -12,12 +12,13 @@
 		00B784B40FF439BC000DE1D7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */; };
 		00B784B50FF439BC000DE1D7 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B10FF439BC000DE1D7 /* AudioUnit.framework */; };
 		00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
-		04E3A56EAE85402D8B251A8E /* NOC_4_01_SingleParticleApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 13050E62D84346D4B6898DEF /* NOC_4_01_SingleParticleApp.cpp */; };
-		2C22899C1809E15F0040FC19 /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C22899A1809E15F0040FC19 /* Particle.cpp */; };
+		1A9DC0EC352A498EBA72742D /* NOC_4_08_ParticleSystemSmokeApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5F5717FA5F2E42F58FA691A0 /* NOC_4_08_ParticleSystemSmokeApp.cpp */; };
+		2CC1531D1829547F00955998 /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1531B1829547F00955998 /* Particle.cpp */; };
+		2CC1531E1829547F00955998 /* ParticleSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1531C1829547F00955998 /* ParticleSystem.cpp */; };
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
+		691F1D42EBE943A1AA054CC1 /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = FB4CBF4352D5402ABC064B9F /* CinderApp.icns */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		E50F72D9B7854E149A50ABC9 /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = CF0EE29250F2433D9DA01950 /* CinderApp.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,18 +28,20 @@
 		00B784B10FF439BC000DE1D7 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		00B784B20FF439BC000DE1D7 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		13050E62D84346D4B6898DEF /* NOC_4_01_SingleParticleApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = NOC_4_01_SingleParticleApp.cpp; path = ../src/NOC_4_01_SingleParticleApp.cpp; sourceTree = "<group>"; };
+		10C0289D33CB4781A30392A3 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		2C22899A1809E15F0040FC19 /* Particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Particle.cpp; path = ../src/Particle.cpp; sourceTree = "<group>"; };
-		2C22899B1809E15F0040FC19 /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Particle.h; path = ../include/Particle.h; sourceTree = "<group>"; };
+		2CC1531B1829547F00955998 /* Particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Particle.cpp; path = ../src/Particle.cpp; sourceTree = "<group>"; };
+		2CC1531C1829547F00955998 /* ParticleSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ParticleSystem.cpp; path = ../src/ParticleSystem.cpp; sourceTree = "<group>"; };
+		2CC1531F1829548800955998 /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Particle.h; path = ../include/Particle.h; sourceTree = "<group>"; };
+		2CC153201829548800955998 /* ParticleSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParticleSystem.h; path = ../include/ParticleSystem.h; sourceTree = "<group>"; };
 		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		5323E6B50EAFCA7E003A9687 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
-		7583D471279E4337A04A4083 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8D1107320486CEB800E47090 /* NOC_4_01_SingleParticle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NOC_4_01_SingleParticle.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3FFB6F4C9004F8F9593032D /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
-		CF0EE29250F2433D9DA01950 /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
-		F1E6C589A38048F08BF9576E /* NOC_4_01_SingleParticle_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = NOC_4_01_SingleParticle_Prefix.pch; sourceTree = "<group>"; };
+		5F5717FA5F2E42F58FA691A0 /* NOC_4_08_ParticleSystemSmokeApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = NOC_4_08_ParticleSystemSmokeApp.cpp; path = ../src/NOC_4_08_ParticleSystemSmokeApp.cpp; sourceTree = "<group>"; };
+		6CB34945E7114FE58732F778 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* NOC_4_08_ParticleSystemSmoke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NOC_4_08_ParticleSystemSmoke.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A53E4C3EA64446A5881EE3F5 /* NOC_4_08_ParticleSystemSmoke_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = NOC_4_08_ParticleSystemSmoke_Prefix.pch; sourceTree = "<group>"; };
+		FB4CBF4352D5402ABC064B9F /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +73,9 @@
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				13050E62D84346D4B6898DEF /* NOC_4_01_SingleParticleApp.cpp */,
-				2C22899A1809E15F0040FC19 /* Particle.cpp */,
+				2CC1531B1829547F00955998 /* Particle.cpp */,
+				2CC1531C1829547F00955998 /* ParticleSystem.cpp */,
+				5F5717FA5F2E42F58FA691A0 /* NOC_4_08_ParticleSystemSmokeApp.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -103,12 +107,12 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D1107320486CEB800E47090 /* NOC_4_01_SingleParticle.app */,
+				8D1107320486CEB800E47090 /* NOC_4_08_ParticleSystemSmoke.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA /* NOC_4_01_SingleParticle */ = {
+		29B97314FDCFA39411CA2CEA /* NOC_4_08_ParticleSystemSmoke */ = {
 			isa = PBXGroup;
 			children = (
 				01B97315FEAEA392516A2CEA /* Blocks */,
@@ -118,15 +122,16 @@
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
-			name = NOC_4_01_SingleParticle;
+			name = NOC_4_08_ParticleSystemSmoke;
 			sourceTree = "<group>";
 		};
 		29B97315FDCFA39411CA2CEA /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				2C22899B1809E15F0040FC19 /* Particle.h */,
-				B3FFB6F4C9004F8F9593032D /* Resources.h */,
-				F1E6C589A38048F08BF9576E /* NOC_4_01_SingleParticle_Prefix.pch */,
+				2CC1531F1829548800955998 /* Particle.h */,
+				2CC153201829548800955998 /* ParticleSystem.h */,
+				10C0289D33CB4781A30392A3 /* Resources.h */,
+				A53E4C3EA64446A5881EE3F5 /* NOC_4_08_ParticleSystemSmoke_Prefix.pch */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -134,8 +139,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CF0EE29250F2433D9DA01950 /* CinderApp.icns */,
-				7583D471279E4337A04A4083 /* Info.plist */,
+				FB4CBF4352D5402ABC064B9F /* CinderApp.icns */,
+				6CB34945E7114FE58732F778 /* Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -152,9 +157,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D1107260486CEB800E47090 /* NOC_4_01_SingleParticle */ = {
+		8D1107260486CEB800E47090 /* NOC_4_08_ParticleSystemSmoke */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "NOC_4_01_SingleParticle" */;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "NOC_4_08_ParticleSystemSmoke" */;
 			buildPhases = (
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
@@ -164,10 +169,10 @@
 			);
 			dependencies = (
 			);
-			name = NOC_4_01_SingleParticle;
+			name = NOC_4_08_ParticleSystemSmoke;
 			productInstallPath = "$(HOME)/Applications";
-			productName = NOC_4_01_SingleParticle;
-			productReference = 8D1107320486CEB800E47090 /* NOC_4_01_SingleParticle.app */;
+			productName = NOC_4_08_ParticleSystemSmoke;
+			productReference = 8D1107320486CEB800E47090 /* NOC_4_08_ParticleSystemSmoke.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -175,7 +180,7 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "NOC_4_01_SingleParticle" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "NOC_4_08_ParticleSystemSmoke" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -185,11 +190,11 @@
 				French,
 				German,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA /* NOC_4_01_SingleParticle */;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* NOC_4_08_ParticleSystemSmoke */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D1107260486CEB800E47090 /* NOC_4_01_SingleParticle */,
+				8D1107260486CEB800E47090 /* NOC_4_08_ParticleSystemSmoke */,
 			);
 		};
 /* End PBXProject section */
@@ -199,7 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E50F72D9B7854E149A50ABC9 /* CinderApp.icns in Resources */,
+				691F1D42EBE943A1AA054CC1 /* CinderApp.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,8 +215,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04E3A56EAE85402D8B251A8E /* NOC_4_01_SingleParticleApp.cpp in Sources */,
-				2C22899C1809E15F0040FC19 /* Particle.cpp in Sources */,
+				1A9DC0EC352A498EBA72742D /* NOC_4_08_ParticleSystemSmokeApp.cpp in Sources */,
+				2CC1531D1829547F00955998 /* Particle.cpp in Sources */,
+				2CC1531E1829547F00955998 /* ParticleSystem.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +227,6 @@
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CINDER_PATH = ../../../../../cinder_0.8.5_mac;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
@@ -229,7 +234,7 @@
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = NOC_4_01_SingleParticle_Prefix.pch;
+				GCC_PREFIX_HEADER = NOC_4_08_ParticleSystemSmoke_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -238,7 +243,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/libcinder_d.a\"";
-				PRODUCT_NAME = NOC_4_01_SingleParticle;
+				PRODUCT_NAME = NOC_4_08_ParticleSystemSmoke;
 				SYMROOT = ./build;
 				WRAPPER_EXTENSION = app;
 			};
@@ -247,7 +252,6 @@
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CINDER_PATH = ../../../../../cinder_0.8.5_mac;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -256,12 +260,12 @@
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = NOC_4_01_SingleParticle_Prefix.pch;
+				GCC_PREFIX_HEADER = NOC_4_08_ParticleSystemSmoke_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/libcinder.a\"";
-				PRODUCT_NAME = NOC_4_01_SingleParticle;
+				PRODUCT_NAME = NOC_4_08_ParticleSystemSmoke;
 				STRIP_INSTALLED_PRODUCT = YES;
 				SYMROOT = ./build;
 				WRAPPER_EXTENSION = app;
@@ -305,7 +309,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "NOC_4_01_SingleParticle" */ = {
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "NOC_4_08_ParticleSystemSmoke" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4B08A954540054247B /* Debug */,
@@ -314,7 +318,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "NOC_4_01_SingleParticle" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "NOC_4_08_ParticleSystemSmoke" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,

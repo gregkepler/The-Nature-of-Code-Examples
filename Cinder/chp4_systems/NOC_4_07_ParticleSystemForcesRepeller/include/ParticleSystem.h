@@ -1,0 +1,26 @@
+//
+//  ParticleSystem.h
+//  NOC_4_03_ParticleSystemClass
+//
+//  Created by Greg Kepler on 10/16/13.
+//
+//
+
+#include "cinder/app/AppBasic.h"
+#include "Particle.h"
+#include "Repeller.h"
+
+class ParticleSystem {
+public:
+	ParticleSystem();
+	ParticleSystem( ci::Vec2f location );
+	
+	void applyForce( ci::Vec2f force );
+	void applyRepeller( Repeller r );
+	void addParticle();
+	void run();
+	
+private:
+	ci::Vec2f mOrigin;
+	std::vector<Particle> mParticles;
+};
