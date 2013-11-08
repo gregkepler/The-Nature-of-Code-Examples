@@ -74,24 +74,23 @@ void NOC_4_08_ParticleSystemSmokeApp::draw()
 // Renders a vector object 'v' as an arrow and a location 'loc'
 void NOC_4_08_ParticleSystemSmokeApp::drawVector( Vec2f v, Vec2f loc, float scale )
 {
-	/*glPushMatrix();
-	float arrowsize = 4.o;
+	glPushMatrix();
+	float arrowsize = 4.0;
 	// Translate to location to render vector
 	gl::translate( loc );
-//	stroke(255);
-	gl::Color( Color::white() );
-	// Call vector heading function to get direction (note that pointing up is a heading of 0) and rotate
-	gl::rotate( loc.)
-	rotate(v.heading2D());
+	
+	gl::color( Color::white() );
+	// There is no heading2d function in cinder so get direction this way (note that pointing up is a heading of 0) and rotate
+	gl::rotate( toDegrees( atan2( v.y, v.x ) ) );
+	
 	// Calculate length of vector & scale it to be bigger or smaller if necessary
-	float len = v.mag()*scayl;
+	float len = v.length() * scale;
+	
 	// Draw three lines to make an arrow (draw pointing up since we've rotate to the proper direction)
-	line(0,0,len,0);
-	line(len,0,len-arrowsize,+arrowsize/2);
-	line(len,0,len-arrowsize,-arrowsize/2);
-	glPopMatrix();*/
+	gl::drawLine( Vec2f::zero(), Vec2f( len , 0.0 ) );
+	gl::drawLine( Vec2f( len, 0 ), Vec2f( len - arrowsize , arrowsize / 2 ) );
+	gl::drawLine( Vec2f( len, 0 ), Vec2f( len - arrowsize , -arrowsize / 2 ) );
+	glPopMatrix();
 }
-
-// TODO: add a rotation function to cinder
 
 CINDER_APP_NATIVE( NOC_4_08_ParticleSystemSmokeApp, RendererGl )

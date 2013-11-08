@@ -1,8 +1,7 @@
 //
 //  ParticleSystem.cpp
-//  NOC_4_03_ParticleSystemClass
 //
-//  Created by Greg Kepler on 10/16/13.
+//  Created by Greg Kepler.
 //
 //
 
@@ -15,7 +14,6 @@ using namespace std;
 
 ParticleSystem::ParticleSystem()
 {
-	
 }
 
 ParticleSystem::ParticleSystem( ci::Vec2f location, ci::gl::Texture img )

@@ -15,7 +15,6 @@ using namespace std;
 
 Particle::Particle()
 {
-	
 }
 
 Particle::Particle( ci::Vec2f location, ci::gl::Texture img )
