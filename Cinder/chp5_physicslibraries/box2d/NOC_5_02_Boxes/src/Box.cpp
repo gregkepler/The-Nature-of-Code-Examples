@@ -7,6 +7,7 @@
 //
 
 #include "cinder/app/AppNative.h"
+#include "cinder/Rand.h"
 #include <Box2D/Box2D.h>
 #include "Box.h"
 
@@ -16,22 +17,21 @@ using namespace std;
 
 Box::Box()
 {
-    
 }
 
 Box::Box( b2World* const world, Vec2f loc )
 {
     mWorld = world;
     
-    mWidth = 16.0;
-    mHeight = 16.0;
+    mWidth = randFloat( 4.0, 16.0 ) / 2.0;
+    mHeight = randFloat( 4.0, 16.0 ) / 2.0;
     
-    // Build Body
-    b2BodyDef bd;
-    bd.type = b2_dynamicBody;
-    bd.position.Set( loc.x, loc.y );
-    mBody = world->CreateBody( &bd );
-    
+    makeBody( loc, mWidth, mHeight );
+}
+
+// This function adds the rectangle to the box2d world
+void Box::makeBody( Vec2f loc, float w, float h )
+{
     // Define a polygon (this is what we use for a rectangle)
     b2PolygonShape ps;
     ps.SetAsBox( mWidth , mHeight );
@@ -44,8 +44,16 @@ Box::Box( b2World* const world, Vec2f loc )
     fd.friction = 0.3;
     fd.restitution = 0.5;
     
-    // Attach Fixture to Body
+    // Define the body and make it from the shape
+    b2BodyDef bd;
+    bd.type = b2_dynamicBody;
+    bd.position.Set( loc.x, loc.y );
+    mBody = mWorld->CreateBody( &bd );
     mBody->CreateFixture( &fd );
+    
+    // Give it some initial random velocity
+    mBody->SetLinearVelocity( b2Vec2( randFloat( -5.0, 5.0 ), randFloat( -5.0, 5.0 ) ) );
+    mBody->SetAngularVelocity( randFloat( -5.0, 5.0 ) );
 }
 
 void Box::killBody()
@@ -60,7 +68,7 @@ bool Box::done()
     b2Vec2 pos = mBody->GetPosition();
     // Is it off the bottom of the screen?
     if( pos.y > getWindowHeight() + mWidth * mHeight ) {
-//        killBody();
+        killBody();
         return true;
     }
     return false;

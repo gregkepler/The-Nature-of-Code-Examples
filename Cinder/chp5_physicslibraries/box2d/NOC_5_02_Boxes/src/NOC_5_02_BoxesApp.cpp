@@ -20,8 +20,6 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-const float BOX_SIZE = 10;
-
 class NOC_5_02_BoxesApp : public AppNative {
 public:
     void prepareSettings( Settings *settings );
@@ -32,8 +30,6 @@ public:
 	b2World				*mWorld;
 	vector<Box*>		mBoxes;
     vector<Boundary*>	mBoundaries;
-    bool                mousePressed;
-    Vec2f               mousePos;
 };
 
 void NOC_5_02_BoxesApp::prepareSettings( Settings *settings )
@@ -45,15 +41,13 @@ void NOC_5_02_BoxesApp::setup()
 {
     // Initialize box2d physics and create the world
     // We are setting a custom gravity
-	b2Vec2 gravity( 0.0f, -10.0f );
+	b2Vec2 gravity( 0.0f, 10.0f );
 	mWorld = new b2World( gravity );
-    mousePressed = false;
     
     // Add a bunch of fixed boundaries
-    mBoundaries.push_back( new Boundary( mWorld, Vec2f( getWindowWidth() / 4, getWindowHeight() - 5 ), getWindowWidth() / 2 - 50, 10 ));
-    mBoundaries.push_back( new Boundary( mWorld, Vec2f( 3 * ( getWindowWidth() / 4 ), getWindowHeight() - 50 ), getWindowWidth() / 2 - 50, 10 ));
+    mBoundaries.push_back( new Boundary( mWorld, Vec2f( getWindowWidth() / 4.0, getWindowHeight() - 5.0 ), (getWindowWidth() / 2.0) - 50.0, 10.0 ));
+    mBoundaries.push_back( new Boundary( mWorld, Vec2f( 3 * ( getWindowWidth() / 4 ), getWindowHeight() - 50 ), (getWindowWidth() / 2) - 50, 10 ));
 }
-
 
 void NOC_5_02_BoxesApp::update()
 {

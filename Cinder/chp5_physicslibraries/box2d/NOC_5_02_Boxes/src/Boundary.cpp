@@ -25,7 +25,7 @@ Boundary::Boundary( b2World* const world, ci::Vec2f pos, float w, float h )
     b2PolygonShape ps;
     
     // We're just a box
-    ps.SetAsBox( mWidth, mHeight );
+    ps.SetAsBox( mWidth/2, mHeight/2 );
     
     
     // Create the body
@@ -42,6 +42,8 @@ Boundary::Boundary( b2World* const world, ci::Vec2f pos, float w, float h )
 void Boundary::display()
 {
     gl::color( Color::black() );
-    gl::drawSolidRect( Rectf( mPos.x, mPos.y, mWidth, mHeight ) );
+    gl::drawSolidRect( Rectf( mPos.x - ( mWidth / 2 ), mPos.y - (mHeight / 2), mPos.x + (mWidth/2), mPos.y + (mHeight/2) ) );
+//    gl::drawSolidRect( Rectf( mPos.x-(mWidth/2), mPos.y-(mHeight/2), mWidth, mHeight ) );
+//     gl::drawSolidRect( Rectf( 160.0, 20.0, 135.0, 10.0 ) );
 }
 

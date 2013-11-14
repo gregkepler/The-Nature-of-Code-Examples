@@ -13,6 +13,8 @@ class Box {
 public:
     Box();
     Box( b2World* const world, ci::Vec2f loc );
+    ~Box();
+    void    makeBody( ci::Vec2f center, float w, float h );
     void    display();
     bool    done();
     void    killBody();
