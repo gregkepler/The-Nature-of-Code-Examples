@@ -51,6 +51,7 @@
 		CD5A013334454771832BF913 /* b2BlockAllocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F86894E2CD0444DB54590BF /* b2BlockAllocator.cpp */; };
 		D3CDDE7282C1474891A7884D /* b2PulleyJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 02733E7D9F8E4A7E9A54E97F /* b2PulleyJoint.cpp */; };
 		D62C27A1710B4F7DAC02A293 /* b2Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9446073ACD64DD6913349D4 /* b2Timer.cpp */; };
+		D7150ABB1841649800BDA517 /* Surface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7150AB91841649800BDA517 /* Surface.cpp */; };
 		D7ADF16F1836C65000E46AFF /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7ADF16D1836C65000E46AFF /* Particle.cpp */; };
 		DABC6768EBFF4FE496F2D7C2 /* b2PolygonShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7CA9DFC80FA9490FA4ACADDA /* b2PolygonShape.cpp */; };
 		DF7682807EEE42FE91D0FD11 /* b2Draw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DA45DC9809F94BEEA69C3470 /* b2Draw.cpp */; };
@@ -159,6 +160,8 @@
 		D0B1D2C24394403AA7201BF6 /* b2Collision.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = b2Collision.h; path = ../../../../../../cinder_0.8.5_mac/blocks/Box2D/src/Box2D/Collision/b2Collision.h; sourceTree = "<group>"; };
 		D3DDB0062FC546C7AD78FCD1 /* b2BroadPhase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = b2BroadPhase.h; path = ../../../../../../cinder_0.8.5_mac/blocks/Box2D/src/Box2D/Collision/b2BroadPhase.h; sourceTree = "<group>"; };
 		D5EC77894B2B4067A9F0CE84 /* b2PolygonContact.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = b2PolygonContact.h; path = ../../../../../../cinder_0.8.5_mac/blocks/Box2D/src/Box2D/Dynamics/Contacts/b2PolygonContact.h; sourceTree = "<group>"; };
+		D7150AB91841649800BDA517 /* Surface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Surface.cpp; path = ../src/Surface.cpp; sourceTree = "<group>"; };
+		D7150ABA1841649800BDA517 /* Surface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Surface.h; path = ../src/Surface.h; sourceTree = "<group>"; };
 		D7ADF16D1836C65000E46AFF /* Particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Particle.cpp; path = ../src/Particle.cpp; sourceTree = "<group>"; };
 		D7ADF16E1836C65000E46AFF /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Particle.h; path = ../src/Particle.h; sourceTree = "<group>"; };
 		DA45DC9809F94BEEA69C3470 /* b2Draw.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = b2Draw.cpp; path = ../../../../../../cinder_0.8.5_mac/blocks/Box2D/src/Box2D/Common/b2Draw.cpp; sourceTree = "<group>"; };
@@ -209,6 +212,7 @@
 			children = (
 				D7ADF16D1836C65000E46AFF /* Particle.cpp */,
 				4330014949804437976AC92B /* NOC_5_03_ChainShape_SimpleAppApp.cpp */,
+				D7150AB91841649800BDA517 /* Surface.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -270,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				D7ADF16E1836C65000E46AFF /* Particle.h */,
+				D7150ABA1841649800BDA517 /* Surface.h */,
 				3A806FBE2B1640538AB7280D /* Resources.h */,
 				3AEB3418B4D141EB9EDDF988 /* NOC_5_03_ChainShape_SimpleApp_Prefix.pch */,
 			);
@@ -524,6 +529,7 @@
 				F9B9E3DE4D08487E9497ED64 /* b2CollideCircle.cpp in Sources */,
 				AE61C8E2E04E4A7F97A71371 /* b2CollideEdge.cpp in Sources */,
 				B509453903B04B01B541429A /* b2CollidePolygon.cpp in Sources */,
+				D7150ABB1841649800BDA517 /* Surface.cpp in Sources */,
 				E46548121D814E9E9AB537AB /* b2Collision.cpp in Sources */,
 				E451C12D92A84D2882CF69C0 /* b2Distance.cpp in Sources */,
 				7F88DEDEA8D74620818E5E33 /* b2DynamicTree.cpp in Sources */,

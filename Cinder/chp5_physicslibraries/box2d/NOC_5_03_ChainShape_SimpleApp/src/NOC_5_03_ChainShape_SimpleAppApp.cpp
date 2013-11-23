@@ -1,6 +1,7 @@
 #include "cinder/app/AppNative.h"
 #include "cinder/gl/gl.h"
 #include <Box2D/Box2D.h>
+#include "Particle.h"
 
 using namespace ci;
 using namespace ci::app;
@@ -15,7 +16,7 @@ class NOC_5_03_ChainShape_SimpleAppApp : public AppNative {
 	void draw();
     
     b2World* mWorld;
-    vector mParticles;
+    vector<Particle> mParticles;
 };
 
 void NOC_5_03_ChainShape_SimpleAppApp::prepareSettings( Settings *settings )

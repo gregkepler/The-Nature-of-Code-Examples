@@ -18,6 +18,8 @@ private:
     b2World     *mWorld;
     float       mRadius;
     
-    void makeBody( ci::Vec2f pos, float r );
-    void killBody();
+    void    makeBody( ci::Vec2f pos, float r );
+    void    killBody();
+    bool    done();
+    void    display();
 };
