@@ -12,6 +12,8 @@
 class Particle{
 public:
     Particle( b2World* const world, ci::Vec2f pos, float r );
+    void    display();
+	bool    done();
     
 private:
     b2Body      *mBody;
@@ -20,6 +22,4 @@ private:
     
     void    makeBody( ci::Vec2f pos, float r );
     void    killBody();
-    bool    done();
-    void    display();
 };

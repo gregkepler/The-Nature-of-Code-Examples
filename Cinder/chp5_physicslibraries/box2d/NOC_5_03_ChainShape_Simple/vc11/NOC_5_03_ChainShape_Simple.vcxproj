@@ -10,8 +10,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{320D021B-D462-4054-A07B-4EBB20F2C80E}</ProjectGuid>
-    <RootNamespace>NOC_5_03_ChainShape_SimpleApp</RootNamespace>
+    <ProjectGuid>{43B0B7B1-7015-49AB-A9F2-FC4703757071}</ProjectGuid>
+    <RootNamespace>NOC_5_03_ChainShape_Simple</RootNamespace>
     <Keyword>Win32Proj</Keyword>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -106,7 +106,7 @@
     <ResourceCompile Include="Resources.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\NOC_5_03_ChainShape_SimpleAppApp.cpp" />
+    <ClCompile Include="..\src\NOC_5_03_ChainShape_SimpleApp.cpp" />
     <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Collision\b2BroadPhase.cpp" />
     <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Collision\b2CollideCircle.cpp" />
     <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Collision\b2CollideEdge.cpp" />

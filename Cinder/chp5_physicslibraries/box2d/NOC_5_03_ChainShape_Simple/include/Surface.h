@@ -19,6 +19,7 @@ public:
     void display();
     
     b2World             *mWorld;
+	b2Body				*mBody;
 	
 	// We'll keep track of all of the surface points
     std::vector<b2Vec2>	surface;

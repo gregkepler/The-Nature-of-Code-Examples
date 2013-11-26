@@ -13,44 +13,44 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
     <Filter Include="Blocks">
-      <UniqueIdentifier>{1875D609-4BF3-4EF7-8124-178496307E28}</UniqueIdentifier>
+      <UniqueIdentifier>{BBBD5B8D-3C13-4997-AA41-BE09D8F1E1F0}</UniqueIdentifier>
     </Filter>
     <Filter Include="Blocks\Box2D">
-      <UniqueIdentifier>{01555A2D-6BB1-40FC-B64C-5A1D089BB5AC}</UniqueIdentifier>
+      <UniqueIdentifier>{5DD7DD78-71DE-49AE-8572-52456BACBCF8}</UniqueIdentifier>
     </Filter>
     <Filter Include="Blocks\Box2D\src">
-      <UniqueIdentifier>{E94ECCA7-D07D-4B00-87C6-015C192C4936}</UniqueIdentifier>
+      <UniqueIdentifier>{B752577B-562F-4544-A77A-392770BD4D6B}</UniqueIdentifier>
     </Filter>
     <Filter Include="Blocks\Box2D\src\Box2D">
-      <UniqueIdentifier>{B0D331C6-675D-4117-8364-89137F69A8CF}</UniqueIdentifier>
+      <UniqueIdentifier>{CE85403E-E013-4FB7-8779-BA416B131172}</UniqueIdentifier>
     </Filter>
     <Filter Include="Blocks\Box2D\src\Box2D\Collision">
-      <UniqueIdentifier>{AE502A6B-A987-4DD8-95E4-D4CF10DAABF3}</UniqueIdentifier>
+      <UniqueIdentifier>{95DA49B8-9E19-4460-894A-37F9541E4A3A}</UniqueIdentifier>
     </Filter>
     <Filter Include="Blocks\Box2D\src\Box2D\Collision\Shapes">
-      <UniqueIdentifier>{0E8D1793-81BF-4F2A-8432-F739FACEEE07}</UniqueIdentifier>
+      <UniqueIdentifier>{2DDC6C6D-630A-4BC2-8AB6-645C85692909}</UniqueIdentifier>
     </Filter>
     <Filter Include="Blocks\Box2D\src\Box2D\Common">
-      <UniqueIdentifier>{B2DDA283-B24D-421C-910F-6B920C84972A}</UniqueIdentifier>
+      <UniqueIdentifier>{6B3C5125-658F-4772-A988-355B6128FA6E}</UniqueIdentifier>
     </Filter>
     <Filter Include="Blocks\Box2D\src\Box2D\Dynamics">
-      <UniqueIdentifier>{EA92B891-11CB-49F2-AABE-D297DC302FBB}</UniqueIdentifier>
+      <UniqueIdentifier>{2860F263-B473-4A8C-BD09-27DF61A30059}</UniqueIdentifier>
     </Filter>
     <Filter Include="Blocks\Box2D\src\Box2D\Dynamics\Contacts">
-      <UniqueIdentifier>{6AF0AD44-214A-4A73-B165-2FFC32C2AA89}</UniqueIdentifier>
+      <UniqueIdentifier>{FF1D99ED-AC05-4D41-9020-8CBF7E913A23}</UniqueIdentifier>
     </Filter>
     <Filter Include="Blocks\Box2D\src\Box2D\Dynamics\Joints">
-      <UniqueIdentifier>{4CAAAD6D-CBDD-49F6-8A08-BC1C7E46AEF7}</UniqueIdentifier>
+      <UniqueIdentifier>{BF4293AE-4707-4A73-962D-98036478B7AA}</UniqueIdentifier>
     </Filter>
     <Filter Include="Blocks\Box2D\src\Box2D\Rope">
-      <UniqueIdentifier>{00B388A0-4B4C-4C10-A101-F73811562192}</UniqueIdentifier>
+      <UniqueIdentifier>{C10A1D20-BB56-4100-8780-D22D53A98CD0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\NOC_5_03_ChainShape_SimpleAppApp.cpp">
+    <ClCompile Include="..\src\NOC_5_03_ChainShape_SimpleApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\NOC_5_03_ChainShape_SimpleAppApp.cpp">
+    <ClCompile Include="..\src\NOC_5_03_ChainShape_SimpleApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClInclude Include="..\include\Resources.h">
