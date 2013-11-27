@@ -49,11 +49,11 @@ void Particle::display()
     gl::rotate( -a );
     
     gl::color( Color8u::gray( 127 ) );
-    gl::drawSolidEllipse( Vec2f::zero(), mRadius*2, mRadius*2 );
+    gl::drawSolidEllipse( Vec2f::zero(), mRadius, mRadius );
     
     gl::color( Color::black() );
     gl::lineWidth( 2.0 );
-    gl::drawStrokedEllipse( Vec2f::zero(), mRadius*2, mRadius*2 );
+    gl::drawStrokedEllipse( Vec2f::zero(), mRadius, mRadius );
     
     // Let's add a line so we can see the rotation
     gl::drawLine( Vec2f::zero(), Vec2f( mRadius, 0 ) );

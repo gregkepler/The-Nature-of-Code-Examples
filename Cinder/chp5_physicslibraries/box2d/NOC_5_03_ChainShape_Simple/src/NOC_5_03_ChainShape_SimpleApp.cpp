@@ -1,3 +1,13 @@
+//
+//  Example 5-3: Chain Shape Simple
+//  The Nature of Code
+//
+//  Converted from Daniel Shiffman's Processing Examples
+//  Created by Greg Kepler
+//
+//  An uneven surface
+//
+
 #include "cinder/app/AppNative.h"
 #include "cinder/gl/gl.h"
 #include "cinder/Rand.h"
@@ -52,13 +62,7 @@ void NOC_5_03_ChainShape_SimpleApp::draw()
 	if ( randFloat() < 0.5 ) {
 		float sz = randFloat( 4, 8 );
 		mParticles.push_back( new Particle( mWorld, Vec2f( getWindowWidth() / 2, 10.0 ), sz ) );
-//		particles.add(new Particle(width/2,10,sz));
 	}
-	
-	// We must always step through time!
-//	box2d.step();
-	
-//	background(255);
 	
 	// Draw the surface
 	mSurface->display();
@@ -67,15 +71,6 @@ void NOC_5_03_ChainShape_SimpleApp::draw()
 	for( vector<Particle*>::iterator p = mParticles.begin(); p != mParticles.end(); ++p ) {
 		(*p)->display();
 	}
-	
-	// Particles that leave the screen, we delete them
-	// (note they have to be deleted from both the box2d world and our list
-	/*for (int i = mParticles.size()-1; i >= 0; i--) {
-		Particle p = mParticles[i];
-		if (p.done()) {
-			mParticles.remove(i);
-		}
-	}*/
 	
 	if(mParticles.size() > 0){
 		for( vector<Particle*>::iterator p = mParticles.end()-1; p != mParticles.begin(); --p ) {

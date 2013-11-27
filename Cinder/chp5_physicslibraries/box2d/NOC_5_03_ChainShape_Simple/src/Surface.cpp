@@ -2,7 +2,7 @@
 //  Surface.cpp
 //  NOC_5_03_ChainShape_SimpleApp
 //
-//  Created by Greg Kepler on 11/23/13.
+//  Created by Greg Kepler
 //
 //
 
@@ -43,27 +43,16 @@ SurfaceBoundary::SurfaceBoundary( b2World* const world )
 }
 
 // A simple function to just draw the edge chain as a series of vertex points
-void SurfaceBoundary::display() {
-	gl::lineWidth( 1.0f );
-	
+void SurfaceBoundary::display()
+{
 	glColor3f(0.0f, 0.0f, 0.0f); // sets color to black.
 	gl::color( Color::black() );
-	glBegin( GL_QUADS );
+	glBegin( GL_POLYGON );
+    glVertex2f( 0.0f, getWindowHeight() );
 	for( b2Vec2 v: surface ){
 		glVertex2f( v.x, v.y );
 	}
 	glVertex2f( getWindowWidth(), getWindowHeight() );
     glVertex2f( 0.0f, getWindowHeight() );
 	glEnd();
-	
-//    strokeWeight(1);
-/*    stroke(0);
-    fill(0);
-    beginShape();
-    for (Vec2 v: surface) {
-		vertex(v.x, v.y);
-    }
-    vertex(width, height);
-    vertex(0, height);
-    endShape(CLOSE);*/
 }
