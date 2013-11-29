@@ -13,13 +13,14 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-Boundary::Boundary( b2World* const world, ci::Vec2f pos, float w, float h )
+Boundary::Boundary( b2World* const world, ci::Vec2f pos, float w, float h, float a )
 {
     mWorld = world;
     
     mPos = pos;
     mWidth = w;
     mHeight = h;
+	mAngle = a;
 
     // Define the polygon
     b2PolygonShape ps;
