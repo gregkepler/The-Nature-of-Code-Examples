@@ -42,8 +42,18 @@ Boundary::Boundary( b2World* const world, ci::Vec2f pos, float w, float h, float
 // Draw the boundary, if it were at an angle we'd have to do something fancier
 void Boundary::display()
 {
-    gl::color( Color::black() );
-    gl::drawSolidRect( Rectf( mPos.x - ( mWidth / 2 ), mPos.y - (mHeight / 2), mPos.x + (mWidth/2), mPos.y + (mHeight/2) ) );
+	float a = mBody->GetAngle();
+	
+	glPushMatrix();
+	gl::translate( mPos.x, mPos.y );
+	gl::rotate( -a );
+//    rect(0,0,w,h);
+	
+	gl::color( Color::black() );
+    gl::drawSolidRect( Rectf( -mWidth/2, -mHeight/2, -(mWidth/2) + mWidth, -(mHeight/2) + mHeight ) );
+    glPopMatrix();
+	
+    
 //    gl::drawSolidRect( Rectf( mPos.x-(mWidth/2), mPos.y-(mHeight/2), mWidth, mHeight ) );
 //     gl::drawSolidRect( Rectf( 160.0, 20.0, 135.0, 10.0 ) );
 }

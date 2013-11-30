@@ -42,11 +42,11 @@ bool Particle::done()
 void Particle::display()
 {
     Vec2f pos = Vec2f( mBody->GetPosition().x, mBody->GetPosition().y );
-    float a = mBody->GetAngle();
+    float a = toDegrees( mBody->GetAngle() );
     
     glPushMatrix();
     gl::translate( pos );
-    gl::rotate( -a );
+    gl::rotate( a );
     
     gl::color( Color8u::gray( 127 ) );
     gl::drawSolidEllipse( Vec2f::zero(), mRadius, mRadius );

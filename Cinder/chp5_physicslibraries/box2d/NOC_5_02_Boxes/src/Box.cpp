@@ -77,11 +77,11 @@ bool Box::done()
 void Box::display()
 {
     Vec2f pos = Vec2f( mBody->GetPosition().x, mBody->GetPosition().y );
-    float a = mBody->GetAngle();
-    
+    float a = toDegrees( mBody->GetAngle() );
+	
     glPushMatrix();
     gl::translate( pos );
-    gl::rotate( -a );
+    gl::rotate( a );
     
     gl::color( Color8u::gray( 127 ) );
     Rectf rect = Rectf( -mWidth, -mHeight, mWidth, mHeight );

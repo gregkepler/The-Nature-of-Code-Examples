@@ -14,6 +14,7 @@ class CustomShape
 public:
 	CustomShape( b2World* const world, ci::Vec2f pos );
 	void    display();
+	void	drawShape();
 	bool    done();
 	
 private:

@@ -42,14 +42,13 @@ void NOC_5_04_PolygonsApp::setup()
 
 void NOC_5_04_PolygonsApp::mouseDown( MouseEvent event )
 {
-	console() << event.getPos() << endl;
-	
-	mPolygons.push_back( new CustomShape( mWorld, Vec2f( event.getPos().x, event.getPos().y ) ) );
+	CustomShape *cs = new CustomShape( mWorld, event.getPos() );
+	mPolygons.push_back( cs );
 }
 
 void NOC_5_04_PolygonsApp::update()
 {
-	for( int i = 0; i < 5; ++i )
+	for( int i = 0; i < 2; ++i )
 		mWorld->Step( 1 / 30.0f, 10, 10 );
 }
 

@@ -43,7 +43,5 @@ void Boundary::display()
 {
     gl::color( Color::black() );
     gl::drawSolidRect( Rectf( mPos.x - ( mWidth / 2 ), mPos.y - (mHeight / 2), mPos.x + (mWidth/2), mPos.y + (mHeight/2) ) );
-//    gl::drawSolidRect( Rectf( mPos.x-(mWidth/2), mPos.y-(mHeight/2), mWidth, mHeight ) );
-//     gl::drawSolidRect( Rectf( 160.0, 20.0, 135.0, 10.0 ) );
 }
 

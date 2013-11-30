@@ -42,38 +42,54 @@ bool CustomShape::done()
 // Drawing the box
 void CustomShape::display()
 {
-	 // We look at each body and get its screen position
+	// draw solid
+    gl::color( Color8u::gray( 127 ) );
+	drawShape();
+	
+	// draw outline
+	gl::color( Color8u::black() );
+	gl::lineWidth( 2.0 );
+	glPolygonMode(GL_FRONT_AND_BACK,GL_LINE);
+	drawShape();
+	
+	glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
+}
+
+void CustomShape::drawShape()
+{
+	// We look at each body and get its screen position
     Vec2f pos = Vec2f( mBody->GetPosition().x, mBody->GetPosition().y );
 	// Get its angle of rotation
-    float a = mBody->GetAngle();
+    float a = toDegrees( mBody->GetAngle() );
 	
 	b2Fixture *f = mBody->GetFixtureList();
 	b2PolygonShape *ps = (b2PolygonShape *)f->GetShape();
     
     glPushMatrix();
     gl::translate( pos );
-    gl::rotate( -a );
-    
-    gl::color( Color8u::gray( 127 ) );
+    gl::rotate( a );
 	glBegin( GL_POLYGON );
-    //println(vertices.length);
+	
     // For every vertex, convert to pixel vector
     for (int i = 0; i < ps->GetVertexCount(); i++) {
+		
 		b2Vec2 v = ps->GetVertex(i);
 		glVertex2f( v.x, v.y );
     }
     glEnd();
     glPopMatrix();
+
 }
 
 // Here's our function that adds the particle to the Box2D world
 void CustomShape::makeBody( Vec2f pos )
 {
 	b2Vec2 vertices[4];
-    vertices[0] = b2Vec2( -15, 25 );
-    vertices[1] = b2Vec2( 15, 0 );
-    vertices[2] = b2Vec2( 20, -15 );
-    vertices[3] = b2Vec2( -10, -10 );
+	// reversed vertices so that it's counter-clockwise
+    vertices[0] = b2Vec2( -10, -10 );
+    vertices[1] = b2Vec2( 20, -15 );
+    vertices[2] = b2Vec2( 15, 0 );
+    vertices[3] = b2Vec2( -15, 25 );
 	
 	// Define a polygon (this is what we use for a rectangle)
     b2PolygonShape ps;

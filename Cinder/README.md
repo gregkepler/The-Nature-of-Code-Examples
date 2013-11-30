@@ -23,6 +23,12 @@ Spacing conventions have been followed as much as possible as well. So instead o
 
 If you're new to C++, you may be thrown off my some member variables with * in front of it, such as *walker in many of the introduction examples. This refers to the variable being a pointer. You can read more about pointers [here](http://www.cplusplus.com/doc/tutorial/pointers/).
 
-Chapter 3
+### Chapter 3
+
 * Many of the processing examples include a version with trails on. The Cinder equivalent includes code that you can uncomment to turn trails on.
 
+### Chapter 4
+#### Box2d
+
+* Rotations from Box2d bodies have to be translated to degrees
+* 
