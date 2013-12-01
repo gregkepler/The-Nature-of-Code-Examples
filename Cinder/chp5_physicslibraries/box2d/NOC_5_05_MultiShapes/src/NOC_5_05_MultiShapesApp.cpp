@@ -1,5 +1,5 @@
 //
-//  Example 5-4: Polygons
+//  Example 5-5: MultiShapes
 //  The Nature of Code
 //
 //  Converted from Daniel Shiffman's Processing Examples
@@ -10,15 +10,14 @@
 
 #include "cinder/app/AppNative.h"
 #include "cinder/gl/gl.h"
-#include <Box2d/Box2D.h>
 #include "Boundary.h"
-#include "CustomShape.h"
+#include "Lollipop.h"
 
 using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-class NOC_5_04_PolygonsApp : public AppNative {
+class NOC_5_05_MultiShapesApp : public AppNative {
   public:
 	void prepareSettings( Settings *settings );
 	void setup();
@@ -28,15 +27,15 @@ class NOC_5_04_PolygonsApp : public AppNative {
 	
 	b2World*				mWorld;
 	vector<Boundary*>		mBoundaries;
-	vector<CustomShape*>	mPolygons;
+	vector<Lollipop*>		mLollipops;
 };
 
-void NOC_5_04_PolygonsApp::prepareSettings( Settings *settings )
+void NOC_5_05_MultiShapesApp::prepareSettings( Settings *settings )
 {
     settings->setWindowSize( 640, 360 );
 }
 
-void NOC_5_04_PolygonsApp::setup()
+void NOC_5_05_MultiShapesApp::setup()
 {
 	b2Vec2 gravity( 0.0f, 20.0f );
     mWorld = new b2World( gravity );
@@ -50,19 +49,19 @@ void NOC_5_04_PolygonsApp::setup()
 	mBoundaries.push_back( new Boundary( mWorld, Vec2f( 5, height / 2 ), 10, height, 0 ) );
 }
 
-void NOC_5_04_PolygonsApp::mouseDown( MouseEvent event )
+void NOC_5_05_MultiShapesApp::mouseDown( MouseEvent event )
 {
-	CustomShape *cs = new CustomShape( mWorld, event.getPos() );
-	mPolygons.push_back( cs );
+	Lollipop *l = new Lollipop( mWorld, event.getPos() );
+	mLollipops.push_back( l );
 }
 
-void NOC_5_04_PolygonsApp::update()
+void NOC_5_05_MultiShapesApp::update()
 {
 	for( int i = 0; i < 2; ++i )
 		mWorld->Step( 1 / 30.0f, 10, 10 );
 }
 
-void NOC_5_04_PolygonsApp::draw()
+void NOC_5_05_MultiShapesApp::draw()
 {
 	gl::clear( Color::white() );
 	
@@ -72,20 +71,19 @@ void NOC_5_04_PolygonsApp::draw()
 	}
 	
 	// Display all the people
-	for( auto& cs: mPolygons ) {
-		cs->display();
+	for( auto& l: mLollipops ) {
+		l->display();
 	}
 	
 	// people that leave the screen, we delete them
 	// (note they have to be deleted from both the box2d world and our list
-	if(mPolygons.size() > 0){
-		for( vector<CustomShape*>::iterator p = mPolygons.end()-1; p != mPolygons.begin(); --p ) {
-			if ((*p)->done()) {
-				mPolygons.erase( p );
+	if(mLollipops.size() > 0){
+		for( vector<Lollipop*>::iterator it = mLollipops.end()-1; it != mLollipops.begin(); --it ) {
+			if ((*it)->done()) {
+				mLollipops.erase( it );
 			}
 		}
 	}
-	
 }
 
-CINDER_APP_NATIVE( NOC_5_04_PolygonsApp, RendererGl )
+CINDER_APP_NATIVE( NOC_5_05_MultiShapesApp, RendererGl )
