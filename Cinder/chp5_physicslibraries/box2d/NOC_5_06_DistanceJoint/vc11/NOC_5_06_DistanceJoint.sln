@@ -1,0 +1,20 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NOC_5_06_DistanceJoint", "NOC_5_06_DistanceJoint.vcxproj", "{79473B54-AE47-4C95-A7AD-418B7E081A4F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79473B54-AE47-4C95-A7AD-418B7E081A4F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{79473B54-AE47-4C95-A7AD-418B7E081A4F}.Debug|Win32.Build.0 = Debug|Win32
+		{79473B54-AE47-4C95-A7AD-418B7E081A4F}.Release|Win32.ActiveCfg = Release|Win32
+		{79473B54-AE47-4C95-A7AD-418B7E081A4F}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
