@@ -11,6 +11,7 @@
 
 #include "cinder/app/AppNative.h"
 #include "cinder/gl/gl.h"
+#include <Box2d/Box2D.h>
 #include "Boundary.h"
 #include "Pair.h"
 

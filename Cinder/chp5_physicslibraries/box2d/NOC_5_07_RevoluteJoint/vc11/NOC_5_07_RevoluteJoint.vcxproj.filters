@@ -1,0 +1,343 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Blocks">
+      <UniqueIdentifier>{7887F608-B3E5-4990-9BB5-BBBC8358A3CC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Box2D">
+      <UniqueIdentifier>{051B065D-0AF9-47F5-953B-D6430C7DA1FA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Box2D\src">
+      <UniqueIdentifier>{3A977D8F-943A-4052-96FB-038D465378E9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Box2D\src\Box2D">
+      <UniqueIdentifier>{51EA22CB-56D5-445A-93AB-D14BD524B2E6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Box2D\src\Box2D\Collision">
+      <UniqueIdentifier>{86A74E06-69F2-4450-8BE7-41CEF57AC2AE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Box2D\src\Box2D\Collision\Shapes">
+      <UniqueIdentifier>{77426537-2F6A-4433-9466-5AAC77E08F4C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Box2D\src\Box2D\Common">
+      <UniqueIdentifier>{F6B6C600-A220-4046-B5AA-56637CD91425}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Box2D\src\Box2D\Dynamics">
+      <UniqueIdentifier>{7AE44FA7-A760-4F60-868F-4406156C10F0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Box2D\src\Box2D\Dynamics\Contacts">
+      <UniqueIdentifier>{AE0C667A-7DDF-4FFD-A8CC-7BEED02F9921}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Box2D\src\Box2D\Dynamics\Joints">
+      <UniqueIdentifier>{3BC6041F-89B0-4806-884E-D0D35B5FAEBD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Box2D\src\Box2D\Rope">
+      <UniqueIdentifier>{2A15B93C-201F-48D9-9E3F-51167DFDC02F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\NOC_5_07_RevoluteJointApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\NOC_5_07_RevoluteJointApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClInclude Include="..\include\Resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Collision\b2BroadPhase.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Collision\b2CollideCircle.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Collision\b2CollideEdge.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Collision\b2CollidePolygon.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Collision\b2Collision.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Collision\b2Distance.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Collision\b2DynamicTree.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Collision\b2TimeOfImpact.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Collision</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Collision\b2BroadPhase.h">
+      <Filter>Blocks\Box2D\src\Box2D\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Collision\b2Collision.h">
+      <Filter>Blocks\Box2D\src\Box2D\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Collision\b2Distance.h">
+      <Filter>Blocks\Box2D\src\Box2D\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Collision\b2DynamicTree.h">
+      <Filter>Blocks\Box2D\src\Box2D\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Collision\b2TimeOfImpact.h">
+      <Filter>Blocks\Box2D\src\Box2D\Collision</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Collision\Shapes\b2ChainShape.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Collision\Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Collision\Shapes\b2CircleShape.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Collision\Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Collision\Shapes\b2EdgeShape.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Collision\Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Collision\Shapes\b2PolygonShape.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Collision\Shapes</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Collision\Shapes\b2ChainShape.h">
+      <Filter>Blocks\Box2D\src\Box2D\Collision\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Collision\Shapes\b2CircleShape.h">
+      <Filter>Blocks\Box2D\src\Box2D\Collision\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Collision\Shapes\b2EdgeShape.h">
+      <Filter>Blocks\Box2D\src\Box2D\Collision\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Collision\Shapes\b2PolygonShape.h">
+      <Filter>Blocks\Box2D\src\Box2D\Collision\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Collision\Shapes\b2Shape.h">
+      <Filter>Blocks\Box2D\src\Box2D\Collision\Shapes</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Common\b2BlockAllocator.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Common\b2Draw.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Common\b2Math.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Common\b2Settings.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Common\b2StackAllocator.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Common\b2Timer.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Common</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Common\b2BlockAllocator.h">
+      <Filter>Blocks\Box2D\src\Box2D\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Common\b2Draw.h">
+      <Filter>Blocks\Box2D\src\Box2D\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Common\b2GrowableStack.h">
+      <Filter>Blocks\Box2D\src\Box2D\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Common\b2Math.h">
+      <Filter>Blocks\Box2D\src\Box2D\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Common\b2Settings.h">
+      <Filter>Blocks\Box2D\src\Box2D\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Common\b2StackAllocator.h">
+      <Filter>Blocks\Box2D\src\Box2D\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Common\b2Timer.h">
+      <Filter>Blocks\Box2D\src\Box2D\Common</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\b2Body.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\b2ContactManager.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\b2Fixture.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\b2Island.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\b2World.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\b2WorldCallbacks.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\b2Body.h">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\b2ContactManager.h">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\b2Fixture.h">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\b2Island.h">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\b2TimeStep.h">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\b2World.h">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\b2WorldCallbacks.h">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Contacts\b2ChainAndCircleContact.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Contacts\b2ChainAndPolygonContact.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Contacts\b2CircleContact.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Contacts\b2Contact.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Contacts\b2ContactSolver.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Contacts\b2EdgeAndCircleContact.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Contacts\b2EdgeAndPolygonContact.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Contacts\b2PolygonAndCircleContact.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Contacts\b2PolygonContact.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Contacts\b2ChainAndCircleContact.h">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Contacts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Contacts\b2ChainAndPolygonContact.h">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Contacts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Contacts\b2CircleContact.h">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Contacts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Contacts\b2Contact.h">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Contacts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Contacts\b2ContactSolver.h">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Contacts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Contacts\b2EdgeAndCircleContact.h">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Contacts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Contacts\b2EdgeAndPolygonContact.h">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Contacts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Contacts\b2PolygonAndCircleContact.h">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Contacts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Contacts\b2PolygonContact.h">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Contacts</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Joints\b2DistanceJoint.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Joints\b2FrictionJoint.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Joints\b2GearJoint.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Joints\b2Joint.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Joints\b2MouseJoint.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Joints\b2PrismaticJoint.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Joints\b2PulleyJoint.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Joints\b2RevoluteJoint.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Joints\b2RopeJoint.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Joints\b2WeldJoint.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Joints\b2WheelJoint.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Joints\b2DistanceJoint.h">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Joints\b2FrictionJoint.h">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Joints\b2GearJoint.h">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Joints\b2Joint.h">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Joints\b2MouseJoint.h">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Joints\b2PrismaticJoint.h">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Joints\b2PulleyJoint.h">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Joints\b2RevoluteJoint.h">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Joints\b2RopeJoint.h">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Joints\b2WeldJoint.h">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Dynamics\Joints\b2WheelJoint.h">
+      <Filter>Blocks\Box2D\src\Box2D\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Rope\b2Rope.cpp">
+      <Filter>Blocks\Box2D\src\Box2D\Rope</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Rope\b2Rope.h">
+      <Filter>Blocks\Box2D\src\Box2D\Rope</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\cinder_0.8.5_mac\blocks\Box2D\src\Box2D\Box2d.h">
+      <Filter>Blocks\Box2D\src\Box2D</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\Resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
