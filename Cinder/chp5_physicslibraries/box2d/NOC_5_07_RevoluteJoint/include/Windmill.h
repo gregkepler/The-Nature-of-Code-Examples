@@ -6,8 +6,11 @@
 //
 //
 
+#include "cinder/app/AppNative.h"
+#include <Box2D/Box2D.h>
+
 class Windmill{
 public:
-	Windmill();
+	Windmill( ci::Vec2f pos );
 private:
 };

@@ -19,6 +19,7 @@
 		1FF49E2FAD124A11989232F6 /* b2Math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C425A01297E4E688F0BC9B4 /* b2Math.cpp */; };
 		22E7BC627AD143A2AFD9D9B4 /* b2ChainShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 78E47187989C4D3E92145CD7 /* b2ChainShape.cpp */; };
 		25265E3698DC41158C1182C8 /* b2CollideEdge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BEAEB5D0564148DF9B0A17D1 /* b2CollideEdge.cpp */; };
+		2C41F17B184E32FC008EE40A /* Box.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C41F179184E32FC008EE40A /* Box.cpp */; };
 		2F03E13514DA4B84B2AD463B /* b2Fixture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9DE49648BF2346BFAF222BCE /* b2Fixture.cpp */; };
 		2F29BA93335A41208BAF64F8 /* b2CollidePolygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 112EA21A065C422EAB1ACF98 /* b2CollidePolygon.cpp */; };
 		342E6D3C511B48069D1E8A3D /* b2RopeJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E379AD3972D4AA8B9AF54D0 /* b2RopeJoint.cpp */; };
@@ -93,6 +94,8 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		2C3E95E0ACCA466BB3EEE1ED /* b2StackAllocator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = b2StackAllocator.h; path = ../../../../../../cinder_0.8.5_mac/blocks/Box2D/src/Box2D/Common/b2StackAllocator.h; sourceTree = "<group>"; };
+		2C41F179184E32FC008EE40A /* Box.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Box.cpp; path = ../src/Box.cpp; sourceTree = "<group>"; };
+		2C41F17A184E32FC008EE40A /* Box.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Box.h; path = ../include/Box.h; sourceTree = "<group>"; };
 		2C425A01297E4E688F0BC9B4 /* b2Math.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = b2Math.cpp; path = ../../../../../../cinder_0.8.5_mac/blocks/Box2D/src/Box2D/Common/b2Math.cpp; sourceTree = "<group>"; };
 		2CE033D8C94D48799C068833 /* b2PrismaticJoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = b2PrismaticJoint.h; path = ../../../../../../cinder_0.8.5_mac/blocks/Box2D/src/Box2D/Dynamics/Joints/b2PrismaticJoint.h; sourceTree = "<group>"; };
 		2F83FC88A899404BBC0CB6A5 /* b2WorldCallbacks.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = b2WorldCallbacks.cpp; path = ../../../../../../cinder_0.8.5_mac/blocks/Box2D/src/Box2D/Dynamics/b2WorldCallbacks.cpp; sourceTree = "<group>"; };
@@ -209,6 +212,7 @@
 			children = (
 				9A0FF2F843D940359B62FD9F /* NOC_5_07_RevoluteJointApp.cpp */,
 				D7369DA1184DFF0E0044CE36 /* Windmill.cpp */,
+				2C41F179184E32FC008EE40A /* Box.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -277,6 +281,7 @@
 		29B97315FDCFA39411CA2CEA /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				2C41F17A184E32FC008EE40A /* Box.h */,
 				D7369DA2184DFF0E0044CE36 /* Windmill.h */,
 				883427F1F6374449AA7F0379 /* Resources.h */,
 				309205F3EDAF40B68E22495E /* NOC_5_07_RevoluteJoint_Prefix.pch */,
@@ -482,8 +487,6 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
-			attributes = {
-			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "NOC_5_07_RevoluteJoint" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -566,6 +569,7 @@
 				C519F02D45E5420C8FDEB713 /* b2WeldJoint.cpp in Sources */,
 				5E8CE45A06104D14AB3506F3 /* b2WheelJoint.cpp in Sources */,
 				F8F207DE892946579EBE8E3D /* b2Rope.cpp in Sources */,
+				2C41F17B184E32FC008EE40A /* Box.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
