@@ -2,7 +2,7 @@
 //  Pair.cpp
 //  NOC_5_06_DistanceJoint
 //
-//  Created by Greg Kepler on 12/2/13.
+//  Created by Greg Kepler
 //
 //
 
@@ -17,23 +17,31 @@ using namespace	std;
 Pair::Pair( b2World* const world, ci::Vec2f pos )
 {
 	mLength = 32.0;
+	mWorld = world;
 	p1 = new Particle( world, pos );
 	p2 = new Particle( world, Vec2f( pos.x + randFloat( -1.0, 1.0 ), pos.y + randFloat( -1.0, 1.0 ) ) );
+	mCreated = false;
 	
-	b2DistanceJointDef djd;
     // Connection between previous particle and this one
     djd.bodyA = p1->mBody;
     djd.bodyB = p2->mBody;
     // Equilibrium length
     djd.length = mLength;
-    
-    // These properties affect how springy the joint is
-    djd.frequencyHz = 3;  // Try a value less than 5 (0 for no elasticity)
-    djd.dampingRatio = 0.1; // Ranges between 0 and 1 (1 for no springiness)
 	
-    // Make the joint.  Note we aren't storing a reference to the joint ourselves anywhere!
+    // These properties affect how springy the joint is
+    djd.frequencyHz = 1;  // Try a value less than 5 (0 for no elasticity)
+    djd.dampingRatio = 0.1; // Ranges between 0 and 1 (1 for no springiness)
+}
+
+// The joint is created seperately so ensure that it's not created while in the middle of a box2d 'step' function
+// It will otherwise give you a Assertion failed: (IsLocked() == false) error
+void Pair::create()
+{
+	if( mCreated ) return;
+	// Make the joint.  Note we aren't storing a reference to the joint ourselves anywhere!
     // We might need to someday, but for now it's ok
-    mWorld->CreateJoint( &djd );
+    b2DistanceJoint* dj = (b2DistanceJoint*) mWorld->CreateJoint( &djd );
+	mCreated = true;
 }
 
 void Pair::display()

@@ -58,6 +58,10 @@ void NOC_5_06_DistanceJointApp::update()
 {
 	for( int i = 0; i < 2; ++i )
 		mWorld->Step( 1 / 30.0f, 10, 10 );
+	
+	for( auto& p: mPairs ) {
+		p->create();
+	}
 }
 
 void NOC_5_06_DistanceJointApp::draw()
@@ -69,7 +73,7 @@ void NOC_5_06_DistanceJointApp::draw()
 		wall->display();
 	}
 	
-	// Display all the people
+	// Display all the pairs
 	for( auto& p: mPairs ) {
 		p->display();
 	}

@@ -2,7 +2,7 @@
 //  Boundary.cpp
 //  NOC_5_02_Boxes
 //
-//  Created by Greg Kepler on 11/12/13.
+//  Created by Greg Kepler
 //
 //
 
@@ -47,14 +47,9 @@ void Boundary::display()
 	glPushMatrix();
 	gl::translate( mPos.x, mPos.y );
 	gl::rotate( -a );
-//    rect(0,0,w,h);
 	
 	gl::color( Color::black() );
     gl::drawSolidRect( Rectf( -mWidth/2, -mHeight/2, -(mWidth/2) + mWidth, -(mHeight/2) + mHeight ) );
     glPopMatrix();
-	
-    
-//    gl::drawSolidRect( Rectf( mPos.x-(mWidth/2), mPos.y-(mHeight/2), mWidth, mHeight ) );
-//     gl::drawSolidRect( Rectf( 160.0, 20.0, 135.0, 10.0 ) );
 }
 
