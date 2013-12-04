@@ -57,7 +57,7 @@ void Box::killBody()
 }
 
 // Drawing the box
-void display() {
+void Box::display() {
     // We look at each body and get its screen position
     b2Vec2 pos = mBody->GetPosition();
     // Get its angle of rotation

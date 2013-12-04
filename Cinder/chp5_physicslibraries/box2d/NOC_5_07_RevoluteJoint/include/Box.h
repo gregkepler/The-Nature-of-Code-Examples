@@ -13,10 +13,10 @@ class Box {
 public:
 	Box( b2World* const world, ci::Vec2f pos, float w, float h, bool lock );
 	void		display();
+	b2Body		*mBody;
 	
 private:
 	void		killBody();
 	b2World		*mWorld;
-	b2Body		*mBody;
 	float		mWidth, mHeight;
 };

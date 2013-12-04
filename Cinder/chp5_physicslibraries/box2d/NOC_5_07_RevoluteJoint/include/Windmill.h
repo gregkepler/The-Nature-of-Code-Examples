@@ -7,10 +7,18 @@
 //
 
 #include "cinder/app/AppNative.h"
+#include "Box.h"
 #include <Box2D/Box2D.h>
 
 class Windmill{
 public:
-	Windmill( ci::Vec2f pos );
+	Windmill( b2World* const world, ci::Vec2f pos );
+	void	toggleMotor();
+	bool	motorOn();
+	void	display();
+	
 private:
+	b2World				*mWorld;
+	Box					*box1, *box2;
+	b2RevoluteJoint		*joint;
 };
