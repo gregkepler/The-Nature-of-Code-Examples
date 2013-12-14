@@ -54,6 +54,7 @@
 		D017A2E522B64912906187E9 /* b2FrictionJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2A5735237304220BEE0D214 /* b2FrictionJoint.cpp */; };
 		D3299A5FF4054E0FAD402125 /* NOC_5_07_RevoluteJointApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A0FF2F843D940359B62FD9F /* NOC_5_07_RevoluteJointApp.cpp */; };
 		D42797B4E1BD4D03ABDECC2C /* b2EdgeAndPolygonContact.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0BD450B6722B4A21BA05A51C /* b2EdgeAndPolygonContact.cpp */; };
+		D72DADF91855372600486673 /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D72DADF81855372600486673 /* Particle.cpp */; };
 		D7369DA3184DFF0E0044CE36 /* Windmill.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7369DA1184DFF0E0044CE36 /* Windmill.cpp */; };
 		DFA7264E0C0C40479C592471 /* b2MouseJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7E6F7FDAEC94EA28F2CC6A1 /* b2MouseJoint.cpp */; };
 		E39BD2ECE6394178994285F7 /* b2StackAllocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1903F3307B184362ACB67AB4 /* b2StackAllocator.cpp */; };
@@ -163,6 +164,8 @@
 		C9F15006EC6445A197209E07 /* b2Draw.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = b2Draw.cpp; path = ../../../../../../cinder_0.8.5_mac/blocks/Box2D/src/Box2D/Common/b2Draw.cpp; sourceTree = "<group>"; };
 		D0171A335FB543DDA2CAE991 /* b2CollideCircle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = b2CollideCircle.cpp; path = ../../../../../../cinder_0.8.5_mac/blocks/Box2D/src/Box2D/Collision/b2CollideCircle.cpp; sourceTree = "<group>"; };
 		D0446A81E55A4B338D0F7B72 /* b2ContactSolver.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = b2ContactSolver.cpp; path = ../../../../../../cinder_0.8.5_mac/blocks/Box2D/src/Box2D/Dynamics/Contacts/b2ContactSolver.cpp; sourceTree = "<group>"; };
+		D72DADF71855371F00486673 /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Particle.h; path = ../include/Particle.h; sourceTree = "<group>"; };
+		D72DADF81855372600486673 /* Particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Particle.cpp; path = ../src/Particle.cpp; sourceTree = "<group>"; };
 		D7369DA1184DFF0E0044CE36 /* Windmill.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Windmill.cpp; path = ../src/Windmill.cpp; sourceTree = "<group>"; };
 		D7369DA2184DFF0E0044CE36 /* Windmill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Windmill.h; path = ../include/Windmill.h; sourceTree = "<group>"; };
 		D8166DFF56A04726BFC308EA /* b2Contact.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = b2Contact.h; path = ../../../../../../cinder_0.8.5_mac/blocks/Box2D/src/Box2D/Dynamics/Contacts/b2Contact.h; sourceTree = "<group>"; };
@@ -210,6 +213,7 @@
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				D72DADF81855372600486673 /* Particle.cpp */,
 				9A0FF2F843D940359B62FD9F /* NOC_5_07_RevoluteJointApp.cpp */,
 				D7369DA1184DFF0E0044CE36 /* Windmill.cpp */,
 				2C41F179184E32FC008EE40A /* Box.cpp */,
@@ -281,6 +285,7 @@
 		29B97315FDCFA39411CA2CEA /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				D72DADF71855371F00486673 /* Particle.h */,
 				2C41F17A184E32FC008EE40A /* Box.h */,
 				D7369DA2184DFF0E0044CE36 /* Windmill.h */,
 				883427F1F6374449AA7F0379 /* Resources.h */,
@@ -487,6 +492,8 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "NOC_5_07_RevoluteJoint" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -557,6 +564,7 @@
 				D42797B4E1BD4D03ABDECC2C /* b2EdgeAndPolygonContact.cpp in Sources */,
 				3CDE73862B84415EABA7FD72 /* b2PolygonAndCircleContact.cpp in Sources */,
 				739F9CAF6E754DE0A1E3B79F /* b2PolygonContact.cpp in Sources */,
+				D72DADF91855372600486673 /* Particle.cpp in Sources */,
 				B0D7F3BB3E2848218625B10C /* b2DistanceJoint.cpp in Sources */,
 				D017A2E522B64912906187E9 /* b2FrictionJoint.cpp in Sources */,
 				AD70AEEE937049129CA45099 /* b2GearJoint.cpp in Sources */,

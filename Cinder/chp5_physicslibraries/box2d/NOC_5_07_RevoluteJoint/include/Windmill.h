@@ -21,4 +21,5 @@ private:
 	b2World				*mWorld;
 	Box					*box1, *box2;
 	b2RevoluteJoint		*joint;
+	//b2Body				*m_bodyA, *m_bodyB;
 };

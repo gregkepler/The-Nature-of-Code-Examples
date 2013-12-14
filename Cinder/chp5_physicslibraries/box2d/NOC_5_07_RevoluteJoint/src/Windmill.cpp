@@ -4,7 +4,7 @@
 //
 //  Created by Greg Kepler
 //
-//
+//  Class to describe a fixed spinning object
 
 
 #include "Windmill.h"
@@ -21,22 +21,19 @@ Windmill::Windmill( b2World* const world, ci::Vec2f pos )
 	
 	// Define joint as between two bodies
 	b2RevoluteJointDef rjd;
+
 	rjd.Initialize( box1->mBody, box2->mBody, box1->mBody->GetWorldCenter() );
-	
-	// Turning on a motor (optional)
-    rjd.motorSpeed = M_PI * 2;      // how fast?
-    rjd.maxMotorTorque = 10000.0;	// how powerful?
-    rjd.enableMotor = true;		// is it on?
+	rjd.motorSpeed = - M_PI * 2;		// how fast?
+    rjd.maxMotorTorque = 1000000.0;		// how powerful?
+	rjd.enableMotor = false;			// is it on?
 	
     // There are many other properties you can set for a Revolute joint
     // For example, you can limit its angle between a minimum and a maximum
     // See box2d manual for more
     
-	
 	// Create the joint
     joint = (b2RevoluteJoint*) mWorld->CreateJoint( &rjd );
 }
-
 
 // Turn the motor on or off
 void Windmill::toggleMotor()
@@ -49,7 +46,9 @@ bool Windmill::motorOn()
     return joint->IsMotorEnabled();
 }
 
-void Windmill::display() {
+void Windmill::display()
+{
+	
     box2->display();
     box1->display();
 	
