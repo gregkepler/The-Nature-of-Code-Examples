@@ -1,3 +1,4 @@
+
 //  Example 5-8: Mouse Joint
 //  The Nature of Code
 //
@@ -12,6 +13,7 @@
 #include <Box2d/Box2D.h>
 #include "Boundary.h"
 #include "Box.h"
+#include "Spring.h"
 
 using namespace ci;
 using namespace ci::app;
@@ -23,6 +25,7 @@ class NOC_5_08_MouseJointApp : public AppNative {
 	void setup();
 	void mouseDown( MouseEvent event );
 	void mouseUp( MouseEvent event );
+	void mouseDrag( MouseEvent event );
 	void update();
 	void draw();
 
@@ -32,7 +35,9 @@ class NOC_5_08_MouseJointApp : public AppNative {
 	Box*					mBox;
 	
 	// The Spring that will attach to the box from the mouse
-//	Spring spring;
+	Spring*					mSpring;
+	
+	Vec2f					mMousePos;
 };
 
 void NOC_5_08_MouseJointApp::prepareSettings( Settings *settings )
@@ -46,8 +51,11 @@ void NOC_5_08_MouseJointApp::setup()
 	b2Vec2 gravity( 0.0f, 10.0f );
     mWorld = new b2World( gravity );
 	
+	// Make the box
+	mBox = new Box( mWorld, Vec2f( getWindowWidth() / 2, getWindowHeight() / 2 ) );
+	
 	// Make the spring (it doesn't really get initialized until the mouse is clicked)
-//	spring = new Spring();
+	mSpring = new Spring( mWorld );
 	
 	// Add a bunch of fixed boundaries
 	int width = getWindowWidth();
@@ -63,14 +71,20 @@ void NOC_5_08_MouseJointApp::mouseDown( MouseEvent event )
 	// Check to see if the mouse was clicked on the box
 	if (mBox->contains( b2Vec2( event.getPos().x, event.getPos().y ) ) ) {
 		// And if so, bind the mouse location to the box with a spring
-//		spring.bind(mouseX,mouseY,box);
+		mSpring->bind( event.getPos().x, event.getPos().y, mBox );
+		mMousePos = event.getPos();
 	}
 }
 
 // When the mouse is released we're done with the spring
 void NOC_5_08_MouseJointApp::mouseUp( MouseEvent event )
 {
-//	spring.destroy();
+	mSpring->destroy();
+}
+
+void NOC_5_08_MouseJointApp::mouseDrag( MouseEvent event )
+{
+	mMousePos = event.getPos();
 }
 
 void NOC_5_08_MouseJointApp::update()
@@ -84,7 +98,7 @@ void NOC_5_08_MouseJointApp::draw()
 	gl::clear( Color::white() );
 	
 	// Always alert the spring to the new mouse location
-//	spring.update(mouseX,mouseY);
+	if( mSpring ) mSpring->update( mMousePos.x, mMousePos.y );
 	
 	// Draw the boundaries
 	for( auto& wall: mBoundaries ) {
@@ -94,7 +108,7 @@ void NOC_5_08_MouseJointApp::draw()
 	// Draw the box
 	mBox->display();
 	// Draw the spring (it only appears when active)
-//	spring.display();
+	if( mSpring ) mSpring->display();
 }
 
 CINDER_APP_NATIVE( NOC_5_08_MouseJointApp, RendererGl )

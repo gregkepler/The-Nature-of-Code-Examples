@@ -15,10 +15,6 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-Box::Box()
-{
-}
-
 Box::Box( b2World* const world, Vec2f loc )
 {
     mWorld = world;
@@ -34,7 +30,7 @@ void Box::makeBody( Vec2f loc, float w, float h )
 {
     // Define a polygon (this is what we use for a rectangle)
     b2PolygonShape ps;
-    ps.SetAsBox( mWidth , mHeight );
+    ps.SetAsBox( mWidth/2 , mHeight/2 );
     
     // Define a fixture
     b2FixtureDef fd;
@@ -77,7 +73,7 @@ void Box::display()
     gl::rotate( a );
     
     gl::color( Color8u::gray( 127 ) );
-    Rectf rect = Rectf( -mWidth, -mHeight, mWidth, mHeight );
+    Rectf rect = Rectf( -mWidth/2, -mHeight/2, mWidth/2, mHeight/2 );
     gl::drawSolidRect( rect );
     
     gl::color( Color::black() );

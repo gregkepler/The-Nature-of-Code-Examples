@@ -22,8 +22,9 @@ public:
     void    destroy();
     
     float			mWidth, mHeight;
-    b2Body			*mBody;
+    b2Body			*mBody, *mGroundBody;
     b2World			*mWorld;
 	b2MouseJoint	*mMouseJoint;
 	Box				*mBox;
+	bool			mBound;
 };
