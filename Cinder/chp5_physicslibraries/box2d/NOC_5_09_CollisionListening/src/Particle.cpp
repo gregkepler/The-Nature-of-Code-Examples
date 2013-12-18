@@ -1,6 +1,5 @@
 //
 //  Particle.cpp
-//  NOC_5_03_ChainShape_SimpleApp
 //
 //  Created by Greg Kepler
 //

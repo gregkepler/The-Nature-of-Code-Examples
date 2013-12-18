@@ -1,6 +1,5 @@
 //
 //  Box.h
-//  NOC_5_01_box2d_exercise_solved
 //
 //  Created by Greg Kepler
 //

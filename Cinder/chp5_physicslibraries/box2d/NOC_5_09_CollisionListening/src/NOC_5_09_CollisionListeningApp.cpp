@@ -1,22 +1,33 @@
+//
+//  Example 5-9: Collision Listening
+//  The Nature of Code
+//
+//  Converted from Daniel Shiffman's Processing Examples
+//  Created by Greg Kepler
+//
+//  Demonstrates how to know which object was hit
+//
+
 #include "cinder/app/AppNative.h"
 #include "cinder/gl/gl.h"
 #include "cinder/Rand.h"
 #include <Box2d/Box2D.h>
 #include "Particle.h"
 #include "Boundary.h"
-#include "MyContactListener.h"
 
 using namespace ci;
 using namespace ci::app;
 using namespace std;
 
+// be sure to extend b2ContactListener
 class NOC_5_09_CollisionListeningApp : public AppNative, public b2ContactListener {
   public:
 	void prepareSettings( Settings *settings );
 	void setup();
-	void mouseDown( MouseEvent event );	
 	void update();
 	void draw();
+	
+	// these must be virtual methods to overwrite the origin functions
 	virtual void BeginContact( b2Contact *cp );
 	virtual void EndContact( b2Contact *cp );
 	
@@ -37,17 +48,8 @@ void NOC_5_09_CollisionListeningApp::setup()
 	mWall = new Boundary( mWorld, Vec2f( getWindowWidth() / 2, getWindowHeight() - 5 ), getWindowWidth(), 10, 0 );
 	
 	// Turn on collision listening!
-	
-	// This is the contact listener that listens to the the collisions
-//	MyContactListener *myContactListenerInstance = new MyContactListener();
-	
-	//in FooTest constructor
-//	mWorld->SetContactListener( myContactListenerInstance );
+	// Pass this as the contact listener (since it extends b2ContactListener)
 	mWorld->SetContactListener( this );
-}
-
-void NOC_5_09_CollisionListeningApp::mouseDown( MouseEvent event )
-{
 }
 
 void NOC_5_09_CollisionListeningApp::update()

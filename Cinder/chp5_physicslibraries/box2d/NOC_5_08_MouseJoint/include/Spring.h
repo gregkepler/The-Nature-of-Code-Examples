@@ -1,6 +1,5 @@
 //
 //  Spring.h
-//  NOC_5_08_MouseJoint
 //
 //  Created by Greg Kepler
 //

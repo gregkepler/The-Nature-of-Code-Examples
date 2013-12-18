@@ -1,8 +1,7 @@
 //
 //  Box.cpp
-//  NOC_5_01_box2d_exercise_solved
 //
-//  Created by Greg Kepler on 11/10/13.
+//  Created by Greg Kepler
 //
 //
 

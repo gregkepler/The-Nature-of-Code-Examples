@@ -1,6 +1,5 @@
 //
 //  Boundary.cpp
-//  NOC_5_02_Boxes
 //
 //  Created by Greg Kepler
 //
