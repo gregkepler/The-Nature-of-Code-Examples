@@ -1,7 +1,6 @@
 // The Nature of Code
-// <http://www.shiffman.net/teaching/nature>
-// Spring 2011
-// PBox2D example
+// Daniel Shiffman
+// http://natureofcode.com
 
 // Basic example of falling rectangles
 
@@ -19,9 +18,7 @@ ArrayList<Boundary> boundaries;
 ArrayList<Lollipop> pops;
 
 void setup() {
-  size(800,200);
-  smooth();
-
+  size(640,360);
   // Initialize box2d physics and create the world
   box2d = new PBox2D(this,20);
   box2d.createWorld();
@@ -43,7 +40,7 @@ void draw() {
   background(255);
 
   // We must always step through time!
-  if (mousePressed) box2d.step();
+  box2d.step();
 
   // Display all the boundaries
   for (Boundary wall: boundaries) {

@@ -1,6 +1,8 @@
-// Path Following
-// Daniel Shiffman <http://www.shiffman.net>
 // The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
+
+// Path Following
 
 class Path {
 
@@ -20,6 +22,15 @@ class Path {
     PVector point = new PVector(x, y);
     points.add(point);
   }
+  
+  PVector getStart() {
+     return points.get(0);
+  }
+
+  PVector getEnd() {
+     return points.get(points.size()-1);
+  }
+
 
   // Draw the path
   void display() {

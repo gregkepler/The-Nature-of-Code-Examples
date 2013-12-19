@@ -1,9 +1,9 @@
-// Stay Within Walls
-// Daniel Shiffman <http://www.shiffman.net>
 // The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
 
+// Stay Within Circle
 // "Made-up" Steering behavior to stay within walls
-
 
 Vehicle v;
 boolean debug = true;
@@ -20,8 +20,6 @@ void setup() {
   
   circleLocation = new PVector(width/2,height/2);
   circleRadius = height/2-25;
-  
-  smooth();
 }
 
 void draw() {

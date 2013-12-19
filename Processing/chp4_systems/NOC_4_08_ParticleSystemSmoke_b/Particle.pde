@@ -1,9 +1,9 @@
+// The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
 // Simple Particle System
-// Daniel Shiffman <http://www.shiffman.net>
 
 // A simple Particle class, renders the particle as an image
-
-// Created 2 May 2005
 
 class Particle {
   PVector loc;
@@ -53,7 +53,7 @@ class Particle {
   }
 
   // Is the particle still useful?
-  boolean dead() {
+  boolean isDead() {
     if (lifespan <= 0.0) {
       return true;
     } else {

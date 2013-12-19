@@ -1,21 +1,21 @@
-/**
- * Forces (Gravity and Fluid Resistence) with Vectors 
- * by Daniel Shiffman.  
- * 
- * Demonstration of multiple force acting on bodies (Mover class)
- * Bodies experience gravity continuously
- * Bodies experience fluid resistance when in "water"
- */
+// The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
+
+// Forces (Gravity and Fluid Resistence) with Vectors 
+ 
+// Demonstration of multiple force acting on bodies (Mover class)
+// Bodies experience gravity continuously
+// Bodies experience fluid resistance when in "water"
 
 // Five moving bodies
-Mover[] movers = new Mover[11];
+Mover[] movers = new Mover[9];
 
 // Liquid
 Liquid liquid;
 
 void setup() {
-  size(800, 200);
-  smooth();
+  size(640, 360);
   reset();
   // Create liquid object
   liquid = new Liquid(0, height/2, width, height/2, 0.1);

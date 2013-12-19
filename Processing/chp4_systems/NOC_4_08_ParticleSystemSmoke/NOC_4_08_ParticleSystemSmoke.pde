@@ -1,5 +1,8 @@
+// The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
+
 // Smoke Particle System
-// Daniel Shiffman <http://www.shiffman.net>
 
 // A basic smoke effect using a particle system
 // Each particle is rendered as an alpha masked image
@@ -7,14 +10,11 @@
 /* @pjs preload="processingjs/chapter04/_4_08_ParticleSystemSmoke/data/texture.png"; */
 
 ParticleSystem ps;
-Random generator;
 
 void setup() {
-  size(383,200);
-  generator = new Random();
+  size(640,360);
   PImage img = loadImage("texture.png");
-  ps = new ParticleSystem(0,new PVector(width/2,height-25),img);
-  smooth();
+  ps = new ParticleSystem(0,new PVector(width/2,height-75),img);
 }
 
 void draw() {

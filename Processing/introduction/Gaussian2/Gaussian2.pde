@@ -1,14 +1,10 @@
-// Daniel Shiffman
 // The Nature of Code
-// http://www.shiffman.net/
-
-Random generator;
+// Daniel Shiffman
+// http://natureofcode.com
 
 void setup() {
   size(200,200);
   background(0);
-  smooth();
-  generator = new Random();
 }
 
 void draw() {
@@ -17,9 +13,9 @@ void draw() {
   rect(0,0,width,height);
 
   //get 3 gaussian random numbers w/ mean of 0 and standard deviation of 1.0
-  float r = (float) generator.nextGaussian();
-  float g = (float) generator.nextGaussian();
-  float b = (float) generator.nextGaussian();
+  float r = randomGaussian();
+  float g = randomGaussian();
+  float b = randomGaussian();
 
   //define standard deviation and mean
   float sd = 100; float mean = 100;
@@ -34,8 +30,8 @@ void draw() {
   b = constrain((b * sd) + mean,0,255);
 
   //get more gaussian numbers, this time for location
-  float xloc = (float) generator.nextGaussian();
-  float yloc = (float) generator.nextGaussian();
+  float xloc = randomGaussian();
+  float yloc = randomGaussian();
   sd = width/10;
   mean = width/2;
   xloc = ( xloc * sd ) + mean;

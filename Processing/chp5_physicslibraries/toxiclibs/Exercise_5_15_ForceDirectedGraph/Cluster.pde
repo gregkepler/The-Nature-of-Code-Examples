@@ -1,7 +1,6 @@
 // The Nature of Code
-// <http://www.shiffman.net/teaching/nature>
-// Spring 2010
-// Toxiclibs example: http://toxiclibs.org/
+// Daniel Shiffman
+// http://natureofcode.com
 
 // Force directed graph
 // Heavily based on: http://code.google.com/p/fidgen/
@@ -50,7 +49,7 @@ class Cluster {
   // This functons connects one cluster to another
   // Each point of one cluster connects to each point of the other cluster
   // The connection is a "VerletMinDistanceSpring"
-  // A VerletMinDistanceSpring is a string which only enforces its rest length if the 
+  // A VerletMinDistanceSpring is a spring which only enforces its rest length if the 
   // current distance is less than its rest length. This is handy if you just want to
   // ensure objects are at least a certain distance from each other, but don't
   // care if it's bigger than the enforced minimum.

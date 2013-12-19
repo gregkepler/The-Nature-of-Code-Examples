@@ -1,5 +1,8 @@
+// The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
+
 // Genetic Algorithm, Evolving Shakespeare
-// Daniel Shiffman <http://www.shiffman.net>
 
 // A class to describe a psuedo-DNA, i.e. genotype
 //   Here, a virtual organism's DNA is an array of character.
@@ -38,6 +41,8 @@ class DNA {
           score++;
         }
      }
+     
+     
      fitness = (float)score / (float)target.length();
   }
   

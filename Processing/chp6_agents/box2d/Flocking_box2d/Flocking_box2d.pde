@@ -1,6 +1,8 @@
-// Flocking
-// Daniel Shiffman <http://www.shiffman.net>
 // The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
+
+// Flocking
 
 // Demonstration of Craig Reynolds' "Flocking" behavior
 // See: http://www.red3d.com/cwr/
@@ -31,18 +33,14 @@ void setup() {
   for (int i = 0; i < 50; i++) {
     flock.addBoid(new Boid(new PVector(random(width),random(height))));
   }
-  smooth();
 }
 
 void draw() {
-
-  
   // We must always step through time!
   box2d.step();
-  
+
   background(255);
   flock.run();
-  
 }
 
 void mousePressed() {

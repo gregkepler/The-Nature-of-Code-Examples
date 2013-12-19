@@ -1,5 +1,7 @@
+// The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
 // Simple Particle System
-// Daniel Shiffman <http://www.shiffman.net>
 
 // Particles are generated each cycle through draw(),
 // fall with gravity and fade out over time
@@ -9,9 +11,8 @@
 ArrayList<ParticleSystem> systems;
 
 void setup() {
-  size(800,200);
+  size(640,360);
   systems = new ArrayList<ParticleSystem>();
-  smooth();
 }
 
 void draw() {
@@ -20,6 +21,9 @@ void draw() {
     ps.run();
     ps.addParticle(); 
   }
+  
+  fill(0);
+  text("click mouse to add particle systems",10,height-30);
 }
 
 void mousePressed() {

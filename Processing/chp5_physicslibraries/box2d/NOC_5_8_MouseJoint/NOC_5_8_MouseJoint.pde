@@ -1,7 +1,6 @@
 // The Nature of Code
-// <http://www.shiffman.net/teaching/nature>
-// Spring 2011
-// PBox2D example
+// Daniel Shiffman
+// http://natureofcode.com
 
 // Basic example of controlling an object with the mouse (by attaching a spring)
 
@@ -26,9 +25,7 @@ Box box;
 Spring spring;
 
 void setup() {
-  size(800,200);
-  smooth();
-
+  size(640,360);
   // Initialize box2d physics and create the world
   box2d = new PBox2D(this);
   box2d.createWorld();

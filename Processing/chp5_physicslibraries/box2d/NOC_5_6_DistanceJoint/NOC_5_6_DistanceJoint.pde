@@ -1,7 +1,6 @@
 // The Nature of Code
-// <http://www.shiffman.net/teaching/nature>
-// Spring 201
-// PBox2D example
+// Daniel Shiffman
+// http://natureofcode.com
 
 // Example demonstrating distance joints 
 // A bridge is formed by connected a series of particles with joints
@@ -26,9 +25,7 @@ ArrayList<Boundary> boundaries;
 ArrayList<Pair> pairs;
 
 void setup() {
-  size(800,200);
-  smooth();
-
+  size(640,360);
   // Initialize box2d physics and create the world
   box2d = new PBox2D(this);
   box2d.createWorld();

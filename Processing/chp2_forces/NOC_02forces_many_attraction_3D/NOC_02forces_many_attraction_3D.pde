@@ -1,4 +1,7 @@
-import processing.opengl.*;
+// The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
+
 
 Mover[] movers = new Mover[10];
 
@@ -7,8 +10,7 @@ Attractor a;
 float angle = 0;
 
 void setup() {
-  size(800,200,OPENGL);
-  smooth();
+  size(640,360,P3D);
   background(255);
   for (int i = 0; i < movers.length; i++) {
     movers[i] = new Mover(random(0.1,2),random(-width/2,width/2),random(-height/2,height/2),random(-100,100)); 

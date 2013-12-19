@@ -1,20 +1,15 @@
-// Seek_Arrive
-// Daniel Shiffman <http://www.shiffman.net>
-// Nature of Code, Spring 2011
+// The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
 
-// Two "vehicles" follow the mouse position
-
-// Implements Craig Reynold's autonomous steering behaviors
-// One vehicle "seeks"
 // One vehicle "arrives"
 // See: http://www.red3d.com/cwr/
 
 Vehicle v;
 
 void setup() {
-  size(800, 200);
+  size(640, 360);
   v = new Vehicle(width/2, height/2);
-  smooth();
 }
 
 void draw() {
