@@ -97,7 +97,6 @@
 			children = (
 				6502F416A5934928BA4180B6 /* NOC_5_10_SimpleSpringApp.cpp */,
 				D76E43D91863DCD000E8BAC5 /* Particle.cpp */,
-				D76E43DA1863DCD000E8BAC5 /* Particle.h */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -152,6 +151,7 @@
 			children = (
 				D76E43BC1863B89F00E8BAC5 /* src */,
 				C4E1C5596D4B43C6B6286056 /* Resources.h */,
+				D76E43DA1863DCD000E8BAC5 /* Particle.h */,
 				6A5C2ED2BEE54744B10558DF /* NOC_5_10_SimpleSpring_Prefix.pch */,
 			);
 			name = Headers;
