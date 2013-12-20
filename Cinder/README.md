@@ -27,8 +27,14 @@ If you're new to C++, you may be thrown off my some member variables with * in f
 
 * Many of the processing examples include a version with trails on. The Cinder equivalent includes code that you can uncomment to turn trails on.
 
-### Chapter 4
+### Chapter 5
 #### Box2d
 
 * Rotations from Box2d bodies have to be translated to degrees
-* 
+
+#### Toxiclibs
+
+* Since Toxiclibs doesn't exist for Cinder, [MSA Physics](https://github.com/memo/ofxMSAPhysics) is used.
+
+#### MSA Physics
+* The source is included (in the src folder for the chapter) but may be out of date. The latest can be [found here](https://github.com/memo/ofxMSAPhysics)
