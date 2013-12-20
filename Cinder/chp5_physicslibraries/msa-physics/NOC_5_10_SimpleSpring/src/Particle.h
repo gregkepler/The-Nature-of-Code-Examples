@@ -8,10 +8,11 @@
 #include "cinder/app/AppNative.h"
 #include "MSAPhysics2D.h"
 
-class Particle {
+class Particle : public msa::physics::Particle2D {
 	
 public:
-	Particle( msa::physics::World2D* const world, ci::Vec2f pos, bool locked );
+//	Particle( msa::physics::World2D* const world, ci::Vec2f pos, bool locked );
+	Particle( ci::Vec2f pos);
 	void display();
 	void startDrag( ci::Vec2f pos );
 	void endDrag();

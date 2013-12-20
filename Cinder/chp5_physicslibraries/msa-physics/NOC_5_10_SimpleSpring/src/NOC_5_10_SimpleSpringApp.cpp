@@ -48,28 +48,37 @@ void NOC_5_10_SimpleSpringApp::setup()
 	physics.setWorldSize( Vec2f::zero(), getWindowSize() );
 	
 	// Make two particles and lock one in place
-	p1 = new Particle( &physics, Vec2f( getWindowWidth() / 2, 20 ), true );
-	p2 = new Particle( &physics, Vec2f( getWindowWidth() / 2 + 160, 20 ), false );
+	p1 = new Particle( Vec2f( getWindowWidth() / 2, 20 ));
+	p2 = new Particle( Vec2f( getWindowWidth() / 2 + 160, 20 ));
+	
+	// Lock one in place
+	p1->makeFixed();
+	
+	// Anything we make, we have to add into the physics world
+	physics.addParticle( p1 );
+	physics.addParticle( p2 );
 	
 	// Make a spring connecting both Particles
-	physics.makeSpring( p1->mParticle, p2->mParticle, 0.1, 160.0 );
+	physics.makeSpring( p1, p2, 0.1, 160.0 );
 }
 
 void NOC_5_10_SimpleSpringApp::mouseDown( MouseEvent event )
 {
 	mMousePressed = true;
-	p2->startDrag( event.getPos() );
+	p2->makeFixed();
+	p2->moveTo( event.getPos() );
 }
 
 void NOC_5_10_SimpleSpringApp::mouseUp( MouseEvent event )
 {
-	p2->endDrag();
+	p2->makeFree();
 	mMousePressed = false;
+	
 }
 
 void NOC_5_10_SimpleSpringApp::mouseDrag( MouseEvent event )
 {
-	p2->drag( event.getPos() );
+	p2->moveTo( event.getPos() );
 }
 
 void NOC_5_10_SimpleSpringApp::update()
@@ -81,7 +90,7 @@ void NOC_5_10_SimpleSpringApp::draw()
 {
 	gl::clear( Color::white() );
 	gl::lineWidth( 2.0 );
-	gl::drawLine( p1->mParticle->getPosition(), p2->mParticle->getPosition() );
+	gl::drawLine( p1->getPosition(), p2->getPosition() );
 	p1->display();
 	p2->display();
 }
