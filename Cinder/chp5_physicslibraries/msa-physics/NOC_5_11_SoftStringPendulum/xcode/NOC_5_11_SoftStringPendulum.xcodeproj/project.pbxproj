@@ -12,14 +12,15 @@
 		00B784B40FF439BC000DE1D7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */; };
 		00B784B50FF439BC000DE1D7 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B10FF439BC000DE1D7 /* AudioUnit.framework */; };
 		00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
-		3AC1CEA925F845A38E6B24ED /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 21796367B2364B69AEB0801E /* CinderApp.icns */; };
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
-		7E0B03144D1A427888CBDF86 /* NOC_5_10_SimpleSpringApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6502F416A5934928BA4180B6 /* NOC_5_10_SimpleSpringApp.cpp */; };
+		6DC58D05A2224117888DFC16 /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 52F61C784CC14F97B8F73B0C /* CinderApp.icns */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		D76E43D41863B89F00E8BAC5 /* MSACoreGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D76E43C11863B89F00E8BAC5 /* MSACoreGL.cpp */; };
-		D76E43D51863B89F00E8BAC5 /* MSAObjCPointer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D76E43C41863B89F00E8BAC5 /* MSAObjCPointer.cpp */; };
-		D76E43DB1863DCD000E8BAC5 /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D76E43D91863DCD000E8BAC5 /* Particle.cpp */; };
+		A61D7553E7DB4856B9FE54BF /* NOC_5_11_SoftStringPendulumApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9559A150A9C457E95DB6A55 /* NOC_5_11_SoftStringPendulumApp.cpp */; };
+		D76E43F4186667BD00E8BAC5 /* MSACoreGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D76E43E1186667BD00E8BAC5 /* MSACoreGL.cpp */; };
+		D76E43F5186667BD00E8BAC5 /* MSAObjCPointer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D76E43E4186667BD00E8BAC5 /* MSAObjCPointer.cpp */; };
+		D76E43F81866689F00E8BAC5 /* Chain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D76E43F61866689E00E8BAC5 /* Chain.cpp */; };
+		D76E43FB1866695000E8BAC5 /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D76E43FA1866695000E8BAC5 /* Particle.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,41 +30,43 @@
 		00B784B10FF439BC000DE1D7 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		00B784B20FF439BC000DE1D7 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		131A18F841EE4155B2C0469E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		21796367B2364B69AEB0801E /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		52F61C784CC14F97B8F73B0C /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
 		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		5323E6B50EAFCA7E003A9687 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
-		6502F416A5934928BA4180B6 /* NOC_5_10_SimpleSpringApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = NOC_5_10_SimpleSpringApp.cpp; path = ../src/NOC_5_10_SimpleSpringApp.cpp; sourceTree = "<group>"; };
-		6A5C2ED2BEE54744B10558DF /* NOC_5_10_SimpleSpring_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = NOC_5_10_SimpleSpring_Prefix.pch; sourceTree = "<group>"; };
-		8D1107320486CEB800E47090 /* NOC_5_10_SimpleSpring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NOC_5_10_SimpleSpring.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C4E1C5596D4B43C6B6286056 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
-		D76E43BD1863B89F00E8BAC5 /* MSACore-Cinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MSACore-Cinder.h"; sourceTree = "<group>"; };
-		D76E43BE1863B89F00E8BAC5 /* MSACore-OF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MSACore-OF.h"; sourceTree = "<group>"; };
-		D76E43BF1863B89F00E8BAC5 /* MSACore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSACore.h; sourceTree = "<group>"; };
-		D76E43C01863B89F00E8BAC5 /* MSACoreCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSACoreCommon.h; sourceTree = "<group>"; };
-		D76E43C11863B89F00E8BAC5 /* MSACoreGL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MSACoreGL.cpp; sourceTree = "<group>"; };
-		D76E43C21863B89F00E8BAC5 /* MSACoreGL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSACoreGL.h; sourceTree = "<group>"; };
-		D76E43C31863B89F00E8BAC5 /* MSACoreMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSACoreMath.h; sourceTree = "<group>"; };
-		D76E43C41863B89F00E8BAC5 /* MSAObjCPointer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MSAObjCPointer.cpp; sourceTree = "<group>"; };
-		D76E43C51863B89F00E8BAC5 /* MSAObjCPointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAObjCPointer.h; sourceTree = "<group>"; };
-		D76E43C61863B89F00E8BAC5 /* MSAPhysics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPhysics.h; sourceTree = "<group>"; };
-		D76E43C71863B89F00E8BAC5 /* MSAPhysics2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPhysics2D.h; sourceTree = "<group>"; };
-		D76E43C81863B89F00E8BAC5 /* MSAPhysics3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPhysics3D.h; sourceTree = "<group>"; };
-		D76E43C91863B89F00E8BAC5 /* MSAPhysicsAttraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPhysicsAttraction.h; sourceTree = "<group>"; };
-		D76E43CA1863B89F00E8BAC5 /* MSAPhysicsCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPhysicsCallbacks.h; sourceTree = "<group>"; };
-		D76E43CB1863B89F00E8BAC5 /* MSAPhysicsConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPhysicsConstraint.h; sourceTree = "<group>"; };
-		D76E43CC1863B89F00E8BAC5 /* MSAPhysicsDataRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPhysicsDataRecorder.h; sourceTree = "<group>"; };
-		D76E43CD1863B89F00E8BAC5 /* MSAPhysicsParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPhysicsParams.h; sourceTree = "<group>"; };
-		D76E43CE1863B89F00E8BAC5 /* MSAPhysicsParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPhysicsParticle.h; sourceTree = "<group>"; };
-		D76E43CF1863B89F00E8BAC5 /* MSAPhysicsParticleDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPhysicsParticleDrawer.h; sourceTree = "<group>"; };
-		D76E43D01863B89F00E8BAC5 /* MSAPhysicsParticleUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPhysicsParticleUpdater.h; sourceTree = "<group>"; };
-		D76E43D11863B89F00E8BAC5 /* MSAPhysicsSector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPhysicsSector.h; sourceTree = "<group>"; };
-		D76E43D21863B89F00E8BAC5 /* MSAPhysicsSpring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPhysicsSpring.h; sourceTree = "<group>"; };
-		D76E43D31863B89F00E8BAC5 /* MSAPhysicsWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPhysicsWorld.h; sourceTree = "<group>"; };
-		D76E43D91863DCD000E8BAC5 /* Particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Particle.cpp; path = ../src/Particle.cpp; sourceTree = "<group>"; };
-		D76E43DA1863DCD000E8BAC5 /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Particle.h; path = ../include/Particle.h; sourceTree = "<group>"; };
+		5E12F110F668416CABDA2F4D /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* NOC_5_11_SoftStringPendulum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NOC_5_11_SoftStringPendulum.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7270845EA73480AAFE0B2D0 /* NOC_5_11_SoftStringPendulum_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = NOC_5_11_SoftStringPendulum_Prefix.pch; sourceTree = "<group>"; };
+		D76E43DD186667BD00E8BAC5 /* MSACore-Cinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MSACore-Cinder.h"; sourceTree = "<group>"; };
+		D76E43DE186667BD00E8BAC5 /* MSACore-OF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MSACore-OF.h"; sourceTree = "<group>"; };
+		D76E43DF186667BD00E8BAC5 /* MSACore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSACore.h; sourceTree = "<group>"; };
+		D76E43E0186667BD00E8BAC5 /* MSACoreCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSACoreCommon.h; sourceTree = "<group>"; };
+		D76E43E1186667BD00E8BAC5 /* MSACoreGL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MSACoreGL.cpp; sourceTree = "<group>"; };
+		D76E43E2186667BD00E8BAC5 /* MSACoreGL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSACoreGL.h; sourceTree = "<group>"; };
+		D76E43E3186667BD00E8BAC5 /* MSACoreMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSACoreMath.h; sourceTree = "<group>"; };
+		D76E43E4186667BD00E8BAC5 /* MSAObjCPointer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MSAObjCPointer.cpp; sourceTree = "<group>"; };
+		D76E43E5186667BD00E8BAC5 /* MSAObjCPointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAObjCPointer.h; sourceTree = "<group>"; };
+		D76E43E6186667BD00E8BAC5 /* MSAPhysics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPhysics.h; sourceTree = "<group>"; };
+		D76E43E7186667BD00E8BAC5 /* MSAPhysics2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPhysics2D.h; sourceTree = "<group>"; };
+		D76E43E8186667BD00E8BAC5 /* MSAPhysics3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPhysics3D.h; sourceTree = "<group>"; };
+		D76E43E9186667BD00E8BAC5 /* MSAPhysicsAttraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPhysicsAttraction.h; sourceTree = "<group>"; };
+		D76E43EA186667BD00E8BAC5 /* MSAPhysicsCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPhysicsCallbacks.h; sourceTree = "<group>"; };
+		D76E43EB186667BD00E8BAC5 /* MSAPhysicsConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPhysicsConstraint.h; sourceTree = "<group>"; };
+		D76E43EC186667BD00E8BAC5 /* MSAPhysicsDataRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPhysicsDataRecorder.h; sourceTree = "<group>"; };
+		D76E43ED186667BD00E8BAC5 /* MSAPhysicsParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPhysicsParams.h; sourceTree = "<group>"; };
+		D76E43EE186667BD00E8BAC5 /* MSAPhysicsParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPhysicsParticle.h; sourceTree = "<group>"; };
+		D76E43EF186667BD00E8BAC5 /* MSAPhysicsParticleDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPhysicsParticleDrawer.h; sourceTree = "<group>"; };
+		D76E43F0186667BD00E8BAC5 /* MSAPhysicsParticleUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPhysicsParticleUpdater.h; sourceTree = "<group>"; };
+		D76E43F1186667BD00E8BAC5 /* MSAPhysicsSector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPhysicsSector.h; sourceTree = "<group>"; };
+		D76E43F2186667BD00E8BAC5 /* MSAPhysicsSpring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPhysicsSpring.h; sourceTree = "<group>"; };
+		D76E43F3186667BD00E8BAC5 /* MSAPhysicsWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAPhysicsWorld.h; sourceTree = "<group>"; };
+		D76E43F61866689E00E8BAC5 /* Chain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Chain.cpp; path = ../src/Chain.cpp; sourceTree = "<group>"; };
+		D76E43F71866689E00E8BAC5 /* Chain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chain.h; path = ../include/Chain.h; sourceTree = "<group>"; };
+		D76E43F91866693200E8BAC5 /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Particle.h; path = ../include/Particle.h; sourceTree = "<group>"; };
+		D76E43FA1866695000E8BAC5 /* Particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Particle.cpp; path = ../src/Particle.cpp; sourceTree = "<group>"; };
+		D9559A150A9C457E95DB6A55 /* NOC_5_11_SoftStringPendulumApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = NOC_5_11_SoftStringPendulumApp.cpp; path = ../src/NOC_5_11_SoftStringPendulumApp.cpp; sourceTree = "<group>"; };
+		DDF88BF78F9D4644AD4BD1DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +98,9 @@
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				6502F416A5934928BA4180B6 /* NOC_5_10_SimpleSpringApp.cpp */,
-				D76E43D91863DCD000E8BAC5 /* Particle.cpp */,
+				D76E43F61866689E00E8BAC5 /* Chain.cpp */,
+				D76E43FA1866695000E8BAC5 /* Particle.cpp */,
+				D9559A150A9C457E95DB6A55 /* NOC_5_11_SoftStringPendulumApp.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -128,12 +132,12 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D1107320486CEB800E47090 /* NOC_5_10_SimpleSpring.app */,
+				8D1107320486CEB800E47090 /* NOC_5_11_SoftStringPendulum.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA /* NOC_5_10_SimpleSpring */ = {
+		29B97314FDCFA39411CA2CEA /* NOC_5_11_SoftStringPendulum */ = {
 			isa = PBXGroup;
 			children = (
 				01B97315FEAEA392516A2CEA /* Blocks */,
@@ -143,16 +147,17 @@
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
-			name = NOC_5_10_SimpleSpring;
+			name = NOC_5_11_SoftStringPendulum;
 			sourceTree = "<group>";
 		};
 		29B97315FDCFA39411CA2CEA /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				D76E43BC1863B89F00E8BAC5 /* src */,
-				C4E1C5596D4B43C6B6286056 /* Resources.h */,
-				D76E43DA1863DCD000E8BAC5 /* Particle.h */,
-				6A5C2ED2BEE54744B10558DF /* NOC_5_10_SimpleSpring_Prefix.pch */,
+				D76E43DC186667BD00E8BAC5 /* src */,
+				D76E43F71866689E00E8BAC5 /* Chain.h */,
+				D76E43F91866693200E8BAC5 /* Particle.h */,
+				5E12F110F668416CABDA2F4D /* Resources.h */,
+				D7270845EA73480AAFE0B2D0 /* NOC_5_11_SoftStringPendulum_Prefix.pch */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -160,8 +165,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				21796367B2364B69AEB0801E /* CinderApp.icns */,
-				131A18F841EE4155B2C0469E /* Info.plist */,
+				52F61C784CC14F97B8F73B0C /* CinderApp.icns */,
+				DDF88BF78F9D4644AD4BD1DC /* Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -175,32 +180,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D76E43BC1863B89F00E8BAC5 /* src */ = {
+		D76E43DC186667BD00E8BAC5 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				D76E43BD1863B89F00E8BAC5 /* MSACore-Cinder.h */,
-				D76E43BE1863B89F00E8BAC5 /* MSACore-OF.h */,
-				D76E43BF1863B89F00E8BAC5 /* MSACore.h */,
-				D76E43C01863B89F00E8BAC5 /* MSACoreCommon.h */,
-				D76E43C11863B89F00E8BAC5 /* MSACoreGL.cpp */,
-				D76E43C21863B89F00E8BAC5 /* MSACoreGL.h */,
-				D76E43C31863B89F00E8BAC5 /* MSACoreMath.h */,
-				D76E43C41863B89F00E8BAC5 /* MSAObjCPointer.cpp */,
-				D76E43C51863B89F00E8BAC5 /* MSAObjCPointer.h */,
-				D76E43C61863B89F00E8BAC5 /* MSAPhysics.h */,
-				D76E43C71863B89F00E8BAC5 /* MSAPhysics2D.h */,
-				D76E43C81863B89F00E8BAC5 /* MSAPhysics3D.h */,
-				D76E43C91863B89F00E8BAC5 /* MSAPhysicsAttraction.h */,
-				D76E43CA1863B89F00E8BAC5 /* MSAPhysicsCallbacks.h */,
-				D76E43CB1863B89F00E8BAC5 /* MSAPhysicsConstraint.h */,
-				D76E43CC1863B89F00E8BAC5 /* MSAPhysicsDataRecorder.h */,
-				D76E43CD1863B89F00E8BAC5 /* MSAPhysicsParams.h */,
-				D76E43CE1863B89F00E8BAC5 /* MSAPhysicsParticle.h */,
-				D76E43CF1863B89F00E8BAC5 /* MSAPhysicsParticleDrawer.h */,
-				D76E43D01863B89F00E8BAC5 /* MSAPhysicsParticleUpdater.h */,
-				D76E43D11863B89F00E8BAC5 /* MSAPhysicsSector.h */,
-				D76E43D21863B89F00E8BAC5 /* MSAPhysicsSpring.h */,
-				D76E43D31863B89F00E8BAC5 /* MSAPhysicsWorld.h */,
+				D76E43DD186667BD00E8BAC5 /* MSACore-Cinder.h */,
+				D76E43DE186667BD00E8BAC5 /* MSACore-OF.h */,
+				D76E43DF186667BD00E8BAC5 /* MSACore.h */,
+				D76E43E0186667BD00E8BAC5 /* MSACoreCommon.h */,
+				D76E43E1186667BD00E8BAC5 /* MSACoreGL.cpp */,
+				D76E43E2186667BD00E8BAC5 /* MSACoreGL.h */,
+				D76E43E3186667BD00E8BAC5 /* MSACoreMath.h */,
+				D76E43E4186667BD00E8BAC5 /* MSAObjCPointer.cpp */,
+				D76E43E5186667BD00E8BAC5 /* MSAObjCPointer.h */,
+				D76E43E6186667BD00E8BAC5 /* MSAPhysics.h */,
+				D76E43E7186667BD00E8BAC5 /* MSAPhysics2D.h */,
+				D76E43E8186667BD00E8BAC5 /* MSAPhysics3D.h */,
+				D76E43E9186667BD00E8BAC5 /* MSAPhysicsAttraction.h */,
+				D76E43EA186667BD00E8BAC5 /* MSAPhysicsCallbacks.h */,
+				D76E43EB186667BD00E8BAC5 /* MSAPhysicsConstraint.h */,
+				D76E43EC186667BD00E8BAC5 /* MSAPhysicsDataRecorder.h */,
+				D76E43ED186667BD00E8BAC5 /* MSAPhysicsParams.h */,
+				D76E43EE186667BD00E8BAC5 /* MSAPhysicsParticle.h */,
+				D76E43EF186667BD00E8BAC5 /* MSAPhysicsParticleDrawer.h */,
+				D76E43F0186667BD00E8BAC5 /* MSAPhysicsParticleUpdater.h */,
+				D76E43F1186667BD00E8BAC5 /* MSAPhysicsSector.h */,
+				D76E43F2186667BD00E8BAC5 /* MSAPhysicsSpring.h */,
+				D76E43F3186667BD00E8BAC5 /* MSAPhysicsWorld.h */,
 			);
 			name = src;
 			path = ../../src;
@@ -209,9 +214,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D1107260486CEB800E47090 /* NOC_5_10_SimpleSpring */ = {
+		8D1107260486CEB800E47090 /* NOC_5_11_SoftStringPendulum */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "NOC_5_10_SimpleSpring" */;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "NOC_5_11_SoftStringPendulum" */;
 			buildPhases = (
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
@@ -221,10 +226,10 @@
 			);
 			dependencies = (
 			);
-			name = NOC_5_10_SimpleSpring;
+			name = NOC_5_11_SoftStringPendulum;
 			productInstallPath = "$(HOME)/Applications";
-			productName = NOC_5_10_SimpleSpring;
-			productReference = 8D1107320486CEB800E47090 /* NOC_5_10_SimpleSpring.app */;
+			productName = NOC_5_11_SoftStringPendulum;
+			productReference = 8D1107320486CEB800E47090 /* NOC_5_11_SoftStringPendulum.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -234,7 +239,7 @@
 			isa = PBXProject;
 			attributes = {
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "NOC_5_10_SimpleSpring" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "NOC_5_11_SoftStringPendulum" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -244,11 +249,11 @@
 				French,
 				German,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA /* NOC_5_10_SimpleSpring */;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* NOC_5_11_SoftStringPendulum */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D1107260486CEB800E47090 /* NOC_5_10_SimpleSpring */,
+				8D1107260486CEB800E47090 /* NOC_5_11_SoftStringPendulum */,
 			);
 		};
 /* End PBXProject section */
@@ -258,7 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AC1CEA925F845A38E6B24ED /* CinderApp.icns in Resources */,
+				6DC58D05A2224117888DFC16 /* CinderApp.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,10 +274,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D76E43D51863B89F00E8BAC5 /* MSAObjCPointer.cpp in Sources */,
-				D76E43DB1863DCD000E8BAC5 /* Particle.cpp in Sources */,
-				7E0B03144D1A427888CBDF86 /* NOC_5_10_SimpleSpringApp.cpp in Sources */,
-				D76E43D41863B89F00E8BAC5 /* MSACoreGL.cpp in Sources */,
+				D76E43F5186667BD00E8BAC5 /* MSAObjCPointer.cpp in Sources */,
+				D76E43FB1866695000E8BAC5 /* Particle.cpp in Sources */,
+				D76E43F81866689F00E8BAC5 /* Chain.cpp in Sources */,
+				A61D7553E7DB4856B9FE54BF /* NOC_5_11_SoftStringPendulumApp.cpp in Sources */,
+				D76E43F4186667BD00E8BAC5 /* MSACoreGL.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +295,7 @@
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = NOC_5_10_SimpleSpring_Prefix.pch;
+				GCC_PREFIX_HEADER = NOC_5_11_SoftStringPendulum_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -298,7 +304,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/libcinder_d.a\"";
-				PRODUCT_NAME = NOC_5_10_SimpleSpring;
+				PRODUCT_NAME = NOC_5_11_SoftStringPendulum;
 				SYMROOT = ./build;
 				WRAPPER_EXTENSION = app;
 			};
@@ -315,12 +321,12 @@
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = NOC_5_10_SimpleSpring_Prefix.pch;
+				GCC_PREFIX_HEADER = NOC_5_11_SoftStringPendulum_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/libcinder.a\"";
-				PRODUCT_NAME = NOC_5_10_SimpleSpring;
+				PRODUCT_NAME = NOC_5_11_SoftStringPendulum;
 				STRIP_INSTALLED_PRODUCT = YES;
 				SYMROOT = ./build;
 				WRAPPER_EXTENSION = app;
@@ -364,7 +370,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "NOC_5_10_SimpleSpring" */ = {
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "NOC_5_11_SoftStringPendulum" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4B08A954540054247B /* Debug */,
@@ -373,7 +379,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "NOC_5_10_SimpleSpring" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "NOC_5_11_SoftStringPendulum" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,

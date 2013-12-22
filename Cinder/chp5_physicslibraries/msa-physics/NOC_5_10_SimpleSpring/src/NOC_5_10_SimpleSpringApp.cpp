@@ -29,7 +29,7 @@ class NOC_5_10_SimpleSpringApp : public AppNative {
 	void draw();
 	void drawParticle( Vec2f pos );
 	
-	msa::physics::World2D		physics;
+	msa::physics::World2D		mPhysics;
 	Particle					*p1, *p2;
 	bool						mMousePressed;
 };
@@ -41,11 +41,11 @@ void NOC_5_10_SimpleSpringApp::prepareSettings( Settings *settings )
 
 void NOC_5_10_SimpleSpringApp::setup()
 {
-	// Initialize the physics
-	physics.setGravity( Vec2f(0, 1) );
+	// Initialize the mPhysics
+	mPhysics.setGravity( Vec2f(0, 1) );
 	
 	// Set the world's bounding box
-	physics.setWorldSize( Vec2f::zero(), getWindowSize() );
+	mPhysics.setWorldSize( Vec2f::zero(), getWindowSize() );
 	
 	// Make two particles and lock one in place
 	p1 = new Particle( Vec2f( getWindowWidth() / 2, 20 ));
@@ -55,11 +55,11 @@ void NOC_5_10_SimpleSpringApp::setup()
 	p1->makeFixed();
 	
 	// Anything we make, we have to add into the physics world
-	physics.addParticle( p1 );
-	physics.addParticle( p2 );
+	mPhysics.addParticle( p1 );
+	mPhysics.addParticle( p2 );
 	
 	// Make a spring connecting both Particles
-	physics.makeSpring( p1, p2, 0.1, 160.0 );
+	mPhysics.makeSpring( p1, p2, 0.1, 160.0 );
 }
 
 void NOC_5_10_SimpleSpringApp::mouseDown( MouseEvent event )
@@ -83,7 +83,7 @@ void NOC_5_10_SimpleSpringApp::mouseDrag( MouseEvent event )
 
 void NOC_5_10_SimpleSpringApp::update()
 {
-	physics.update();
+	mPhysics.update();
 }
 
 void NOC_5_10_SimpleSpringApp::draw()
