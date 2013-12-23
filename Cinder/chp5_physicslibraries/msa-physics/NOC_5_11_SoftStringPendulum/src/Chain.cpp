@@ -31,7 +31,7 @@ Chain::Chain( msa::physics::World2D* const world, float length, int numPts, floa
     for( int i = 0; i < mNumPoints; i++ )
 	{
 		// Make a new particle with an initial starting location
-		Particle *particle = new Particle( Vec2f( getWindowWidth() / 2, i * len ) );\
+		Particle *particle = new Particle( Vec2f( getWindowWidth() / 2, i * len ) );
 		particle->setRadius( 0.0 ); // set to 0.0 or else the default is 15.0.
 		
 		// Redundancy, we put the particles both in physics and in our own ArrayList
