@@ -15,14 +15,17 @@ using namespace std;
 
 Particle::Particle( Vec2f pos )
 {
-	mRadius = 16.0;
+	mRadius = 8.0;
 	moveTo( pos );
 }
 
 void Particle::display()
 {
+	gl::lineWidth( 2.0 );
 	gl::color( Color8u::gray( 127 ) );
 	gl::drawSolidEllipse( getPosition(), mRadius, mRadius );
 	gl::color( Color::black() );
 	gl::drawStrokedEllipse( getPosition(), mRadius, mRadius );
 }
+
+
