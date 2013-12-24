@@ -45,15 +45,15 @@ void NOC_5_13_AttractRepelApp::setup()
 		mAttractor->attractParticle( p );
 	}
 	
-	// Connect all the nodes with a Spring
     for( int i = 0; i < mParticles.size() - 1; i++ )
 	{
 		Particle *pi = mParticles[i];
-		for( int j = i + 1; j < mParticles.size(); j++ )
+		for( int j = 0; j < mParticles.size(); j++ )
 		{
 			Particle *pj = mParticles[j];
-			mPhysics.makeAttraction( pi, pj, -0.1 );
-			mPhysics.getAttraction( mPhysics.numberOfAttractions() - 1 )->setMaxDistance( 24.0 );
+			if(pi == pj) continue;
+			mPhysics.makeAttraction( pi, pj, -1.0 );
+			mPhysics.getAttraction( mPhysics.numberOfAttractions() - 1 )->setMaxDistance( 32.0 );
 		}
     }
 	
@@ -96,7 +96,7 @@ void NOC_5_13_AttractRepelApp::draw()
 		mAttractor->makeFixed();
 		mAttractor->moveTo( mMousePos );
 	} else {
-//		mAttractor->makeFree();
+		mAttractor->makeFree();
 	}
 }
 

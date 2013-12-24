@@ -1,5 +1,6 @@
 #pragma once
 
+#include "cinder/app/AppBasic.h"
 #include "MSACore.h"
 #include "MSAPhysicsConstraint.h"
 
@@ -28,7 +29,7 @@ namespace msa {
 		protected:
 			float _strength;
 			
-			void solve() {
+			/*void solve() {
 				T delta = this->_b->getPosition() - this->_a->getPosition();
 				float deltaLength2 = delta.lengthSquared();
 				
@@ -38,6 +39,17 @@ namespace msa {
 				
 				if (this->_a->isFree()) this->_a->moveBy(deltaForce * this->_a->getInvMass(), false);
 				if (this->_b->isFree()) this->_b->moveBy(deltaForce * -this->_b->getInvMass(), false);
+			}*/
+			
+			// rewritten to match toxiclibs a bit more
+			void solve() {
+				T delta = this->_a->getPosition() - this->_b->getPosition();
+				float dist = delta.lengthSquared();
+				if (dist < this->_maxDist2) {
+					Vec2f f = delta.safeNormalized() * (1.0f - dist / this->_maxDist2);
+					f *= (_strength * 1);
+					if (this->_b->isFree()) this->_b->moveBy(f, false);
+				}
 			}
 			
 			void debugDraw() {

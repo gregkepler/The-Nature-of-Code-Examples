@@ -16,6 +16,7 @@ using namespace std;
 Particle::Particle( Vec2f pos )
 {
 	mRadius = 8.0;
+	setMass( 100.0 );
 	moveTo( pos );
 }
 

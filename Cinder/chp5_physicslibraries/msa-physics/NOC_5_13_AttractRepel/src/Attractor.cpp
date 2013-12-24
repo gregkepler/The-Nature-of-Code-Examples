@@ -18,20 +18,13 @@ Attractor::Attractor( msa::physics::World2D* const world, Vec2f loc )
 	mWorld = world;
 	moveTo( loc );
 	mRadius = 24.0;
-	makeFixed();
     mWorld->addParticle( this );
-	//mWorld->addConstraint( new msa::physics::Attraction2D( this, ) );
-//    physics.addBehavior(new AttractionBehavior(this, width, 0.1));
 }
 
 void Attractor::attractParticle( msa::physics::Particle2D *const particle )
 {
-//	msa::physics::Attraction2D *attraction = new msa::physics::Attraction2D( this, particle, 0.1 );
-//	attraction->setMinDistance( getWindowWidth() );
-//	mWorld->addConstraint( attraction );
-//	mWorld->makeAttraction( this, particle, 0.1 );
-	mWorld->makeAttraction( this, particle, 1.0 );
-	mWorld->getAttraction( 0 )->setMinDistance( getWindowWidth() );
+	mWorld->makeAttraction( this, particle, 0.1 );
+	mWorld->getAttraction( mWorld->numberOfAttractions() - 1 )->setMaxDistance( getWindowWidth() );
 }
 
 void Attractor::display()
