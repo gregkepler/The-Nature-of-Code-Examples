@@ -46,15 +46,14 @@ void Vehicle::applyForce( Vec2f force )
 void Vehicle::arrive( Vec2f target )
 {
     Vec2f desired = target - mLocation;  // A vector pointing from the location to the target
-   	
-	float d = desired.length();
+   	float d = desired.length();
+	desired.normalize();
+	
 	// Scale with arbitrary damping within 100 pixels
     if (d < 100.0) {
 		float m = lmap( d, 0.0f, 100.0f, 0.0f, mMaxSpeed );
-		desired.normalize();
 		desired *= m;
     } else {
-		desired.normalize();
 		desired *= mMaxSpeed;
     }
 	
