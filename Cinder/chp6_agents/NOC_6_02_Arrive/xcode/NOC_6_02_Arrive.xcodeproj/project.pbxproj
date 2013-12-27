@@ -12,12 +12,12 @@
 		00B784B40FF439BC000DE1D7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */; };
 		00B784B50FF439BC000DE1D7 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B10FF439BC000DE1D7 /* AudioUnit.framework */; };
 		00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
-		42F3BA410D6149B7B923A39B /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4DBDE03063064C1295C6A35D /* CinderApp.icns */; };
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
-		7F68CC6EC55E47E7808912FD /* NOC_6_01_SeekApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27DEE4D73A694730AEE4B233 /* NOC_6_01_SeekApp.cpp */; };
+		60A6AA60C70C46E3AE215401 /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = A8919CC25ED44980A209F6B6 /* CinderApp.icns */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		D76E443E186C7F7600E8BAC5 /* Vehicle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D76E443C186C7F7600E8BAC5 /* Vehicle.cpp */; };
+		A4B31161EBC943F097D68B1C /* NOC_6_02_ArriveApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3749F79FD54C48B888A6879C /* NOC_6_02_ArriveApp.cpp */; };
+		D7672229186DCC80000EB137 /* Vehicle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7672228186DCC80000EB137 /* Vehicle.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,18 +27,18 @@
 		00B784B10FF439BC000DE1D7 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		00B784B20FF439BC000DE1D7 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		1C471EF64310406DA7FB50A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		27DEE4D73A694730AEE4B233 /* NOC_6_01_SeekApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = NOC_6_01_SeekApp.cpp; path = ../src/NOC_6_01_SeekApp.cpp; sourceTree = "<group>"; };
+		219D3844A6D3453A890EB3E5 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		4DBDE03063064C1295C6A35D /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
+		3749F79FD54C48B888A6879C /* NOC_6_02_ArriveApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = NOC_6_02_ArriveApp.cpp; path = ../src/NOC_6_02_ArriveApp.cpp; sourceTree = "<group>"; };
 		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		5323E6B50EAFCA7E003A9687 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
-		75970E28E9E5464CA2A8B434 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
-		8D1107320486CEB800E47090 /* NOC_6_01_Seek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NOC_6_01_Seek.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0B44A583C764378871DFD1F /* NOC_6_01_Seek_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = NOC_6_01_Seek_Prefix.pch; sourceTree = "<group>"; };
-		D76E443C186C7F7600E8BAC5 /* Vehicle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Vehicle.cpp; path = ../src/Vehicle.cpp; sourceTree = "<group>"; };
-		D76E443D186C7F7600E8BAC5 /* Vehicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vehicle.h; path = ../include/Vehicle.h; sourceTree = "<group>"; };
+		57A53901C5D547CC90BA772D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		895E9172800C497D81E86652 /* NOC_6_02_Arrive_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = NOC_6_02_Arrive_Prefix.pch; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* NOC_6_02_Arrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NOC_6_02_Arrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8919CC25ED44980A209F6B6 /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
+		D7672227186DCC76000EB137 /* Vehicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vehicle.h; path = ../include/Vehicle.h; sourceTree = "<group>"; };
+		D7672228186DCC80000EB137 /* Vehicle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Vehicle.cpp; path = ../src/Vehicle.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +70,8 @@
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				27DEE4D73A694730AEE4B233 /* NOC_6_01_SeekApp.cpp */,
-				D76E443C186C7F7600E8BAC5 /* Vehicle.cpp */,
+				D7672228186DCC80000EB137 /* Vehicle.cpp */,
+				3749F79FD54C48B888A6879C /* NOC_6_02_ArriveApp.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -103,12 +103,12 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D1107320486CEB800E47090 /* NOC_6_01_Seek.app */,
+				8D1107320486CEB800E47090 /* NOC_6_02_Arrive.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA /* NOC_6_01_Seek */ = {
+		29B97314FDCFA39411CA2CEA /* NOC_6_02_Arrive */ = {
 			isa = PBXGroup;
 			children = (
 				01B97315FEAEA392516A2CEA /* Blocks */,
@@ -118,15 +118,15 @@
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
-			name = NOC_6_01_Seek;
+			name = NOC_6_02_Arrive;
 			sourceTree = "<group>";
 		};
 		29B97315FDCFA39411CA2CEA /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				D76E443D186C7F7600E8BAC5 /* Vehicle.h */,
-				75970E28E9E5464CA2A8B434 /* Resources.h */,
-				D0B44A583C764378871DFD1F /* NOC_6_01_Seek_Prefix.pch */,
+				D7672227186DCC76000EB137 /* Vehicle.h */,
+				219D3844A6D3453A890EB3E5 /* Resources.h */,
+				895E9172800C497D81E86652 /* NOC_6_02_Arrive_Prefix.pch */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -134,8 +134,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4DBDE03063064C1295C6A35D /* CinderApp.icns */,
-				1C471EF64310406DA7FB50A0 /* Info.plist */,
+				A8919CC25ED44980A209F6B6 /* CinderApp.icns */,
+				57A53901C5D547CC90BA772D /* Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -152,9 +152,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D1107260486CEB800E47090 /* NOC_6_01_Seek */ = {
+		8D1107260486CEB800E47090 /* NOC_6_02_Arrive */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "NOC_6_01_Seek" */;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "NOC_6_02_Arrive" */;
 			buildPhases = (
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
@@ -164,10 +164,10 @@
 			);
 			dependencies = (
 			);
-			name = NOC_6_01_Seek;
+			name = NOC_6_02_Arrive;
 			productInstallPath = "$(HOME)/Applications";
-			productName = NOC_6_01_Seek;
-			productReference = 8D1107320486CEB800E47090 /* NOC_6_01_Seek.app */;
+			productName = NOC_6_02_Arrive;
+			productReference = 8D1107320486CEB800E47090 /* NOC_6_02_Arrive.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -177,7 +177,7 @@
 			isa = PBXProject;
 			attributes = {
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "NOC_6_01_Seek" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "NOC_6_02_Arrive" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -187,11 +187,11 @@
 				French,
 				German,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA /* NOC_6_01_Seek */;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* NOC_6_02_Arrive */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D1107260486CEB800E47090 /* NOC_6_01_Seek */,
+				8D1107260486CEB800E47090 /* NOC_6_02_Arrive */,
 			);
 		};
 /* End PBXProject section */
@@ -201,7 +201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42F3BA410D6149B7B923A39B /* CinderApp.icns in Resources */,
+				60A6AA60C70C46E3AE215401 /* CinderApp.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,8 +212,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D76E443E186C7F7600E8BAC5 /* Vehicle.cpp in Sources */,
-				7F68CC6EC55E47E7808912FD /* NOC_6_01_SeekApp.cpp in Sources */,
+				D7672229186DCC80000EB137 /* Vehicle.cpp in Sources */,
+				A4B31161EBC943F097D68B1C /* NOC_6_02_ArriveApp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,7 +230,7 @@
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = NOC_6_01_Seek_Prefix.pch;
+				GCC_PREFIX_HEADER = NOC_6_02_Arrive_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -239,7 +239,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/libcinder_d.a\"";
-				PRODUCT_NAME = NOC_6_01_Seek;
+				PRODUCT_NAME = NOC_6_02_Arrive;
 				SYMROOT = ./build;
 				WRAPPER_EXTENSION = app;
 			};
@@ -256,12 +256,12 @@
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = NOC_6_01_Seek_Prefix.pch;
+				GCC_PREFIX_HEADER = NOC_6_02_Arrive_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = "\"$(CINDER_PATH)/lib/libcinder.a\"";
-				PRODUCT_NAME = NOC_6_01_Seek;
+				PRODUCT_NAME = NOC_6_02_Arrive;
 				STRIP_INSTALLED_PRODUCT = YES;
 				SYMROOT = ./build;
 				WRAPPER_EXTENSION = app;
@@ -305,7 +305,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "NOC_6_01_Seek" */ = {
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "NOC_6_02_Arrive" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4B08A954540054247B /* Debug */,
@@ -314,7 +314,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "NOC_6_01_Seek" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "NOC_6_02_Arrive" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,

@@ -1,18 +1,13 @@
 //
-//  Example 6-1: Seek
+//  Example 6-2: Arrive
 //  The Nature of Code
 //
 //  Converted from Daniel Shiffman's Processing Examples
 //  Created by Greg Kepler
 //
-//  Two "vehicles" follow the mouse position
+//	One vehicle "arrives"
+//	See: http://www.red3d.com/cwr/
 //
-//  Implements Craig Reynold's autonomous steering behaviors
-//  One vehicle "seeks"
-//  One vehicle "arrives"
-//  See: http://www.red3d.com/cwr/
-//
-
 
 #include "cinder/app/AppNative.h"
 #include "cinder/gl/gl.h"
@@ -22,8 +17,8 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-class NOC_6_01_SeekApp : public AppNative {
-  public:
+class NOC_6_02_ArriveApp : public AppNative {
+public:
 	void prepareSettings( Settings *settings );
 	void setup();
 	void mouseMove( MouseEvent event );
@@ -34,29 +29,29 @@ class NOC_6_01_SeekApp : public AppNative {
 	Vec2f	mMousePos;
 };
 
-void NOC_6_01_SeekApp::prepareSettings( Settings *settings )
+void NOC_6_02_ArriveApp::prepareSettings( Settings *settings )
 {
 	settings->setWindowSize( 640, 360 );
 }
 
-void NOC_6_01_SeekApp::setup()
+void NOC_6_02_ArriveApp::setup()
 {
 	mVehicle = new Vehicle( getWindowSize() / 2 );
 }
 
-void NOC_6_01_SeekApp::mouseMove( MouseEvent event )
+void NOC_6_02_ArriveApp::mouseMove( MouseEvent event )
 {
 	mMousePos = event.getPos();
 }
 
-void NOC_6_01_SeekApp::update()
+void NOC_6_02_ArriveApp::update()
 {
 	// Call the appropriate steering behaviors for our agents
-	mVehicle->seek( mMousePos );
+	mVehicle->arrive( mMousePos );
 	mVehicle->update();
 }
 
-void NOC_6_01_SeekApp::draw()
+void NOC_6_02_ArriveApp::draw()
 {
 	gl::clear( Color::white() );
 	
@@ -71,4 +66,4 @@ void NOC_6_01_SeekApp::draw()
 	mVehicle->display();
 }
 
-CINDER_APP_NATIVE( NOC_6_01_SeekApp, RendererGl )
+CINDER_APP_NATIVE( NOC_6_02_ArriveApp, RendererGl )
