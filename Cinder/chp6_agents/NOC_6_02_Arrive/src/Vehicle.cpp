@@ -1,8 +1,7 @@
 //
 //  Vehicle.cpp
-//  NOC_6_01_Seek
 //
-//  Created by Greg Kepler on 12/26/13.
+//  Created by Greg Kepler
 //
 //
 
