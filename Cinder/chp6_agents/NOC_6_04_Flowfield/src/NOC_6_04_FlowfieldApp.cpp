@@ -32,7 +32,7 @@ public:
 	
 	bool				mDebug = true;				// Using this variable to decide whether to draw all the stuff
 	float				mBoundaryWidth = 25;
-	FlowField			*mFlowfield;					// Flowfield object
+	FlowField			*mFlowfield;				// Flowfield object
 	vector<Vehicle*>	mVehicles;					// A vector of vehicles
 };
 
