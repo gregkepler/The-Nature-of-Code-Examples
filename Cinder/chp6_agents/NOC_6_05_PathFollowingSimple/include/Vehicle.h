@@ -6,6 +6,7 @@
 //
 
 #include "cinder/app/AppNative.h"
+#include "Path.h"
 
 class Vehicle {
 	ci::Vec2f		mLocation;
@@ -15,16 +16,18 @@ class Vehicle {
 	float			mMaxForce;    // Maximum steering force
 	float			mMaxSpeed;    // Maximum speed
 	float			mBoundaryWidth;
+	bool			mDebug;
 	
-	void			borders();
+	ci::Vec2f		getNormalPoint( ci::Vec2f p, ci::Vec2f a, ci::Vec2f b );
+	void			seek( ci::Vec2f target );
 	
 public:
-	Vehicle();
 	Vehicle( ci::Vec2f loc, float ms, float mf );
 	void	update();
 	void	applyForce( ci::Vec2f force );
 	void	boundaries();
-	void	run();
+	void	run( bool debug );
 	void	display();
-//	void	follow( FlowField* const flowField );
+	void	follow( Path* const p );
+	void	borders( Path* const p );
 };

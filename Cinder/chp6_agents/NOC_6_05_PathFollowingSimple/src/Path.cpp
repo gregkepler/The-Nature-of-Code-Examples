@@ -22,12 +22,12 @@ Path::Path()
 }
 
 void Path::display()
-{
-	/*strokeWeight(radius*2);
-    stroke(0,100);
-    line(start.x,start.y,end.x,end.y);
+{	
+	gl::lineWidth( mRadius * 2.0 );
+	gl::color( ColorA8u( 0, 0, 0, 100 ) );
+	gl::drawLine( mStart, mEnd );
 	
-    strokeWeight(1);
-    stroke(0);
-    line(start.x,start.y,end.x,end.y);*/
+	gl::lineWidth( 1.0 );
+	gl::color( Color::black() );
+	gl::drawLine( mStart, mEnd );
 }

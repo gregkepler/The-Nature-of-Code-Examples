@@ -82,8 +82,6 @@ void NOC_6_04_FlowfieldApp::draw()
 	}
 	
 	// Instructions
-//	fill(0);
-//	text("Hit space bar to toggle debugging lines.\nClick the mouse to generate a new flow field.",10,height-20);
 	gl::color( Color::black() );
 	TextBox tbox = TextBox().size( Vec2i( getWindowWidth(), TextBox::GROW ) ).text( "Hit space bar to toggle debugging lines.\nClick the mouse to generate a new flow field." );
 	tbox.setBackgroundColor( ColorA( 0, 0, 0, 0 ) );
