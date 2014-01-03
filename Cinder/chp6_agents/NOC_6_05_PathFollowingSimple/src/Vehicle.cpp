@@ -14,16 +14,15 @@ using namespace std;
 
 Vehicle::Vehicle( Vec2f loc, float ms, float mf )
 {
-	mAcceleration = Vec2f( 0.0, 0.0 );
-	mVelocity = Vec2f( 3.0, -2.0 );
-	mVelocity *= 5.0;
 	mLocation = loc;
-    r = 6.0;
+    r = 4.0;
     mMaxSpeed = ms;
     mMaxForce = mf;
-	mBoundaryWidth = 25.0;
+	mAcceleration = Vec2f::zero();
+	mVelocity = Vec2f( mMaxSpeed, 0.0 );
 }
 
+// Main "run" function
 void Vehicle::run( bool debug ) {
 	mDebug = debug;
     update();
@@ -65,23 +64,18 @@ void Vehicle::follow( Path* const p )
 	{
 		gl::color( Color::black() );
 		gl::drawLine( mLocation, predictLoc );
-		gl::drawSolidEllipse( predictLoc, 4.0, 4.0 );
+		gl::drawSolidEllipse( predictLoc, 2.0, 2.0 );
 		
-		/*// Draw normal location
-		 fill(0);
-		 stroke(0);
-		 line(predictLoc.x, predictLoc.y, normalPoint.x, normalPoint.y);
-		 ellipse(normalPoint.x, normalPoint.y, 4, 4);
-		 stroke(0);
-		 if (distance > p.radius) fill(255, 0, 0);
-		 noStroke();
-		 ellipse(target.x+dir.x, target.y+dir.y, 8, 8);*/
+		// Draw normal location
+		gl::drawLine( predictLoc, normalPoint );
+		gl::drawSolidEllipse( predictLoc, 2.0, 2.0 );
+		if ( distance > p->mRadius ) gl::color( Color8u( 255, 0, 0 ) );
+		gl::drawSolidEllipse( target + dir, 4.0, 4.0 );
     }
 }
 
 // A function to get the normal point from a point (p) to a line segment (a-b)
 // This function could be optimized to make fewer new Vector objects
-
 Vec2f Vehicle::getNormalPoint( Vec2f p, Vec2f a, Vec2f b)
 {
     // Vector from a to p
@@ -111,33 +105,6 @@ void Vehicle::applyForce( Vec2f force )
 {
     // We could add mass here if we want A = F / M
     mAcceleration += force;
-}
-
-void Vehicle::boundaries()
-{	
-    Vec2f desired = Vec2f::zero();
-	
-    if( mLocation.x < mBoundaryWidth ) {
-		desired = Vec2f( mMaxSpeed, mVelocity.y );
-    }
-    else if( mLocation.x > getWindowWidth() - mBoundaryWidth ) {
-		desired = Vec2f( -mMaxSpeed, mVelocity.y );
-    }
-	
-    if( mLocation.y < mBoundaryWidth ) {
-		desired = Vec2f( mVelocity.x, mMaxSpeed );
-    }
-    else if( mLocation.y > getWindowHeight() - mBoundaryWidth ) {
-		desired = Vec2f( mVelocity.x, -mMaxSpeed );
-    }
-	
-    if ( desired != Vec2f::zero() ) {
-		desired.normalize();
-		desired *= mMaxSpeed;
-		Vec2f steer = desired - mVelocity;
-		steer.limit( mMaxForce );
-		applyForce(steer);
-    }
 }
 
 // A method that calculates and applies a steering force towards a target
@@ -188,14 +155,8 @@ void Vehicle::display()
 // Wraparound
 void Vehicle::borders( Path* const p )
 {
-/*	int width = getWindowWidth();
-	int height = getWindowHeight();
-    if( mLocation.x < -r ) mLocation.x = width + r;
-    if( mLocation.y < -r ) mLocation.y = height + r;
-    if( mLocation.x > width + r ) mLocation.x = -r;
-    if( mLocation.y > height + r ) mLocation.y = -r;*/
-	
-	if( mLocation.x > p->mEnd.x + r ) {
+	if( mLocation.x > p->mEnd.x + r )
+	{
 		mLocation.x = p->mStart.x - r;
 		mLocation.y = p->mStart.y + ( mLocation.y - p->mEnd.y );
     }

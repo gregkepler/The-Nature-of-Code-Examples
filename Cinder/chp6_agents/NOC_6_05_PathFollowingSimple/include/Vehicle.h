@@ -25,7 +25,6 @@ public:
 	Vehicle( ci::Vec2f loc, float ms, float mf );
 	void	update();
 	void	applyForce( ci::Vec2f force );
-	void	boundaries();
 	void	run( bool debug );
 	void	display();
 	void	follow( Path* const p );

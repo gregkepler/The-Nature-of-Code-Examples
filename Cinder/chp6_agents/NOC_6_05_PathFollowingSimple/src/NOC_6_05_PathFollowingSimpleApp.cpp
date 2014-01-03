@@ -25,7 +25,6 @@ class NOC_6_05_PathFollowingSimpleApp : public AppNative {
   public:
 	void prepareSettings( Settings *settings );
 	void setup();
-	void mouseDown( MouseEvent event );
 	void keyDown( KeyEvent event );
 	void update();
 	void draw();
@@ -50,10 +49,6 @@ void NOC_6_05_PathFollowingSimpleApp::setup()
 	// Each vehicle has different maxspeed and maxforce for demo purposes
 	car1 = new Vehicle( Vec2f( 0.0, getWindowHeight() / 2 ), 2.0, 0.02 );
 	car2 = new Vehicle( Vec2f( 0.0, getWindowHeight() / 2 ), 3.0, 0.05 );
-}
-
-void NOC_6_05_PathFollowingSimpleApp::mouseDown( MouseEvent event )
-{
 }
 
 void NOC_6_05_PathFollowingSimpleApp::update()
