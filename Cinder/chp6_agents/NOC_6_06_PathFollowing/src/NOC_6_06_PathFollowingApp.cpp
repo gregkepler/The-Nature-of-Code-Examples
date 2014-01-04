@@ -1,12 +1,11 @@
 //
-//  Example 6-5: Path Following Simple
+//  Example 6-6: Path Following
 //  The Nature of Code
 //
 //  Converted from Daniel Shiffman's Processing Examples
 //  Created by Greg Kepler
 //
 //	Path Following
-//	Path is a just a straight line in this example
 //	Via Reynolds: // http://www.red3d.com/cwr/steer/PathFollow.html
 //
 
@@ -14,6 +13,7 @@
 #include "cinder/gl/gl.h"
 #include "cinder/Text.h"
 #include "cinder/gl/Texture.h"
+#include "cinder/Rand.h"
 #include "Path.h"
 #include "Vehicle.h"
 
@@ -21,13 +21,15 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-class NOC_6_05_PathFollowingSimpleApp : public AppNative {
-  public:
+class NOC_6_06_PathFollowingApp : public AppNative {
+public:
 	void prepareSettings( Settings *settings );
 	void setup();
 	void keyDown( KeyEvent event );
+	void mouseDown( MouseEvent event );
 	void update();
 	void draw();
+	void newPath();
 	
 	bool			mDebug = true;		// Using this variable to decide whether to draw all the stuff
 	Path			*mPath;				// A path object (series of connected points)
@@ -37,25 +39,26 @@ class NOC_6_05_PathFollowingSimpleApp : public AppNative {
 	Vehicle *car2;
 };
 
-void NOC_6_05_PathFollowingSimpleApp::prepareSettings( Settings *settings )
+void NOC_6_06_PathFollowingApp::prepareSettings( Settings *settings )
 {
 	settings->setWindowSize( 640, 360 );
 }
 
-void NOC_6_05_PathFollowingSimpleApp::setup()
+void NOC_6_06_PathFollowingApp::setup()
 {
-	mPath = new Path();
+	// Call a function to generate new Path object
+	newPath();
 	
 	// Each vehicle has different maxspeed and maxforce for demo purposes
 	car1 = new Vehicle( Vec2f( 0.0, getWindowHeight() / 2 ), 2.0, 0.02 );
 	car2 = new Vehicle( Vec2f( 0.0, getWindowHeight() / 2 ), 3.0, 0.05 );
 }
 
-void NOC_6_05_PathFollowingSimpleApp::update()
+void NOC_6_06_PathFollowingApp::update()
 {
 }
 
-void NOC_6_05_PathFollowingSimpleApp::keyDown( KeyEvent event )
+void NOC_6_06_PathFollowingApp::keyDown( KeyEvent event )
 {
 	if( event.getChar() == ' ' )
 	{
@@ -63,7 +66,12 @@ void NOC_6_05_PathFollowingSimpleApp::keyDown( KeyEvent event )
 	}
 }
 
-void NOC_6_05_PathFollowingSimpleApp::draw()
+void NOC_6_06_PathFollowingApp::mouseDown( MouseEvent event )
+{
+	newPath();
+}
+
+void NOC_6_06_PathFollowingApp::draw()
 {
 	gl::clear( Color::white() );
 	gl::enableAlphaBlending();
@@ -91,4 +99,18 @@ void NOC_6_05_PathFollowingSimpleApp::draw()
 	glPopMatrix();
 }
 
-CINDER_APP_NATIVE( NOC_6_05_PathFollowingSimpleApp, RendererGl )
+void NOC_6_06_PathFollowingApp::newPath()
+{
+	// A path is a series of connected points
+	// A more sophisticated path might be a curve
+	int width = getWindowWidth();
+	int height = getWindowHeight();
+	
+	mPath = new Path();
+	mPath->addPoint( Vec2f( -20.0, height / 2 ) );
+	mPath->addPoint( Vec2f( randFloat( 0, width / 2 ), randFloat( 0, height ) ) );
+	mPath->addPoint( Vec2f( randFloat( width / 2, width ), randFloat( 0, height ) ) );
+	mPath->addPoint( Vec2f( width + 20, height / 2 ) );
+}
+
+CINDER_APP_NATIVE( NOC_6_06_PathFollowingApp, RendererGl )
