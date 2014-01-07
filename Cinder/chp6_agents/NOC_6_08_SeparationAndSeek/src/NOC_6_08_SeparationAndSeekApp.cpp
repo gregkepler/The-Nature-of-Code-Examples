@@ -1,12 +1,10 @@
 //
-//  Example 6-7: Separation
+//  Example 6-8: Separation and Seek
 //  The Nature of Code
 //
 //  Converted from Daniel Shiffman's Processing Examples
 //  Created by Greg Kepler
 //
-//	Separation
-//	Via Reynolds: http://www.red3d.com/cwr/steer/
 //
 
 #include "cinder/app/AppNative.h"
@@ -20,24 +18,26 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-class NOC_6_07_SeparationApp : public AppNative {
-  public:
+class NOC_6_08_SeparationAndSeekApp : public AppNative {
+public:
 	void prepareSettings( Settings *settings );
 	void setup();
 	void mouseDrag( MouseEvent event );
+	void mouseMove( MouseEvent event );
 	void update();
 	void draw();
 	
 	// A list of vehicles
 	vector<Vehicle*>	mVehicles;
+	Vec2f				mMousePos;
 };
 
-void NOC_6_07_SeparationApp::prepareSettings( Settings *settings )
+void NOC_6_08_SeparationAndSeekApp::prepareSettings( Settings *settings )
 {
 	settings->setWindowSize( 640, 360 );
 }
 
-void NOC_6_07_SeparationApp::setup()
+void NOC_6_08_SeparationAndSeekApp::setup()
 {
 	// We are now making random vehicles and storing them in a vector
 	for (int i = 0; i < 100; i++) {
@@ -45,25 +45,30 @@ void NOC_6_07_SeparationApp::setup()
 	}
 }
 
-void NOC_6_07_SeparationApp::mouseDrag( MouseEvent event )
+void NOC_6_08_SeparationAndSeekApp::mouseDrag( MouseEvent event )
 {
-	mVehicles.push_back( new Vehicle( event.getPos() ) );
+	mMousePos = event.getPos();
+	mVehicles.push_back( new Vehicle( mMousePos + randVec2f() ) );
 }
 
-void NOC_6_07_SeparationApp::update()
+void NOC_6_08_SeparationAndSeekApp::mouseMove( MouseEvent event )
+{
+	mMousePos = event.getPos();
+}
+
+void NOC_6_08_SeparationAndSeekApp::update()
 {
 }
 
-void NOC_6_07_SeparationApp::draw()
+void NOC_6_08_SeparationAndSeekApp::draw()
 {
 	gl::clear( Color::white() );
 	
 	for( Vehicle *v : mVehicles) {
 		// Path following and separation are worked on in this function
-		v->separate( &mVehicles );
+		v->applyBehaviors( &mVehicles, mMousePos );
 		// Call the generic run method (update, borders, display, etc.)
 		v->update();
-		v->borders();
 		v->display();
 	}
 	
@@ -78,4 +83,4 @@ void NOC_6_07_SeparationApp::draw()
 	glPopMatrix();
 }
 
-CINDER_APP_NATIVE( NOC_6_07_SeparationApp, RendererGl )
+CINDER_APP_NATIVE( NOC_6_08_SeparationAndSeekApp, RendererGl )
