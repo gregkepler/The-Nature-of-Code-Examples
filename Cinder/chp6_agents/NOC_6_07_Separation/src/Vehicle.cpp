@@ -22,28 +22,46 @@ Vehicle::Vehicle( Vec2f loc )
 	mVelocity = Vec2f( mMaxSpeed, 0.0 );
 }
 
-// Main "run" function
-void Vehicle::run( bool debug ) {
-	mDebug = debug;
-    update();
-    display();
+void Vehicle::applyForce( Vec2f force )
+{
+    // We could add mass here if we want A = F / M
+    mAcceleration += force;
 }
 
-
-
-// A function to get the normal point from a point (p) to a line segment (a-b)
-// This function could be optimized to make fewer new Vector objects
-Vec2f Vehicle::getNormalPoint( Vec2f p, Vec2f a, Vec2f b)
+// Separation
+// Method checks for nearby vehicles and steers away
+void Vehicle::separate( std::vector<Vehicle*>* const vehicles )
 {
-    // Vector from a to p
-    Vec2f ap = p - a;
-    // Vector from a to b
-    Vec2f ab = b - a;
-    ab.normalize(); // Normalize the line
-    // Project vector "diff" onto line by using the dot product
-    ab *= ap.dot(ab);
-    Vec2f normalPoint = a + ab;
-    return normalPoint;
+	float desiredseparation = r * 2;
+    Vec2f sum;
+    int count = 0;
+    // For every boid in the system, check if it's too close
+    for( Vehicle *other : *vehicles )
+	{
+		float d = mLocation.distance( other->mLocation );
+		// If the distance is greater than 0 and less than an arbitrary amount (0 when you are yourself)
+		if( ( d > 0 ) && ( d < desiredseparation ) )
+		{
+			// Calculate vector pointing away from neighbor
+			Vec2f diff = mLocation - other->mLocation;
+			diff.normalize();
+			diff /= d;        // Weight by distance
+			sum += diff;
+			count++;            // Keep track of how many
+		}
+    }
+    // Average -- divide by how many
+    if( count > 0 )
+	{
+		sum /= count;
+		// Our desired vector is the average scaled to maximum speed
+		sum.normalize();
+		sum *= mMaxSpeed;
+		// Implement Reynolds: Steering = Desired - Velocity
+		Vec2f steer = sum - mVelocity;
+		steer.limit( mMaxForce );
+		applyForce(steer);
+    }
 }
 
 // Method to update location
@@ -58,63 +76,24 @@ void Vehicle::update()
 	mAcceleration = Vec2f::zero();
 }
 
-void Vehicle::applyForce( Vec2f force )
-{
-    // We could add mass here if we want A = F / M
-    mAcceleration += force;
-}
-
-// A method that calculates and applies a steering force towards a target
-// STEER = DESIRED MINUS VELOCITY
-void Vehicle::seek( Vec2f target )
-{
-    Vec2f desired = target - mLocation;  // A vector pointing from the location to the target
-	
-    // If the magnitude of desired equals 0, skip out of here
-    // (We could optimize this to check if x and y are 0 to avoid mag() square root
-    if( desired.length() == 0 ) return;
-	
-    // Normalize desired and scale to maximum speed
-    desired.normalize();
-    desired *= mMaxSpeed;
-    // Steering = Desired minus Velocity
-    Vec2f steer = desired - mVelocity;
-    steer.limit( mMaxForce );  // Limit to maximum steering force
-	
-	applyForce( steer );
-}
-
 void Vehicle::display()
 {
-    // Draw a triangle rotated in the direction of velocity
-	float theta = toDegrees( atan2( mVelocity.y, mVelocity.x ) ) + 90;	// there is no heading2d function in cinder
-
 	glPushMatrix();
 	gl::translate( mLocation );
-	gl::rotate( theta );
-	
-	gl::color( Color8u::gray( 127 ) );
-	gl::begin( GL_TRIANGLE_STRIP );
-	gl::vertex( Vec2f( 0.0, -r * 2.0 ) );
-	gl::vertex( Vec2f( -r, r * 2.0 ) );
-	gl::vertex( Vec2f( r, r * 2.0 ) );
-	gl::end();
-
-	gl::color( Color8u::black() );
-	gl::begin( GL_LINE_LOOP );
-	gl::vertex( Vec2f( 0.0, -r * 2.0 ) );
-	gl::vertex( Vec2f( -r, r * 2.0 ) );
-	gl::vertex( Vec2f( r, r * 2.0 ) );
-	gl::end();
+	gl::color( Color8u::gray( 175 ) );
+	gl::drawSolidEllipse( Vec2f::zero(), r/2, r/2 );
+	gl::color( Color::black() );
+	gl::drawStrokedEllipse( Vec2f::zero(), r/2, r/2 );
     glPopMatrix();
 }
 
 // Wraparound
 void Vehicle::borders()
 {
-	/*if( mLocation.x > p->mEnd.x + r )
-	{
-		mLocation.x = p->mStart.x - r;
-		mLocation.y = p->mStart.y + ( mLocation.y - p->mEnd.y );
-    }*/
+	int width = getWindowWidth();
+	int height = getWindowHeight();
+    if( mLocation.x < -r ) mLocation.x = width + r;
+    if( mLocation.y < -r ) mLocation.y = height + r;
+    if( mLocation.x > width + r ) mLocation.x = -r;
+    if( mLocation.y > height + r ) mLocation.y = -r;
 }

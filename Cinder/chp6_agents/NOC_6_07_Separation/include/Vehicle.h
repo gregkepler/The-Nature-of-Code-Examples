@@ -15,17 +15,13 @@ class Vehicle {
 	float			mMaxForce;    // Maximum steering force
 	float			mMaxSpeed;    // Maximum speed
 	float			mBoundaryWidth;
-	bool			mDebug;
 	
-	ci::Vec2f		getNormalPoint( ci::Vec2f p, ci::Vec2f a, ci::Vec2f b );
-	void			seek( ci::Vec2f target );
 	
 public:
 	Vehicle( ci::Vec2f loc );
 	void	update();
-	void	separate( const std::vector<Vehicle*> vehicles );
+	void	separate( std::vector<Vehicle*>* const vehicles );
 	void	applyForce( ci::Vec2f force );
-	void	run( bool debug );
 	void	display();
 	void	borders();
 };
