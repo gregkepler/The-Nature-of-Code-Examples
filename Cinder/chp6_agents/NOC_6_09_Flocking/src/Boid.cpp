@@ -39,9 +39,9 @@ void Boid::applyForce( Vec2f force )
 // We accumulate a new acceleration each time based on three rules
 void Boid::flock( vector<Boid*>* const boids )
 {
-	Vec2f sep = separate( boids );   // Separation
-    Vec2f ali = align( boids );      // Alignment
-    Vec2f coh = cohesion( boids);   // Cohesion
+	Vec2f sep = separate( boids );		// Separation
+    Vec2f ali = align( boids );			// Alignment
+    Vec2f coh = cohesion( boids);		// Cohesion
     // Arbitrarily weight these forces
     sep *= 1.5;
     ali *- 1.0;
@@ -50,18 +50,6 @@ void Boid::flock( vector<Boid*>* const boids )
     applyForce(sep);
     applyForce(ali);
     applyForce(coh);
-}
-
-
-
-void Boid::applyBehaviors( std::vector<Boid*>* const Boids, Vec2f mousePos )
-{
-	Vec2f separateForce = separate( Boids );
-	Vec2f seekForce = seek( mousePos );
-	separateForce *= 2;
-	seekForce *= 1;
-	applyForce(separateForce);
-	applyForce(seekForce);
 }
 
 // A method that calculates a steering force towards a target
