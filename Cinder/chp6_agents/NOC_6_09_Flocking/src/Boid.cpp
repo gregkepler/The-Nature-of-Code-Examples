@@ -26,8 +26,8 @@ void Boid::run( vector<Boid*>* const boids )
 {
 	flock( boids );
 	update();
-//	borders();
-//	render();
+	borders();
+	render();
 }
 
 void Boid::applyForce( Vec2f force )
@@ -43,13 +43,13 @@ void Boid::flock( vector<Boid*>* const boids )
     Vec2f ali = align( boids );      // Alignment
     Vec2f coh = cohesion( boids);   // Cohesion
     // Arbitrarily weight these forces
-    /*sep.mult(1.5);
-    ali.mult(1.0);
-    coh.mult(1.0);
+    sep *= 1.5;
+    ali *- 1.0;
+    coh *= 1.0;
     // Add the force vectors to acceleration
     applyForce(sep);
     applyForce(ali);
-    applyForce(coh);*/
+    applyForce(coh);
 }
 
 
@@ -79,6 +79,17 @@ Vec2f Boid::seek( Vec2f target )
     steer.limit( mMaxForce );  // Limit to maximum steering force
     
 	return steer;
+}
+
+// Wraparound
+void Boid::borders()
+{
+	int width = getWindowWidth();
+	int height = getWindowHeight();
+    if( mLocation.x < -r ) mLocation.x = width + r;
+    if( mLocation.y < -r ) mLocation.y = height + r;
+    if( mLocation.x > width + r ) mLocation.x = -r;
+    if( mLocation.y > height + r ) mLocation.y = -r;
 }
 
 // Separation
@@ -186,13 +197,28 @@ void Boid::update()
 	mAcceleration = Vec2f::zero();
 }
 
-void Boid::display()
+void Boid::render()
 {
+	// Draw a triangle rotated in the direction of velocity
+	float theta = toDegrees( atan2( mVelocity.y, mVelocity.x ) ) + 90;	// there is no heading2d function in cinder
+	
 	glPushMatrix();
 	gl::translate( mLocation );
-	gl::color( Color8u::gray( 175 ) );
-	gl::drawSolidEllipse( Vec2f::zero(), r/2, r/2 );
-	gl::color( Color::black() );
-	gl::drawStrokedEllipse( Vec2f::zero(), r/2, r/2 );
+	gl::rotate( theta );
+	
+	gl::color( Color8u::gray( 127 ) );
+	gl::begin( GL_TRIANGLE_STRIP );
+	gl::vertex( Vec2f( 0.0, -r * 2.0 ) );
+	gl::vertex( Vec2f( -r, r * 2.0 ) );
+	gl::vertex( Vec2f( r, r * 2.0 ) );
+	gl::end();
+	
+	gl::color( Color8u::black() );
+	gl::begin( GL_LINE_LOOP );
+	gl::vertex( Vec2f( 0.0, -r * 2.0 ) );
+	gl::vertex( Vec2f( -r, r * 2.0 ) );
+	gl::vertex( Vec2f( r, r * 2.0 ) );
+	gl::end();
     glPopMatrix();
+
 }

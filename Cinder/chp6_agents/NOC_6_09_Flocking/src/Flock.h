@@ -1,6 +1,5 @@
 //
 //  Flock.h
-//  NOC_6_09_Flocking
 //
 //  Created by Greg Kepler
 //

@@ -29,5 +29,6 @@ public:
 	ci::Vec2f	align( std::vector<Boid*>* const boids );
 	ci::Vec2f	cohesion( std::vector<Boid*>* const boids );
 	void		applyForce( ci::Vec2f force );
-	void		display();
+	void		render();
+	void		borders();
 };

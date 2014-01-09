@@ -1,8 +1,7 @@
 //
 //  Flock.cpp
-//  NOC_6_09_Flocking
 //
-//  Created by Greg Kepler on 1/9/14.
+//  Created by Greg Kepler
 //
 //
 
