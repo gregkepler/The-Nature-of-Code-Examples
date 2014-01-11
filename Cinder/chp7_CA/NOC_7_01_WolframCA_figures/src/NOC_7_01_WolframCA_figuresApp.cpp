@@ -15,7 +15,18 @@
 
 #include "cinder/app/AppNative.h"
 #include "cinder/gl/gl.h"
+#include "cinder/ImageIo.h"
+#include "cinder/Utilities.h"
 #include "CA.h"
+
+#include "cinder/app/AppBasic.h"
+#include "cinder/gl/gl.h"
+#include "cinder/Rand.h"
+#include "cinder/ImageIo.h"
+#include "cinder/Utilities.h"
+
+#include <sstream>
+#include <list>
 
 using namespace ci;
 using namespace ci::app;
@@ -34,15 +45,15 @@ class NOC_7_01_WolframCA_figuresApp : public AppNative {
 
 void NOC_7_01_WolframCA_figuresApp::prepareSettings( Settings *settings )
 {
-	settings->setWindowSize( 1800, 600 );
+	settings->setWindowSize( 1200, 600 );
 }
 
 void NOC_7_01_WolframCA_figuresApp::setup()
 {
-	//int ruleset[8] = {0,1,0,1,1,0,1,0};    // 90
-	vector<int> ruleset = {0,1,1,1,1,0,1,1};    // An initial rule system
+	vector<int> ruleset = {0,1,0,1,1,0,1,0};    // 90
+//	vector<int> ruleset = {0,1,1,1,1,0,1,1};    // An initial rule system
 	
-	ca = new CA( &ruleset );
+	ca = new CA( ruleset );
 }
 
 void NOC_7_01_WolframCA_figuresApp::mouseDown( MouseEvent event )
@@ -62,8 +73,7 @@ void NOC_7_01_WolframCA_figuresApp::draw()
 	ca->generate();  // Generate the next level
 	
 	if( ca->finished() ) {   // If we're done, clear the screen, pick a new ruleset and restart
-/*		saveFrame("rule222.png");
-		noLoop();*/
+		ci::writeImage("rule222.png", copyWindowSurface() );
 	}
 }
 

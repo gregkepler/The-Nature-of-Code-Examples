@@ -16,10 +16,10 @@ using namespace std;
 
 const static int scl = 20;
 
-CA::CA( vector<int>* const r)
+CA::CA( vector<int> r)
 {
-	
 	mRuleset = r;
+	mCells.resize( getWindowWidth() / scl, 0 );
     restart();
 }
 
@@ -27,17 +27,16 @@ CA::CA( vector<int>* const r)
 void CA::randomize()
 {
     for( int i = 0; i < 8; i++ ) {
-//		mRuleset[i] = int( randInt( 2 ) );
-		(*mRuleset)[i] = randInt( 2 );
+		mRuleset[i] = randInt( 2 );
     }
 }
 
 // Reset to generation 0
 void CA::restart()
 {
-    for( int i = 0; i < 8; i++ )
+    for( int i = 0; i < mCells.size(); i++ )
 	{
-		mCells.push_back( 0 );
+		mCells[i] = 0;
     }
     mCells[mCells.size()/2] = 1;    // We arbitrarily start with just the middle cell having a state of "1"
     mGeneration = 0;
@@ -47,7 +46,6 @@ void CA::restart()
 void CA::generate()
 {
     // First we create an empty array for the new values
-//    int[] nextgen = new int[cells.length];
 	vector<int> nextGen;
 	for( int i = 0; i < mCells.size(); i++ ) {
 		nextGen.push_back(0);
@@ -89,10 +87,10 @@ void CA::render() {
 // Could be improved and made more concise, but here we can explicitly see what is going on for each case
 int CA::rules (int a, int b, int c)
 {
-    string s = to_string(a + b + c);
+    string s = to_string(a) + to_string(b) + to_string(c);
 	// stol: http://en.cppreference.com/w/cpp/string/basic_string/stol
-	int index = stol( s, NULL, 2);
-    return (*mRuleset)[index];
+	int index = stol( s, nullptr, 2);
+    return mRuleset[index];
 }
 
 // The CA is done if it reaches the bottom of the screen
