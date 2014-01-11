@@ -40,9 +40,9 @@ void NOC_7_01_WolframCA_figuresApp::prepareSettings( Settings *settings )
 void NOC_7_01_WolframCA_figuresApp::setup()
 {
 	//int ruleset[8] = {0,1,0,1,1,0,1,0};    // 90
-	int ruleset[8] = {0,1,1,1,1,0,1,1};    // An initial rule system
+	vector<int> ruleset = {0,1,1,1,1,0,1,1};    // An initial rule system
 	
-	ca = new CA( ruleset );
+	ca = new CA( &ruleset );
 }
 
 void NOC_7_01_WolframCA_figuresApp::mouseDown( MouseEvent event )

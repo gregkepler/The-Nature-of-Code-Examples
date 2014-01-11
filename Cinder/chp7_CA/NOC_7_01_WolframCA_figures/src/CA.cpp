@@ -16,8 +16,9 @@ using namespace std;
 
 const static int scl = 20;
 
-CA::CA( int r[] )
+CA::CA( vector<int>* const r)
 {
+	
 	mRuleset = r;
     restart();
 }
@@ -26,16 +27,17 @@ CA::CA( int r[] )
 void CA::randomize()
 {
     for( int i = 0; i < 8; i++ ) {
-		mRuleset[i] = int( randInt( 2 ) );
+//		mRuleset[i] = int( randInt( 2 ) );
+		(*mRuleset)[i] = randInt( 2 );
     }
 }
 
 // Reset to generation 0
 void CA::restart()
 {
-    for( int i = 0; i < mCells.size(); i++ )
+    for( int i = 0; i < 8; i++ )
 	{
-		mCells[i] = 0;
+		mCells.push_back( 0 );
     }
     mCells[mCells.size()/2] = 1;    // We arbitrarily start with just the middle cell having a state of "1"
     mGeneration = 0;
@@ -47,6 +49,9 @@ void CA::generate()
     // First we create an empty array for the new values
 //    int[] nextgen = new int[cells.length];
 	vector<int> nextGen;
+	for( int i = 0; i < mCells.size(); i++ ) {
+		nextGen.push_back(0);
+    }
 	
     // For every spot, determine new state by examing current state, and neighbor states
     // Ignore edges that only have one neighor
@@ -87,7 +92,7 @@ int CA::rules (int a, int b, int c)
     string s = to_string(a + b + c);
 	// stol: http://en.cppreference.com/w/cpp/string/basic_string/stol
 	int index = stol( s, NULL, 2);
-    return mRuleset[index];
+    return (*mRuleset)[index];
 }
 
 // The CA is done if it reaches the bottom of the screen

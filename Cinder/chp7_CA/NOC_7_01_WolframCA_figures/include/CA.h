@@ -9,13 +9,13 @@
 class CA {
 	std::vector<int> mCells;
 	int mGeneration;
-	int *mRuleset;
+	std::vector<int> *mRuleset;
 	
 	void	setRules();
 	int		rules( int a, int b, int c );
 	
 public:
-	CA( int r[] );
+	CA( std::vector<int>* const r );
 	void	randomize();
 	void	restart();
 	void	render();
