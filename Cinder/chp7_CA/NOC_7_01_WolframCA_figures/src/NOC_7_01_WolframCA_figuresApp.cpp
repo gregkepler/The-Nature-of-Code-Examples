@@ -1,5 +1,5 @@
 //
-//  Example 6-5: Path Following Simple
+//  Example 7-1: Wolfram Cellular Automata
 //  The Nature of Code
 //
 //  Converted from Daniel Shiffman's Processing Examples
@@ -74,6 +74,11 @@ void NOC_7_01_WolframCA_figuresApp::draw()
 	
 	if( ca->finished() ) {   // If we're done, clear the screen, pick a new ruleset and restart
 		ci::writeImage("rule222.png", copyWindowSurface() );
+		
+		// reset
+//		gl::clear( Color::white() );
+//		ca->randomize();
+//		ca->restart();
 	}
 }
 
