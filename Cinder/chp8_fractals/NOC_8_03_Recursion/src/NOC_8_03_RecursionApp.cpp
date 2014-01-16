@@ -43,7 +43,7 @@ void NOC_8_03_RecursionApp::drawCircle( Vec2f loc, float r )
 	gl::color( Color::black() );
 	gl::drawStrokedEllipse( loc, r, r );
 	// Exit condition, stop when radius is too small
-	if( r > 4 )
+	if( r > 4)
 	{
 		// Four circles! left right, up and down
 		drawCircle( Vec2f( loc.x + r, loc.y), r/2);
