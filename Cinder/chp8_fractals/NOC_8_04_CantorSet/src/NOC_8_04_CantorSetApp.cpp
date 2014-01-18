@@ -1,3 +1,15 @@
+//
+//  Example 8-4: Cantor Set
+//  The Nature of Code
+//
+//  Converted from Daniel Shiffman's Processing Examples
+//  Created by Greg Kepler
+//
+//	Cantor Set
+//	Renders a simple fractal, the Cantor Set
+//
+//
+
 #include "cinder/app/AppNative.h"
 #include "cinder/gl/gl.h"
 
@@ -28,7 +40,7 @@ void NOC_8_04_CantorSetApp::update()
 {
 }
 
-void NOC_8_04_CantorSetApp::cantor(float x, float y, float len) {
+void NOC_8_04_CantorSetApp::cantor( float x, float y, float len ) {
 	
 	float h = 30;
 	

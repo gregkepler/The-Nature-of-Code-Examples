@@ -1,5 +1,5 @@
 //
-//  Example 8-3: Recusion
+//  Example 8-3: Recursion
 //  The Nature of Code
 //
 //  Converted from Daniel Shiffman's Processing Examples
