@@ -1,5 +1,5 @@
 //
-//  Example 8-6: Tree static
+//  Example 8-6: Tree
 //  The Nature of Code
 //
 //  Converted from Daniel Shiffman's Processing Examples
@@ -23,7 +23,6 @@ class NOC_8_06_TreeApp : public AppNative {
 	void prepareSettings( Settings *settings );
 	void setup();
 	void mouseMove( MouseEvent event );
-	void mouseDown( MouseEvent event );	
 	void update();
 	void draw();
 	void branch( float len );
@@ -42,10 +41,6 @@ void NOC_8_06_TreeApp::prepareSettings( Settings *settings )
 void NOC_8_06_TreeApp::setup()
 {
 	
-}
-
-void NOC_8_06_TreeApp::mouseDown( MouseEvent event )
-{
 }
 
 void NOC_8_06_TreeApp::mouseMove( MouseEvent event )
@@ -71,7 +66,7 @@ void NOC_8_06_TreeApp::draw()
 	gl::popMatrices();
 }
 
-void NOC_8_06_TreeApp::branch(float len)
+void NOC_8_06_TreeApp::branch( float len )
 {
 	// Each branch will be 2/3rds the size of the previous one
 	
@@ -87,10 +82,10 @@ void NOC_8_06_TreeApp::branch(float len)
 	// All recursive functions must have an exit condition!!!!
 	// Here, ours is when the length of the branch is 2 pixels or less
 	if (len > 2) {
-		gl::pushMatrices();    // Save the current state of transformation (i.e. where are we now)
-		gl::rotate( toDegrees( theta ) );   // Rotate by theta
-		branch( len );       // Ok, now call myself to draw two new branches!!
-		gl::popMatrices();     // Whenever we get back here, we "pop" in order to restore the previous matrix state
+		gl::pushMatrices();					// Save the current state of transformation (i.e. where are we now)
+		gl::rotate( toDegrees( theta ) );	// Rotate by theta
+		branch( len );						// Ok, now call myself to draw two new branches!!
+		gl::popMatrices();					// Whenever we get back here, we "pop" in order to restore the previous matrix state
 		
 		// Repeat the same thing, only branch off to the "left" this time!
 		gl::pushMatrices();

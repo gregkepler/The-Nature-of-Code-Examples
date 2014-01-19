@@ -1,0 +1,20 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NOC_8_07_TreeStochastic_angleonly", "NOC_8_07_TreeStochastic_angleonly.vcxproj", "{75A619DA-3A91-4B7C-9CB3-471B4DF8B082}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75A619DA-3A91-4B7C-9CB3-471B4DF8B082}.Debug|Win32.ActiveCfg = Debug|Win32
+		{75A619DA-3A91-4B7C-9CB3-471B4DF8B082}.Debug|Win32.Build.0 = Debug|Win32
+		{75A619DA-3A91-4B7C-9CB3-471B4DF8B082}.Release|Win32.ActiveCfg = Release|Win32
+		{75A619DA-3A91-4B7C-9CB3-471B4DF8B082}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
