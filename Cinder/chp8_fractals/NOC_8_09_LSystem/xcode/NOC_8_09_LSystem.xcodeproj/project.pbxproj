@@ -38,11 +38,11 @@
 		8D1107320486CEB800E47090 /* NOC_8_09_LSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NOC_8_09_LSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD17B227537A4E18894BD2A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7AED258188D4D4E00A7BDD0 /* Rule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Rule.cpp; path = ../src/Rule.cpp; sourceTree = "<group>"; };
-		D7AED259188D4D4E00A7BDD0 /* Rule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Rule.h; path = ../src/Rule.h; sourceTree = "<group>"; };
+		D7AED259188D4D4E00A7BDD0 /* Rule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Rule.h; path = ../include/Rule.h; sourceTree = "<group>"; };
 		D7AED25B188D4E5200A7BDD0 /* LSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LSystem.cpp; path = ../src/LSystem.cpp; sourceTree = "<group>"; };
-		D7AED25C188D4E5200A7BDD0 /* LSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSystem.h; path = ../src/LSystem.h; sourceTree = "<group>"; };
+		D7AED25C188D4E5200A7BDD0 /* LSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSystem.h; path = ../include/LSystem.h; sourceTree = "<group>"; };
 		D7AED25E188D539900A7BDD0 /* Turtle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Turtle.cpp; path = ../src/Turtle.cpp; sourceTree = "<group>"; };
-		D7AED25F188D539900A7BDD0 /* Turtle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Turtle.h; path = ../src/Turtle.h; sourceTree = "<group>"; };
+		D7AED25F188D539900A7BDD0 /* Turtle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Turtle.h; path = ../include/Turtle.h; sourceTree = "<group>"; };
 		DAE7E16CFC734464AB6051E3 /* NOC_8_09_LSystemApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = NOC_8_09_LSystemApp.cpp; path = ../src/NOC_8_09_LSystemApp.cpp; sourceTree = "<group>"; };
 		E996B1B5F4454B759D59FABA /* NOC_8_09_LSystem_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = NOC_8_09_LSystem_Prefix.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
