@@ -1,0 +1,20 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NOC_8_08_SimpleLSystem", "NOC_8_08_SimpleLSystem.vcxproj", "{75250CCF-A260-4A87-9EFD-8F418995D01C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75250CCF-A260-4A87-9EFD-8F418995D01C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{75250CCF-A260-4A87-9EFD-8F418995D01C}.Debug|Win32.Build.0 = Debug|Win32
+		{75250CCF-A260-4A87-9EFD-8F418995D01C}.Release|Win32.ActiveCfg = Release|Win32
+		{75250CCF-A260-4A87-9EFD-8F418995D01C}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
