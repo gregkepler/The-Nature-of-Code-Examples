@@ -1,8 +1,17 @@
 //
 //  DNA.cpp
-//  NOC_9_01_GA_Shakespeare
 //
-//  Created by Greg Kepler on 1/23/14.
+//  Created by Greg Kepler
+//
+//	Genetic Algorithm, Evolving Shakespeare
+
+//	A class to describe a psuedo-DNA, i.e. genotype
+//   Here, a virtual organism's DNA is an array of character.
+//   Functionality:
+//      -- convert DNA into a string
+//      -- calculate DNA's "fitness"
+//      -- mate DNA with another set of DNA
+//      -- mutate DNA
 //
 //
 
@@ -39,7 +48,7 @@ string DNA::getPhrase()
 }
 
 // Fitness function (returns floating point % of "correct" characters)
-void DNA::fitness( string target )
+void DNA::calcFitness( string target )
 {
 	int score = 0;
 	for( int i = 0; i < mGenes.size(); i++ ) {
