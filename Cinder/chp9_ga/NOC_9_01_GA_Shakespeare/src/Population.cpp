@@ -65,7 +65,6 @@ void Population::naturalSelection()
 			mMatingPool.push_back( mPopulation[i] );
 		}
     }
-//	console() << mMatingPool.size() << endl;
 }
 
 // Create a new generation

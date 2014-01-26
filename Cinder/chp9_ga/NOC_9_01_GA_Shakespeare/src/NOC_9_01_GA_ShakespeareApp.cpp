@@ -11,12 +11,12 @@
 //
 //	setup()
 //  # Step 1: The Population
-//    # Create an empty population (an array or ArrayList)
+//    # Create an empty population (an array or vector)
 //    # Fill it with DNA encoded objects (pick random values to start)
 //
 //	draw()
 //  # Step 1: Selection
-//    # Create an empty mating pool (an empty ArrayList)
+//    # Create an empty mating pool (an empty vector)
 //    # For every member of the population, evaluate its fitness based on some criteria / function,
 //      and add it to the mating pool in a manner consistant with its fitness, i.e. the more fit it
 //      is the more times it appears in the mating pool, in order to be more likely picked for reproduction.
@@ -33,8 +33,8 @@
 
 #include "cinder/app/AppNative.h"
 #include "cinder/gl/gl.h"
-#include "cinder/Text.h"
 #include "cinder/gl/Texture.h"
+#include "cinder/Text.h"
 #include "Population.h"
 
 using namespace ci;
@@ -107,32 +107,11 @@ void NOC_9_01_GA_ShakespeareApp::draw()
 
 void NOC_9_01_GA_ShakespeareApp::displayInfo()
 {
-	
-	
 	gl::clear( Color::white() );
 	gl::enableAlphaBlending();
 	
 	// Display current status of populationation
 	string answer = mPopulation->getBest();
-	
-	/*textFont(f);
-	textAlign(LEFT);
-	fill(0);
-	
-	
-	textSize(24);
-	text("Best phrase:",20,30);
-	textSize(40);
-	text(answer, 20, 100);
-	
-	textSize(18);
-	text("total generations:     " + population.getGenerations(), 20, 160);
-	text("average fitness:       " + nf(population.getAverageFitness(), 0, 2), 20, 180);
-	text("total population: " + popmax, 20, 200);
-	text("mutation rate:         " + int(mutationRate * 100) + "%", 20, 220);
-	
-	textSize(10);
-	text("All phrases:\n" + population.allPhrases(), 500, 10);*/
 
 	drawText( "Best Phrase:", 24, Vec2i(20, 30) );
 	drawText( answer, 40, Vec2i(20, 100) );
@@ -141,28 +120,6 @@ void NOC_9_01_GA_ShakespeareApp::displayInfo()
 	drawText( "total population:     " + to_string( mPopmax ), 18, Vec2i(20, 200) );
 	drawText( "mutation rate:     " + to_string( int( mMutationRate * 100 ) ) + "%", 18, Vec2i(20, 220) );
 	drawText( "All phrases:\n" + mPopulation->allPhrases(), 10, Vec2i(500, 10) );
-	
-	/*Font font = Font( mFont.getName(), 24 );
-
-	TextBox tbox = TextBox().alignment( TextBox::LEFT ).font( font ).size( Vec2i( getWindowWidth(), TextBox::GROW ) ).text( "Best Phrase:" );
-	tbox.setColor( Color::black() );
-	tbox.setBackgroundColor( ColorA( 0, 0, 0, 0 ) );
-	gl::draw( tbox.render(), Vec2f( 20, 30 ) );
-	
-	font = Font( mFont.getName(), 40 );
-	tbox = TextBox().alignment( TextBox::LEFT ).font( font ).size( Vec2i( getWindowWidth(), TextBox::GROW ) ).text( answer );
-	tbox.setColor( Color::black() );
-	tbox.setBackgroundColor( ColorA( 0, 0, 0, 0 ) );
-	gl::draw( tbox.render(), Vec2f( 20, 100 ) );
-
-	
-	font = Font( mFont.getName(), 18 );
-	tbox = TextBox().alignment( TextBox::LEFT ).font( font ).size( Vec2i( getWindowWidth(), TextBox::GROW ) ).text( answer );
-	tbox.setColor( Color::black() );
-	tbox.setBackgroundColor( ColorA( 0, 0, 0, 0 ) );
-	gl::draw( tbox.render(), Vec2f( 20, 100 ) );*/
-
-	
 }
 
 void NOC_9_01_GA_ShakespeareApp::drawText( string str, int fontSize, Vec2i pos )
