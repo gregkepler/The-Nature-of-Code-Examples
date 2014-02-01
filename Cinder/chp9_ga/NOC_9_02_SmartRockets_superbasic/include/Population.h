@@ -11,28 +11,23 @@
 
 class Population {
 	
-	float				mMutationRate;		// Mutation rate
-	std::vector<Rocket>	mPopulation;        // Vector to hold the current population
-	std::vector<Rocket>	mMatingPool;		// Vector which we will use for our "mating pool"
-	int					mGenerations;       // Number of generations
-	bool				mFinished;          // Are we finished evolving?
-	int					mPerfectScore;
+	float					mMutationRate;		// Mutation rate
+	std::vector<Rocket*>	mPopulation;        // Vector to hold the current population
+	std::vector<Rocket*>	mMatingPool;		// Vector which we will use for our "mating pool"
+	int						mGenerations;       // Number of generations
+	bool					mFinished;          // Are we finished evolving?
+	int						mPerfectScore;
+	ci::Vec2f				*mTarget;
 	
 	
 	
 public:
-	Population( float m, int num );
+	Population( float m, int num, ci::Vec2f* const target, int lifetime );
 	void			live();
 	void			naturalSelection();
 	void			fitness();
 	void			selection();
 	void			reproduction();
-	
-	void			generate();
-	std::string		getBest();
-	bool			finished();
 	int				getGenerations();
-	float			getAverageFitness();
-	std::string		allPhrases();
-
+	float			getMaxFitness();
 };

@@ -14,12 +14,14 @@ class Rocket {
 	ci::Vec2f	mLocation;
 	ci::Vec2f	mVelocity;
 	ci::Vec2f	mAcceleration;
+	ci::Vec2f	*mTarget;
 	
 	float		r;					// size
 	
 	// Fitness and DNA
 	float		mFitness;
-	DNA			mDna;
+	DNA			*mDna;
+
 	
 	// To count which force we're on in the genes
 	int			mGeneCounter;
@@ -29,5 +31,15 @@ class Rocket {
 
 	
 public:
-	Rocket( ci::Vec2f l, DNA dna_ );
+	Rocket( ci::Vec2f l, DNA* const dna, ci::Vec2f* const target );
+	
+	void fitness();
+	void run();
+	void checkTarget();
+	void applyForce( ci::Vec2f f);
+	void update();
+	void display();
+	DNA* getDNA();
+	float getFitness();
+	
 };

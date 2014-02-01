@@ -1,8 +1,7 @@
 //
 //  Population.cpp
-//  NOC_9_01_GA_Shakespeare
 //
-//  Created by Greg Kepler on 1/23/14.
+//  Created by Greg Kepler
 //
 //
 
@@ -15,27 +14,29 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-Population::Population( float m, int num )
+Population::Population( float m, int num, ci::Vec2f* const target, int lifetime )
 {
     mMutationRate = m;
     mPopulation.resize( num );
     mFinished = false;
     mGenerations = 0;
 	
+	mTarget = target;
+	
 	//make a new set of creatures
 	for( int i = 0; i < mPopulation.size(); i++ )
 	{
 		Vec2f mLocation = Vec2f( getWindowWidth() / 2.0, getWindowHeight() + 20.0 );
-		mPopulation[i] = Rocket( location, DNA() );
+		mPopulation[i] = new Rocket( mLocation, new DNA( lifetime ), mTarget );
 	}
 }
 
 void Population::live()
 {
     // Run every rocket
-    for( int i = 0; i < mPopulation.length; i++ )
+    for( int i = 0; i < mPopulation.size(); i++ )
 	{
-		mPopulation[i].run();
+		mPopulation[i]->run();
     }
 }
 
@@ -44,7 +45,7 @@ void Population::fitness()
 {
     for( int i = 0; i < mPopulation.size(); i++ )
 	{
-		mPopulation[i].fitness();
+		mPopulation[i]->fitness();
     }
 }
 
@@ -61,13 +62,13 @@ void Population::selection()
     // Based on fitness, each member will get added to the mating pool a certain number of times
     // A higher fitness = more entries to mating pool = more likely to be picked as a parent
     // A lower fitness = fewer entries to mating pool = less likely to be picked as a parent
-    for( int i = 0; i < mPopulation.length; i++ )
+    for( int i = 0; i < mPopulation.size(); i++ )
 	{
-		float fitnessNormal = lmap( population[i].getFitness(), 0.0f, maxFitness, 0.0f, 1.0f );
+		float fitnessNormal = lmap( mPopulation[i]->getFitness(), 0.0f, maxFitness, 0.0f, 1.0f );
 		int n = int( fitnessNormal * 100 );  // Arbitrary multiplier
 		for( int j = 0; j < n; j++ )
 		{
-			mMatingPool.add( mPopulation[i]  );
+			mMatingPool.push_back( mPopulation[i] );
 		}
     }
 }
@@ -76,131 +77,44 @@ void Population::selection()
 void Population::reproduction()
 {
     // Refill the population with children from the mating pool
-    for (int i = 0; i < mPopulation.length; i++)
+    for (int i = 0; i < mPopulation.size(); i++)
 	{
 		// Sping the wheel of fortune to pick two parents
-		int m = int(random(matingPool.size()));
-		int d = int(random(matingPool.size()));
+		int m = randInt( mMatingPool.size() );
+		int d = randInt( mMatingPool.size() );
 		// Pick two parents
-		Rocket mom = matingPool.get(m);
-		Rocket dad = matingPool.get(d);
+		Rocket *mom = mMatingPool[m];
+		Rocket *dad = mMatingPool[d];
 		// Get their genes
-		DNA momgenes = mom.getDNA();
-		DNA dadgenes = dad.getDNA();
+		DNA *momgenes = mom->getDNA();
+		DNA *dadgenes = dad->getDNA();
 		// Mate their genes
-		DNA child = momgenes.crossover(dadgenes);
+		DNA *child = momgenes->crossover( dadgenes );
 		// Mutate their genes
-		child.mutate(mutationRate);
+		child->mutate( mMutationRate );
 		// Fill the new population with the new child
-		PVector location = new PVector(width/2,height+20);
-		population[i] = new Rocket(location, child);
-    }
-    generations++;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-// Generate a mating pool
-void Population::naturalSelection()
-{
-    // Clear the vector
-    mMatingPool.clear();
-	
-    float maxFitness = 0.0f;
-    for( int i = 0; i < mPopulation.size(); i++)
-	{
-		if( mPopulation[i].mFitness > maxFitness )
-		{
-			maxFitness = mPopulation[i].mFitness;
-		}
-    }
-	
-    // Based on fitness, each member will get added to the mating pool a certain number of times
-    // a higher fitness = more entries to mating pool = more likely to be picked as a parent
-    // a lower fitness = fewer entries to mating pool = less likely to be picked as a parent
-    for( int i = 0; i < mPopulation.size(); i++ )
-	{
-		float fitness = lmap( mPopulation[i].mFitness, 0.0f, maxFitness, 0.0f, 1.0f );
-		int n = int( fitness * 100 );			// Arbitrary multiplier, we can also use monte carlo method
-		for( int j = 0; j < n; j++ ) {           // and pick two random numbers
-			mMatingPool.push_back( mPopulation[i] );
-		}
-    }
-}
-
-// Create a new generation
-void Population::generate()
-{
-    // Refill the population with children from the mating pool
-    for( int i = 0; i < mPopulation.size(); i++ )
-	{
-		int a = randInt( mMatingPool.size() );
-		int b = randInt( mMatingPool.size() );
-		
-		DNA partnerA = mMatingPool[a];
-		DNA partnerB = mMatingPool[b];
-		DNA child = partnerA.crossover( partnerB );
-		child.mutate( mMutationRate );
-		mPopulation[i] = child;
+		Vec2f location = Vec2f( getWindowWidth() / 2.0, getWindowHeight() + 20.0 );
+		mPopulation[i] = new Rocket( location, child, mTarget );
     }
     mGenerations++;
 }
 
-// Compute the current "most fit" member of the population
-string Population::getBest()
-{
-    float worldrecord = 0.0;
-    int index = 0;
-    for( int i = 0; i < mPopulation.size(); i++) {
-		if( mPopulation[i].mFitness > worldrecord) {
-			index = i;
-			worldrecord = mPopulation[i].mFitness;
-		}
-    }
-    
-    if( worldrecord == mPerfectScore ) mFinished = true;
-    return mPopulation[index].getPhrase();
-}
-
-bool Population::finished()
-{
-    return mFinished;
-}
 
 int Population::getGenerations()
 {
     return mGenerations;
 }
 
-// Compute average fitness for the population
-float Population::getAverageFitness()
+// Find highest fintess for the population
+float Population::getMaxFitness()
 {
-    float total = 0;
-    for (int i = 0; i < mPopulation.size(); i++) {
-		total += mPopulation[i].mFitness;
-    }
-    return total / ( mPopulation.size() );
-}
-
-string Population::allPhrases()
-{
-    string everything = "";
-    
-    int displayLimit = MIN( mPopulation.size(), 50 );
-	
-    
-    for (int i = 0; i < displayLimit; i++)
+    float record = 0;
+    for( int i = 0; i < mPopulation.size(); i++ )
 	{
-		everything += mPopulation[i].getPhrase() + "\n";
+		if( mPopulation[i]->getFitness() > record )
+		{
+			record = mPopulation[i]->getFitness();
+		}
     }
-    return everything;
+    return record;
 }

@@ -1,5 +1,7 @@
 #include "cinder/app/AppNative.h"
 #include "cinder/gl/gl.h"
+#include "cinder/Text.h"
+#include "cinder/gl/Texture.h"
 #include "Population.h"
 
 using namespace ci;
@@ -13,9 +15,10 @@ class NOC_9_02_SmartRockets_superbasicApp : public AppNative {
 	void mouseDown( MouseEvent event );	
 	void update();
 	void draw();
+	void drawText( string str, Vec2i pos );
 	
 	int mLifetime;				// How long should each generation live
-	Population *mPopulation;		// Population
+	Population *mPopulation;	// Population
 	int mLifeCounter;			// Timer for cycle of generation
 	Vec2f mTarget;				// Target location
 };
@@ -37,7 +40,7 @@ void NOC_9_02_SmartRockets_superbasicApp::setup()
 	
 	// Create a population with a mutation rate, and population max
 	float mutationRate = 0.01;
-	mPopulation = new Population( mutationRate, 50 );
+	mPopulation = new Population( mutationRate, 50, &mTarget, mLifetime );
 }
 
 // Move the target if the mouse is pressed
@@ -55,10 +58,11 @@ void NOC_9_02_SmartRockets_superbasicApp::draw()
 {
 	// clear out the window with black
 	gl::clear( Color::white() );
+	gl::enableAlphaBlending();
 	
 	// Draw the start and target locations
 	gl::color( Color::black() );
-	gl::drawSolidEllipse( mTarget, 24.0, 24.0 );
+	gl::drawSolidEllipse( mTarget, 12.0, 12.0 );
 	
 	// If the generation hasn't ended yet
 	if( mLifeCounter < mLifetime )
@@ -77,14 +81,13 @@ void NOC_9_02_SmartRockets_superbasicApp::draw()
 	
 	// Display some info
 	gl::color( Color::black() );
-	text("Generation #: " + population.getGenerations(), 10, 18);
-	text("Cycles left: " + (lifetime-lifeCounter), 10, 36);
+	drawText("Generation #: " + to_string( mPopulation->getGenerations() ), Vec2i( 10, 18 ) );
+	drawText("Cycles left: " + to_string( mLifetime - mLifeCounter ), Vec2i( 10, 36 ) );
 }
 
-void NOC_9_02_SmartRockets_superbasicApp::drawText( string str, int fontSize, Vec2i pos )
+void NOC_9_02_SmartRockets_superbasicApp::drawText( string str, Vec2i pos )
 {
-	Font font = Font( mFont.getName(), fontSize );
-	TextBox tbox = TextBox().alignment( TextBox::LEFT ).font( font ).size( Vec2i( getWindowWidth(), TextBox::GROW ) ).text( str );
+	TextBox tbox = TextBox().alignment( TextBox::LEFT ).size( Vec2i( getWindowWidth(), TextBox::GROW ) ).text( str );
 	tbox.setColor( Color::black() );
 	tbox.setBackgroundColor( ColorA( 0, 0, 0, 0 ) );
 	gl::draw( tbox.render(), pos );

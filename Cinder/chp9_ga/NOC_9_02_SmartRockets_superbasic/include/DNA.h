@@ -9,16 +9,18 @@
 
 class DNA {
 	
-	std::vector<char>	mGenes;		// The genetic sequence
+	
 
 	
 public:
-	DNA();
-	DNA( int num );
+	DNA( int lifetime );
 	
-	float				mFitness;
-	void				fitness( std::string target );
-	DNA					crossover( DNA partner);
-	void				mutate( float mutationRate);
-	std::string			getPhrase();
+	float					mFitness;
+	// The maximum strength of the forces
+	float					mMaxforce;
+	
+	DNA*					crossover( DNA* const partner );
+	void					mutate( float m );
+	
+	std::vector<ci::Vec2f>	mGenes;		// The genetic sequence
 };
