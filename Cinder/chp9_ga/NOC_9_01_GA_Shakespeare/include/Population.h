@@ -1,8 +1,7 @@
 //
 //  Population.h
-//  NOC_9_01_GA_Shakespeare
 //
-//  Created by Greg Kepler on 1/23/14.
+//  Created by Greg Kepler
 //
 //
 

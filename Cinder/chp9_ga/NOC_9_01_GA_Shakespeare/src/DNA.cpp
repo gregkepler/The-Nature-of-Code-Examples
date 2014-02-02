@@ -1,8 +1,7 @@
 //
 //  DNA.cpp
-//  NOC_9_01_GA_Shakespeare
 //
-//  Created by Greg Kepler on 1/23/14.
+//  Created by Greg Kepler
 //
 //
 
@@ -28,7 +27,6 @@ DNA::DNA( int num )
 	{
 		mGenes[i] = (char) randInt(32,128);  // Pick from range of chars
     }
-	
 }
 
 // Converts character array to a String
