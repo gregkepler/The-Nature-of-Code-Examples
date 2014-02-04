@@ -1,8 +1,7 @@
 //
 //  Rocket.h
-//  NOC_9_02_SmartRockets_superbasic
 //
-//  Created by Greg Kepler on 1/29/14.
+//  Created by Greg Kepler
 //
 //
 
@@ -15,23 +14,20 @@ class Rocket {
 	ci::Vec2f	mVelocity;
 	ci::Vec2f	mAcceleration;
 	ci::Vec2f	*mTarget;
-	
 	float		r;					// size
 	
 	// Fitness and DNA
 	float		mFitness;
 	DNA			*mDna;
 
-	
-	// To count which force we're on in the genes
-	int			mGeneCounter;
-	
+	int			mGeneCounter;		// To count which force we're on in the genes
 	bool		mHitTarget;			// Did I reach the target
 	
 
 	
 public:
 	Rocket( ci::Vec2f l, DNA* const dna, ci::Vec2f* const target );
+	~Rocket();
 	
 	void fitness();
 	void run();

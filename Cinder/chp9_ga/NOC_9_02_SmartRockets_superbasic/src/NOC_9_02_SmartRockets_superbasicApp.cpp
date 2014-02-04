@@ -1,3 +1,23 @@
+//
+//  Example 9-2: Smart Rockets Super Basic
+//  The Nature of Code
+//
+//  Converted from Daniel Shiffman's Processing Examples
+//  Created by Greg Kepler
+//
+//  Smart Rockets w/ Genetic Algorithms
+//
+//	Each Rocket's DNA is an array of Vec2fs
+//	Each Vec2f acts as a force for each frame of animation
+//	Imagine a booster on the end of the rocket that can point in any direction
+//	and fire at any strength every frame
+//
+//	The Rocket's fitness is a function of how close it gets to the target as well as how fast it gets there
+//
+//	This example is inspired by Jer Thorp's Smart Rockets
+//	http://www.blprnt.com/smartrockets/
+//
+
 #include "cinder/app/AppNative.h"
 #include "cinder/gl/gl.h"
 #include "cinder/Text.h"
@@ -81,8 +101,8 @@ void NOC_9_02_SmartRockets_superbasicApp::draw()
 	
 	// Display some info
 	gl::color( Color::black() );
-	drawText("Generation #: " + to_string( mPopulation->getGenerations() ), Vec2i( 10, 18 ) );
-	drawText("Cycles left: " + to_string( mLifetime - mLifeCounter ), Vec2i( 10, 36 ) );
+	drawText("Generation #: " + to_string( mPopulation->getGenerations() ), Vec2i( 10, 10 ) );
+	drawText("Cycles left: " + to_string( mLifetime - mLifeCounter ), Vec2i( 10, 28 ) );
 }
 
 void NOC_9_02_SmartRockets_superbasicApp::drawText( string str, Vec2i pos )

@@ -1,8 +1,7 @@
 //
 //  DNA.cpp
-//  NOC_9_01_GA_Shakespeare
 //
-//  Created by Greg Kepler on 1/23/14.
+//  Created by Greg Kepler
 //
 //
 
@@ -25,17 +24,15 @@ DNA::DNA( int lifetime )
 	{
 		float angle = randFloat( 360.0 );
 		mGenes[i] = Vec2f( cos( angle ), sin( angle ) );
-		mGenes[i] *= randFloat( 0, mMaxforce );
+		mGenes[i] *= randFloat( 0.0, mMaxforce );
     }
 }
-
 
 // Crossover
 DNA* DNA::crossover( DNA* const partner )
 {
     // A new child
     DNA *child = new DNA( mGenes.size() );
-    
     int midpoint = randInt( mGenes.size() ); // Pick a midpoint
     
     // Half from one, half from the other
@@ -47,14 +44,14 @@ DNA* DNA::crossover( DNA* const partner )
     return child;
 }
 
-// Based on a mutation probability, picks a new random character
+// Based on a mutation probability, picks a new random rotation
 void DNA::mutate( float m )
 {
     for( int i = 0; i < mGenes.size(); i++ )
 	{
 		if( randFloat() < m )
 		{
-			float angle = randFloat( M_PI * 2 );
+			float angle = randFloat( 360.0 );
 			mGenes[i] = Vec2f( cos( angle ), sin( angle ) );
 			mGenes[i] *= randFloat( 0.0, mMaxforce );
 		}

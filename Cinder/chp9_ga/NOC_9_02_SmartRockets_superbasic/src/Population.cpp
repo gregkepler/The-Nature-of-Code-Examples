@@ -18,7 +18,6 @@ Population::Population( float m, int num, ci::Vec2f* const target, int lifetime 
 {
     mMutationRate = m;
     mPopulation.resize( num );
-    mFinished = false;
     mGenerations = 0;
 	
 	mTarget = target;
@@ -77,7 +76,7 @@ void Population::selection()
 void Population::reproduction()
 {
     // Refill the population with children from the mating pool
-    for (int i = 0; i < mPopulation.size(); i++)
+    for( int i = 0; i < mPopulation.size(); i++ )
 	{
 		// Sping the wheel of fortune to pick two parents
 		int m = randInt( mMatingPool.size() );
@@ -94,11 +93,12 @@ void Population::reproduction()
 		child->mutate( mMutationRate );
 		// Fill the new population with the new child
 		Vec2f location = Vec2f( getWindowWidth() / 2.0, getWindowHeight() + 20.0 );
+		
+		delete mPopulation[i]; // get rid of the old rocket
 		mPopulation[i] = new Rocket( location, child, mTarget );
     }
     mGenerations++;
 }
-
 
 int Population::getGenerations()
 {

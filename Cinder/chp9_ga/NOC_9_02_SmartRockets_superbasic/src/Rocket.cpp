@@ -1,8 +1,7 @@
 //
 //  Rocket.cpp
-//  NOC_9_02_SmartRockets_superbasic
 //
-//  Created by Greg Kepler on 1/29/14.
+//  Created by Greg Kepler
 //
 //
 
@@ -14,17 +13,21 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-Rocket::Rocket( Vec2f l, DNA* const dna, Vec2f* const target ){
+Rocket::Rocket( Vec2f l, DNA* const dna, Vec2f* const target )
+{
 	mGeneCounter = 0;
 	mHitTarget = false;
-	
 	mAcceleration = Vec2f::zero();
     mVelocity = Vec2f::zero();
     mLocation = l;
     r = 4;
     mDna = dna;
-	
 	mTarget = target;
+}
+
+Rocket::~Rocket()
+{
+	
 }
 
 // Fitness function
@@ -44,7 +47,7 @@ void Rocket::run()
     if( !mHitTarget )
 	{
 		applyForce( mDna->mGenes[mGeneCounter] );
-		mGeneCounter = ( mGeneCounter + 1) % mDna->mGenes.size();
+		mGeneCounter = ( mGeneCounter + 1 ) % mDna->mGenes.size();
 		update();
     }
     display();
@@ -69,7 +72,7 @@ void Rocket::update()
 {
     mVelocity += mAcceleration;
     mLocation += mVelocity;
-    mAcceleration += 0;
+    mAcceleration *= 0;
 }
 
 void Rocket::display()
@@ -86,8 +89,7 @@ void Rocket::display()
 	gl::drawStrokedRect( Rectf( -r/2, r*2, r/2, r ) );
 	gl::drawSolidRect( Rectf( r/2, r*2, r/2, r ) );
 	gl::drawSolidRect( Rectf( r/2, r*2, r/2, r ) );
-	
-	
+		
 	// Rocket Body
 	gl::color( Color8u::gray( 175 ) );
 	gl::begin( GL_TRIANGLES );
@@ -95,7 +97,6 @@ void Rocket::display()
 	gl::vertex( Vec2f( -r, r*2 ) );
 	gl::vertex( Vec2f( r, r*2 ) );
 	gl::end();
-	gl::popMatrices();
 	
 	gl::color( Color::black()  );
 	gl::begin( GL_LINE_LOOP );
