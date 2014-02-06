@@ -37,7 +37,7 @@ void Population::live( std::vector<Obstacle*>* const obstacles )
 	{
 		// If it finishes, mark it down as done!
 		mPopulation[i]->checkTarget();
-		mPopulation[i]->run( obstacles );
+		mPopulation[i]->run( *obstacles );
     }
 }
 

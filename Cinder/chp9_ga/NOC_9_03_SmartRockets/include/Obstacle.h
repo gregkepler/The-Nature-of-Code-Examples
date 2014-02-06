@@ -11,12 +11,14 @@
 //  Also using this class for target location
 //
 
+#pragma once
 #include "cinder/app/AppNative.h"
 
 class Obstacle {
 public:
 	Obstacle( ci::Vec2f loc, float w, float h ): mLocation( loc ), mWidth( w ), mHeight( h ){};
 	void display();
+	bool contains( ci::Vec2f spot );
 	
 	ci::Vec2f	mLocation;
 	float		mWidth, mHeight;

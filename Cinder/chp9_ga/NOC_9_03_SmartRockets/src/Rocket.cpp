@@ -15,14 +15,17 @@ using namespace std;
 
 Rocket::Rocket( Vec2f l, DNA* const dna, Obstacle* const target )
 {
-	mGeneCounter = 0;
-	mHitTarget = false;
 	mAcceleration = Vec2f::zero();
     mVelocity = Vec2f::zero();
     mLocation = l;
-    r = 4;
+	r = 4;
     mDna = dna;
 	mTarget = target;
+	mFinishTime = 0;          // We're going to count how long it takes to reach target
+    mRecordDist = 10000;      // Some high number that will be beat instantly
+	mHitObstacle = 0;
+	mHitTarget = 0;
+	mGeneCounter = 0;
 }
 
 Rocket::~Rocket()
@@ -30,36 +33,73 @@ Rocket::~Rocket()
 	
 }
 
-// Fitness function
-// fitness = one divided by distance squared
+// FITNESS FUNCTION
+// distance = distance from target
+// finish = what order did i finish (first, second, etc. . .)
+// f(distance,finish) =   (1.0f / finish^1.5) * (1.0f / distance^6);
+// a lower finish is rewarded (exponentially) and/or shorter distance to target (exponetially)
 void Rocket::fitness()
 {
-	float d = mLocation.distance( *mTarget );
-	mFitness = pow( 1.0f / d, 2.0f );
+//	float d = mLocation.distance( *mTarget );
+//	mFitness = pow( 1.0f / d, 2.0f );
+	
+	
+	if( mRecordDist < 1 ) mRecordDist = 1;
+	
+    // Reward finishing faster and getting close
+    mFitness = ( 1.0 / ( mFinishTime * mRecordDist ) );
+	
+    // Make the function exponential
+    mFitness = pow( mFitness, 4 );
+	
+    if( mHitObstacle ) mFitness *= 0.1; // lose 90% of fitness hitting an obstacle
+    if( mHitTarget ) mFitness *= 2.0; // twice the fitness for finishing!
 	
 }
 
 // Run in relation to all the obstacles
 // If I'm stuck, don't bother updating or checking for intersection
-void Rocket::run()
+void Rocket::run( vector<Obstacle*> const os )
 {
-    checkTarget(); // Check to see if we've reached the target
-    if( !mHitTarget )
+    if( !mHitObstacle && !mHitTarget )
 	{
 		applyForce( mDna->mGenes[mGeneCounter] );
 		mGeneCounter = ( mGeneCounter + 1 ) % mDna->mGenes.size();
 		update();
+		// If I hit an edge or an obstacle
+		obstacles( os );
     }
-    display();
+	
+    // Draw me!
+    if( !mHitObstacle )
+	{
+		display();
+    }
 }
 
 // Did I make it to the target?
 void Rocket::checkTarget()
 {
-    float d = mLocation.distance( *mTarget );
-    if( d < 12 )
+    float d = mLocation.distance( mTarget->mLocation );
+	if( d < mRecordDist ) mRecordDist = d;
+	
+    if( mTarget->contains( mLocation ) && !mHitTarget )
 	{
 		mHitTarget = true;
+    }
+    else if( !mHitTarget )
+	{
+		mFinishTime++;
+    }
+}
+
+// Did I hit an obstacle?
+void Rocket::obstacles( vector<Obstacle*> const os )
+{
+    for( Obstacle *obs: os ) {
+		if( obs->contains( mLocation ) ) {
+			mHitObstacle = true;
+		}
     }
 }
 
@@ -115,4 +155,9 @@ DNA* Rocket::getDNA()
 float Rocket::getFitness()
 {
 	return mFitness;
+}
+
+bool Rocket::stopped()
+{
+    return mHitObstacle;
 }

@@ -16,13 +16,17 @@ class Rocket {
 	ci::Vec2f	mAcceleration;
 	Obstacle	*mTarget;
 	float		r;					// size
+
+	int			mRecordDist;		// How close did it get to the target
 	
 	// Fitness and DNA
 	float		mFitness;
 	DNA			*mDna;
 
 	int			mGeneCounter;		// To count which force we're on in the genes
-	bool		mHitTarget;			// Did I reach the target
+	bool		mHitObstacle;		// Did I reach the target
+	int			mFinishTime;
+
 	
 
 	
@@ -31,12 +35,16 @@ public:
 	~Rocket();
 	
 	void fitness();
-	void run();
+	void run( std::vector<Obstacle*> const os );
 	void checkTarget();
+	void obstacles( std::vector<Obstacle*> const os );
 	void applyForce( ci::Vec2f f);
 	void update();
 	void display();
 	DNA* getDNA();
 	float getFitness();
+	bool stopped();
+	
+	bool		mHitTarget;			// Did I reach the target
 	
 };
