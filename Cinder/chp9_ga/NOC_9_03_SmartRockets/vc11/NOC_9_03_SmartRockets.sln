@@ -1,0 +1,20 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NOC_9_03_SmartRockets", "NOC_9_03_SmartRockets.vcxproj", "{5E8E9205-34F6-4631-B1A6-5C9A961DC1FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E8E9205-34F6-4631-B1A6-5C9A961DC1FF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5E8E9205-34F6-4631-B1A6-5C9A961DC1FF}.Debug|Win32.Build.0 = Debug|Win32
+		{5E8E9205-34F6-4631-B1A6-5C9A961DC1FF}.Release|Win32.ActiveCfg = Release|Win32
+		{5E8E9205-34F6-4631-B1A6-5C9A961DC1FF}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
