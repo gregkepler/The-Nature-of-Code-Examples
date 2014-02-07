@@ -82,14 +82,7 @@ void Rocket::display()
 	gl::pushMatrices();
 	gl::translate( mLocation );
 	gl::rotate( theta );
-	
-	// Thrusters
-	gl::color( Color::black() );
-	gl::drawSolidRect( Rectf( -r/2, r*2, r/2, r ) );
-	gl::drawStrokedRect( Rectf( -r/2, r*2, r/2, r ) );
-	gl::drawSolidRect( Rectf( r/2, r*2, r/2, r ) );
-	gl::drawSolidRect( Rectf( r/2, r*2, r/2, r ) );
-		
+			
 	// Rocket Body
 	gl::color( Color8u::gray( 175 ) );
 	gl::begin( GL_TRIANGLES );
@@ -104,6 +97,16 @@ void Rocket::display()
 	gl::vertex( Vec2f( -r, r*2 ) );
 	gl::vertex( Vec2f( r, r*2 ) );
 	gl::end();
+	
+	// Thrusters
+	gl::color( Color8u::gray( 175 ) );
+	gl::drawSolidRect( Rectf( -r/2, r*2,	(-r/2) - r/2, (r*2) + r ) );
+	gl::drawSolidRect( Rectf( r/2, r*2,		(r/2) + r/2, (r*2) + r ) );
+	
+	gl::color( Color::black() );
+	gl::drawStrokedRect( Rectf( -r/2, r*2,	(-r/2) - r/2, (r*2) + r ) );
+	gl::drawStrokedRect( Rectf( r/2, r*2,	(r/2) + r/2, (r*2) + r ) );
+	
 	gl::popMatrices();
 }
 

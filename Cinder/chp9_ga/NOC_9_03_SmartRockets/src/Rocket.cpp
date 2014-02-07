@@ -40,10 +40,6 @@ Rocket::~Rocket()
 // a lower finish is rewarded (exponentially) and/or shorter distance to target (exponetially)
 void Rocket::fitness()
 {
-//	float d = mLocation.distance( *mTarget );
-//	mFitness = pow( 1.0f / d, 2.0f );
-	
-	
 	if( mRecordDist < 1 ) mRecordDist = 1;
 	
     // Reward finishing faster and getting close
@@ -53,7 +49,7 @@ void Rocket::fitness()
     mFitness = pow( mFitness, 4 );
 	
     if( mHitObstacle ) mFitness *= 0.1; // lose 90% of fitness hitting an obstacle
-    if( mHitTarget ) mFitness *= 2.0; // twice the fitness for finishing!
+    if( mHitTarget ) mFitness *= 2.0;	// twice the fitness for finishing!
 	
 }
 
@@ -118,17 +114,11 @@ void Rocket::update()
 void Rocket::display()
 {
 	float theta = toDegrees( atan2( mVelocity.y, mVelocity.x ) ) + 90;	// there is no heading2d function in cinder
+	gl::lineWidth( 1.0 );
 	
 	gl::pushMatrices();
 	gl::translate( mLocation );
 	gl::rotate( theta );
-	
-	// Thrusters
-	gl::color( Color::black() );
-	gl::drawSolidRect( Rectf( -r/2, r*2, r/2, r ) );
-	gl::drawStrokedRect( Rectf( -r/2, r*2, r/2, r ) );
-	gl::drawSolidRect( Rectf( r/2, r*2, r/2, r ) );
-	gl::drawSolidRect( Rectf( r/2, r*2, r/2, r ) );
 		
 	// Rocket Body
 	gl::color( Color8u::gray( 175 ) );
@@ -144,6 +134,16 @@ void Rocket::display()
 	gl::vertex( Vec2f( -r, r*2 ) );
 	gl::vertex( Vec2f( r, r*2 ) );
 	gl::end();
+	
+	// Thrusters
+	gl::color( Color8u::gray( 175 ) );
+	gl::drawSolidRect( Rectf( -r/2, r*2,	(-r/2) - r/2, (r*2) + r ) );
+	gl::drawSolidRect( Rectf( r/2, r*2,		(r/2) + r/2, (r*2) + r ) );
+	
+	gl::color( Color::black() );
+	gl::drawStrokedRect( Rectf( -r/2, r*2,	(-r/2) - r/2, (r*2) + r ) );
+	gl::drawStrokedRect( Rectf( r/2, r*2,	(r/2) + r/2, (r*2) + r ) );
+	
 	gl::popMatrices();
 }
 

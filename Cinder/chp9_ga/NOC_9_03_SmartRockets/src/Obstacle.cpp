@@ -1,8 +1,7 @@
 //
 //  Obstacle.cpp
-//  NOC_9_03_SmartRockets
 //
-//  Created by Greg Kepler on 2/6/14.
+//  Created by Greg Kepler
 //
 //
 

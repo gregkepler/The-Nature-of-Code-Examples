@@ -26,6 +26,9 @@ DNA::DNA( int lifetime )
 		mGenes[i] = Vec2f( cos( angle ), sin( angle ) );
 		mGenes[i] *= randFloat( 0.0, mMaxforce );
     }
+	
+	// Let's give each Rocket an extra boost of strength for its first frame
+    mGenes[0].normalize();
 }
 
 // Crossover
@@ -54,6 +57,7 @@ void DNA::mutate( float m )
 			float angle = randFloat( 360.0 );
 			mGenes[i] = Vec2f( cos( angle ), sin( angle ) );
 			mGenes[i] *= randFloat( 0.0, mMaxforce );
+			if (i ==0) mGenes[i].normalize();
 		}
     }
 }
