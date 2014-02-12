@@ -20,13 +20,11 @@ Population::Population( float m, int num )
     mPopulation.resize( num );
     mGenerations = 0;
 	
-	
-	/*//make a new set of creatures
+	//make a new set of creatures
 	for( int i = 0; i < mPopulation.size(); i++ )
 	{
-		Vec2f mLocation = Vec2f( getWindowWidth() / 2.0, getWindowHeight() + 20.0 );
-		mPopulation[i] = new Face( mLocation, new DNA( lifetime ), mTarget );
-	}*/
+		mPopulation[i] = new Face( new DNA(), Vec2f( 50.0 + i * 75.0, 60.0 ) );
+	}
 }
 
 // Display all faces
@@ -37,9 +35,12 @@ void Population::display()
     }
 }
 
+// Are we rolling over any of the faces?
 void Population::rollover( ci::Vec2f mousePos )
 {
-	
+	for (int i = 0; i < mPopulation.size(); i++) {
+		mPopulation[i]->rollover( mousePos );
+    }
 }
 
 
@@ -86,11 +87,10 @@ void Population::reproduction()
 		DNA *child = momgenes->crossover( dadgenes );
 		// Mutate their genes
 		child->mutate( mMutationRate );
-		// Fill the new population with the new child
-		Vec2f location = Vec2f( getWindowWidth() / 2.0, getWindowHeight() + 20.0 );
 		
+		// Fill the new population with the new child
 		delete mPopulation[i]; // get rid of the old Face
-//		mPopulation[i] = new Face( location, child, mTarget );
+		mPopulation[i] = new Face( new DNA(), Vec2f( 50.0 + i * 75.0, 60.0 ) );
     }
     mGenerations++;
 }

@@ -9,15 +9,13 @@
 #include "DNA.h"
 
 class Face {
-	// All of our physics stuff
-	ci::Vec2f	mLocation;
-	ci::Vec2f	mVelocity;
-	ci::Vec2f	mAcceleration;
-	float		r;					// size
 	
-	// Fitness and DNA
-	float		mFitness;
-	DNA			*mDna;
+	DNA			*mDna;			// Face's DNA
+	float		mFitness;		// How good is this face?
+	ci::Vec2f	mLocation;      // Position on screen
+	bool		mRolloverOn;	// Are we rolling over this face?
+	ci::Rectf	mRect;			// size
+	
 
 	int			mGeneCounter;		// To count which force we're on in the genes
 	bool		mHitTarget;			// Did I reach the target
@@ -25,15 +23,13 @@ class Face {
 
 	
 public:
-	Face( ci::Vec2f l, DNA* const dna );
+	Face( DNA* const dna, ci::Vec2f loc );
 	~Face();
 	
 	void fitness();
-	void run();
-	void applyForce( ci::Vec2f f);
-	void update();
 	void display();
 	DNA* getDNA();
 	float getFitness();
+	void rollover( ci::Vec2f loc );
 	
 };

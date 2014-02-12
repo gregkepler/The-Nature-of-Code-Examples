@@ -13,18 +13,19 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
+const int LEN = 20;
+
  // Constructor (makes a random DNA)
-DNA::DNA( int lifetime )
+DNA::DNA()
 {
+	// DNA is random floating point values between 0 and 1 (!!)
 	Rand::randomize();
 	
 	mMaxforce = 0.1f;
-	mGenes.resize(lifetime);
+	mGenes.resize( LEN );
     for( int i = 0; i < mGenes.size(); i++ )
 	{
-		float angle = randFloat( 360.0 );
-		mGenes[i] = Vec2f( cos( angle ), sin( angle ) );
-		mGenes[i] *= randFloat( 0.0, mMaxforce );
+		mGenes[i] = randFloat( 0.0, 1.0 );
     }
 }
 
@@ -32,7 +33,7 @@ DNA::DNA( int lifetime )
 DNA* DNA::crossover( DNA* const partner )
 {
     // A new child
-    DNA *child = new DNA( mGenes.size() );
+    DNA *child = new DNA( );
     int midpoint = randInt( mGenes.size() ); // Pick a midpoint
     
     // Half from one, half from the other
@@ -51,9 +52,7 @@ void DNA::mutate( float m )
 	{
 		if( randFloat() < m )
 		{
-			float angle = randFloat( 360.0 );
-			mGenes[i] = Vec2f( cos( angle ), sin( angle ) );
-			mGenes[i] *= randFloat( 0.0, mMaxforce );
+			 mGenes[i] = randFloat( 0.0, 1.0 );
 		}
     }
 }
