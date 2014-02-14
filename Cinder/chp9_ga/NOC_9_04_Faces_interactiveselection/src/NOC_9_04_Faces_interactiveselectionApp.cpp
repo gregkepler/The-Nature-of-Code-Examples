@@ -66,6 +66,7 @@ void NOC_9_04_Faces_interactiveselectionApp::draw()
 {
 	// clear out the window with black
 	gl::clear( Color::white() );
+	gl::enableAlphaBlending();
 	
 	// Display the faces
 	mPopulation->display();

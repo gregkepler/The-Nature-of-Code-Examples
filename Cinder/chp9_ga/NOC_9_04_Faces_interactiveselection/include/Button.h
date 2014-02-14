@@ -17,4 +17,10 @@ class Button {
 	bool	rollover( ci::Vec2f mousePos );
 	bool	clicked( ci::Vec2f mousePos );
 	bool	released();
+	
+	ci::Rectf		mRect;			// Button's rectangle
+	std::string		mTxt;			// Button's text
+	bool			mClickedOn;		// Did i click on it?
+	bool			mRolloverOn;	// Did i rollover it?
+	
 };

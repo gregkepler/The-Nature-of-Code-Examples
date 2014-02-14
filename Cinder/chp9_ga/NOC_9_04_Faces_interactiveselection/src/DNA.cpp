@@ -29,20 +29,25 @@ DNA::DNA()
     }
 }
 
+DNA::DNA( std::vector<float> genes )
+{
+	mGenes = genes;
+}
+
 // Crossover
+// Creates new DNA sequence from two (this &
 DNA* DNA::crossover( DNA* const partner )
 {
-    // A new child
-    DNA *child = new DNA( );
-    int midpoint = randInt( mGenes.size() ); // Pick a midpoint
-    
-    // Half from one, half from the other
-    for( int i = 0; i < mGenes.size(); i++ )
-	{
-		if( i > midpoint )	child->mGenes[i] = mGenes[i];
-		else				child->mGenes[i] = partner->mGenes[i];
+	std::vector<float> child;
+	child.resize( mGenes.size() );
+	
+	int crossover = randInt( mGenes.size() );
+    for (int i = 0; i < mGenes.size(); i++) {
+		if (i > crossover) child[i] = mGenes[i];
+		else               child[i] = partner->mGenes[i];
     }
-    return child;
+    DNA *newgenes = new DNA( child );
+    return newgenes;
 }
 
 // Based on a mutation probability, picks a new random rotation

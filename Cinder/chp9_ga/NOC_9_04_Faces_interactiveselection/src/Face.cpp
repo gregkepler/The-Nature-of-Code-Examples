@@ -6,8 +6,11 @@
 //
 
 #include "cinder/app/AppNative.h"
-#include "Face.h"
 #include "cinder/CinderMath.h"
+#include "cinder/Text.h"
+#include "cinder/gl/Texture.h"
+#include "Face.h"
+
 
 using namespace ci;
 using namespace ci::app;
@@ -53,33 +56,53 @@ void Face::display()
 	
     // Draw the head
 	gl::color( c );
-	gl::drawSolidEllipse( Vec2f::zero(), r, r );
+	gl::drawSolidEllipse( Vec2f::zero(), r/2, r/2 );
 	
     // Draw the eyes
-	gl::color( eyecolor );
+	
 //    rectMode(CENTER);
 //    rect(-eye_x, -eye_y, eye_size, eye_size);
 //    rect( eye_x, -eye_y, eye_size, eye_size);
-	gl::drawSolidRect( Rectf( -eye_x, -eye_y, -eye_x + eye_size, -eye_y + eye_size ) );
+	gl::color( eyecolor );
+	Vec2f leftEyePos  = Vec2f( -eye_x - eye_size / 2.0, -eye_y - eye_size/2.0 );
+	Vec2f rightEyePos = Vec2f( eye_x - eye_size / 2.0, leftEyePos.y );
+	gl::drawSolidRect( Rectf( leftEyePos.x, leftEyePos.y, leftEyePos.x + eye_size, leftEyePos.y + eye_size ) );
+	gl::drawSolidRect( Rectf( rightEyePos.x, rightEyePos.y,  rightEyePos.x + eye_size, rightEyePos.y + eye_size ) );
 	
     // Draw the mouth
-    fill(mouthColor);
-    rectMode(CENTER);
-    rect(mouth_x, mouth_y, mouthw, mouthh);
+//    fill(mouthColor);
+//    rectMode(CENTER);
+//    rect(mouth_x, mouth_y, mouthw, mouthh);
+	gl::color( mouthColor );
+	Vec2f mouthPos = Vec2f( mouth_x - mouthw / 2, mouth_y - mouthh / 2 );
+	gl::drawSolidRect( Rectf( mouthPos.x, mouthPos.y, mouthPos.x + mouthw, mouthPos.y + mouthh ) );
 	
     // Draw the bounding box
-    stroke(0.25);
-    if (rolloverOn) fill(0, 0.25);
-    else noFill();
-    rectMode(CENTER);
-    rect(0, 0, wh, wh);
+	gl::color( Color( 0.25, 0.25, 0.25 ) );
+	if( mRolloverOn ){
+		gl::color( ColorA( 0, 0, 0, 0.25 ) );
+		gl::drawSolidRect( Rectf( -wh/2, -wh/2, -wh/2 + wh, -wh/2 + wh ) );
+	}
+	gl::drawStrokedRect( Rectf( -wh/2, -wh/2, -wh/2 + wh, -wh/2 + wh ) );
 	gl::popMatrices();
 	
     // Display fitness value
-    textAlign(CENTER);
-    if (rolloverOn) fill(0);
-    else fill(0.25);
-    text(int(fitness), x, y+55);}
+//    textAlign(CENTER);
+//    if (rolloverOn) fill(0);
+//    else fill(0.25);
+//    text(int(fitness), x, y+55);
+	
+	// reset the color
+	gl::color( Color::white() ) ;
+	
+	Color textColor = (mRolloverOn) ? Color::black() : Color( 0.25, 0.25, 0.25 );
+	textColor = Color::black();
+	TextBox tbox = TextBox().alignment( TextBox::CENTER ).size( Vec2i( TextBox::GROW, TextBox::GROW ) ).text( to_string( mFitness ) );
+	tbox.setColor( textColor );
+	tbox.setBackgroundColor( ColorA( 0, 0, 0, 0.5 ) );
+	gl::draw( tbox.render(), Vec2f( mLocation.x - tbox.getSize().x / 2.0, mLocation.y + 55.0) );
+
+}
 
 DNA* Face::getDNA()
 {

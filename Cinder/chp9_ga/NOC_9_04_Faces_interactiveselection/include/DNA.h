@@ -10,6 +10,7 @@
 class DNA {
 public:
 	DNA();
+	DNA( std::vector<float> genes );
 	DNA*					crossover( DNA* const partner );
 	void					mutate( float m );
 	
