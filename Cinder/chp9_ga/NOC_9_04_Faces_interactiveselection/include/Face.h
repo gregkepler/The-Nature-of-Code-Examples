@@ -14,19 +14,13 @@ class Face {
 	float		mFitness;		// How good is this face?
 	ci::Vec2f	mLocation;      // Position on screen
 	bool		mRolloverOn;	// Are we rolling over this face?
-	ci::Rectf	mRect;			// size
-	
-
-	int			mGeneCounter;		// To count which force we're on in the genes
-	bool		mHitTarget;			// Did I reach the target
-	
+	ci::Rectf	mRect;
 
 	
 public:
-	Face( DNA* const dna, ci::Vec2f loc );
+	Face( DNA* dna, ci::Vec2f loc );
 	~Face();
 	
-	void fitness();
 	void display();
 	DNA* getDNA();
 	float getFitness();

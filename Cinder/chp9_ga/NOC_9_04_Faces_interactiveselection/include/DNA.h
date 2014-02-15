@@ -10,11 +10,11 @@
 class DNA {
 public:
 	DNA();
+	~DNA();
 	DNA( std::vector<float> genes );
-	DNA*					crossover( DNA* const partner );
+	DNA*					crossover( const DNA* partner );
 	void					mutate( float m );
 	
 	float					mFitness;
-	float					mMaxforce;				// The maximum strength of the forces
 	std::vector<float>		mGenes;					// The genetic sequence
 };

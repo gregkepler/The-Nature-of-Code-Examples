@@ -3,6 +3,8 @@
 //
 //  Created by Greg Kepler
 //
+//	The class for our "face", contains DNA sequence, fitness value, position on screen
+//	Fitness Function f(t) = t (where t is "time" mouse rolls over face)
 //
 
 #include "cinder/app/AppNative.h"
@@ -18,20 +20,21 @@ using namespace std;
 
 const int wh = 70;				// Size of square enclosing face
 
-Face::Face( DNA* const dna, Vec2f loc )
+// Create a new face
+Face::Face( DNA* dna, Vec2f loc )
 {
-	mGeneCounter = 0;
     mLocation = loc;
 	mFitness = 1.0;
     mDna = dna;
-	mRect = Rectf( loc.x - wh / 2.0, loc.y - wh / 2.0, loc.x + wh / 2.0, loc.y + wh );
+	mRect = Rectf( loc.x - wh / 2.0, loc.y - wh / 2.0, loc.x + wh / 2.0, loc.y + wh / 2.0 );
 }
 
 Face::~Face()
 {
-	
+	delete mDna;
 }
 
+// Display the face
 void Face::display()
 {
 	// We are using the face's DNA to pick properties for this face
@@ -52,17 +55,12 @@ void Face::display()
     // Once we calculate all the above properties, we use those variables to draw rects, ellipses, etc.
 	gl::pushMatrices();
 	gl::translate( mLocation );
-//    noStroke();
 	
     // Draw the head
 	gl::color( c );
 	gl::drawSolidEllipse( Vec2f::zero(), r/2, r/2 );
 	
     // Draw the eyes
-	
-//    rectMode(CENTER);
-//    rect(-eye_x, -eye_y, eye_size, eye_size);
-//    rect( eye_x, -eye_y, eye_size, eye_size);
 	gl::color( eyecolor );
 	Vec2f leftEyePos  = Vec2f( -eye_x - eye_size / 2.0, -eye_y - eye_size/2.0 );
 	Vec2f rightEyePos = Vec2f( eye_x - eye_size / 2.0, leftEyePos.y );
@@ -70,9 +68,6 @@ void Face::display()
 	gl::drawSolidRect( Rectf( rightEyePos.x, rightEyePos.y,  rightEyePos.x + eye_size, rightEyePos.y + eye_size ) );
 	
     // Draw the mouth
-//    fill(mouthColor);
-//    rectMode(CENTER);
-//    rect(mouth_x, mouth_y, mouthw, mouthh);
 	gl::color( mouthColor );
 	Vec2f mouthPos = Vec2f( mouth_x - mouthw / 2, mouth_y - mouthh / 2 );
 	gl::drawSolidRect( Rectf( mouthPos.x, mouthPos.y, mouthPos.x + mouthw, mouthPos.y + mouthh ) );
@@ -85,23 +80,18 @@ void Face::display()
 	}
 	gl::drawStrokedRect( Rectf( -wh/2, -wh/2, -wh/2 + wh, -wh/2 + wh ) );
 	gl::popMatrices();
-	
-    // Display fitness value
-//    textAlign(CENTER);
-//    if (rolloverOn) fill(0);
-//    else fill(0.25);
-//    text(int(fitness), x, y+55);
-	
+		
 	// reset the color
 	gl::color( Color::white() ) ;
 	
 	Color textColor = (mRolloverOn) ? Color::black() : Color( 0.25, 0.25, 0.25 );
-	textColor = Color::black();
-	TextBox tbox = TextBox().alignment( TextBox::CENTER ).size( Vec2i( TextBox::GROW, TextBox::GROW ) ).text( to_string( mFitness ) );
+	TextBox tbox = TextBox().alignment( TextBox::CENTER ).size( Vec2i( wh, TextBox::GROW ) ).text( to_string( int( mFitness ) ) );
 	tbox.setColor( textColor );
-	tbox.setBackgroundColor( ColorA( 0, 0, 0, 0.5 ) );
-	gl::draw( tbox.render(), Vec2f( mLocation.x - tbox.getSize().x / 2.0, mLocation.y + 55.0) );
-
+	tbox.setBackgroundColor( ColorA( 0, 0, 0, 0.0 ) );
+	gl::pushMatrices();
+	gl::translate(mLocation.x - wh/2, mLocation.y + 45.0 );
+	gl::draw( tbox.render() );
+	gl::popMatrices();
 }
 
 DNA* Face::getDNA()

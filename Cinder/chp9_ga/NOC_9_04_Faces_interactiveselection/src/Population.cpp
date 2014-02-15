@@ -3,6 +3,8 @@
 //
 //  Created by Greg Kepler
 //
+//	A class to describe a population of faces
+//	this hasn't changed very much from example to example
 //
 
 #include "cinder/app/AppNative.h"
@@ -14,6 +16,7 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
+// Create the population
 Population::Population( float m, int num )
 {
     mMutationRate = m;
@@ -64,6 +67,7 @@ void Population::selection()
 		for( int j = 0; j < n; j++ )
 		{
 			mMatingPool.push_back( mPopulation[i] );
+			
 		}
     }
 }
@@ -77,20 +81,22 @@ void Population::reproduction()
 		// Sping the wheel of fortune to pick two parents
 		int m = randInt( mMatingPool.size() );
 		int d = randInt( mMatingPool.size() );
+		
 		// Pick two parents
 		Face *mom = mMatingPool[m];
 		Face *dad = mMatingPool[d];
+		
 		// Get their genes
 		DNA *momgenes = mom->getDNA();
 		DNA *dadgenes = dad->getDNA();
+		
 		// Mate their genes
 		DNA *child = momgenes->crossover( dadgenes );
 		// Mutate their genes
 		child->mutate( mMutationRate );
 		
 		// Fill the new population with the new child
-		delete mPopulation[i]; // get rid of the old Face
-		mPopulation[i] = new Face( new DNA(), Vec2f( 50.0 + i * 75.0, 60.0 ) );
+		mPopulation[i] = new Face( child, Vec2f( 50.0 + i * 75.0, 60.0 ) );
     }
     mGenerations++;
 }
