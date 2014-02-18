@@ -18,6 +18,9 @@
 		8A68DA586CB64D8B82B7AF45 /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = BAA58C6076024EF287A654EA /* CinderApp.icns */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		D77B865518B2814700F8605C /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D77B865318B2814700F8605C /* World.cpp */; };
+		D77B865B18B3750C00F8605C /* Bloop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D77B865918B3750C00F8605C /* Bloop.cpp */; };
+		D77B865E18B3755E00F8605C /* Food.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D77B865C18B3755E00F8605C /* Food.cpp */; };
+		D77B866018B3767400F8605C /* DNA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D77B865F18B3767400F8605C /* DNA.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +40,13 @@
 		BAA58C6076024EF287A654EA /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
 		BDEE3CC4A70A4D3DBCCDF731 /* NOC_9_05_EvolutionEcosystemApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = NOC_9_05_EvolutionEcosystemApp.cpp; path = ../src/NOC_9_05_EvolutionEcosystemApp.cpp; sourceTree = "<group>"; };
 		D77B865318B2814700F8605C /* World.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = World.cpp; path = ../src/World.cpp; sourceTree = "<group>"; };
-		D77B865418B2814700F8605C /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = World.h; path = ../src/World.h; sourceTree = "<group>"; };
+		D77B865418B2814700F8605C /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = World.h; path = ../include/World.h; sourceTree = "<group>"; };
+		D77B865918B3750C00F8605C /* Bloop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Bloop.cpp; path = ../src/Bloop.cpp; sourceTree = "<group>"; };
+		D77B865A18B3750C00F8605C /* Bloop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bloop.h; path = ../include/Bloop.h; sourceTree = "<group>"; };
+		D77B865C18B3755E00F8605C /* Food.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Food.cpp; path = ../src/Food.cpp; sourceTree = "<group>"; };
+		D77B865D18B3755E00F8605C /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Food.h; path = ../include/Food.h; sourceTree = "<group>"; };
+		D77B865F18B3767400F8605C /* DNA.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DNA.cpp; path = ../src/DNA.cpp; sourceTree = "<group>"; };
+		D77B866118B3767C00F8605C /* DNA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNA.h; path = ../include/DNA.h; sourceTree = "<group>"; };
 		F18375DB087C4B5983ABAE6F /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +81,9 @@
 			children = (
 				BDEE3CC4A70A4D3DBCCDF731 /* NOC_9_05_EvolutionEcosystemApp.cpp */,
 				D77B865318B2814700F8605C /* World.cpp */,
+				D77B865918B3750C00F8605C /* Bloop.cpp */,
+				D77B865C18B3755E00F8605C /* Food.cpp */,
+				D77B865F18B3767400F8605C /* DNA.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -127,6 +139,9 @@
 				F18375DB087C4B5983ABAE6F /* Resources.h */,
 				4DF2785FF5F049CE88F11F0D /* NOC_9_05_EvolutionEcosystem_Prefix.pch */,
 				D77B865418B2814700F8605C /* World.h */,
+				D77B865A18B3750C00F8605C /* Bloop.h */,
+				D77B865D18B3755E00F8605C /* Food.h */,
+				D77B866118B3767C00F8605C /* DNA.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -212,6 +227,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D77B865B18B3750C00F8605C /* Bloop.cpp in Sources */,
+				D77B865E18B3755E00F8605C /* Food.cpp in Sources */,
+				D77B866018B3767400F8605C /* DNA.cpp in Sources */,
 				D77B865518B2814700F8605C /* World.cpp in Sources */,
 				3DD6B07A73AB4435B3FDC12F /* NOC_9_05_EvolutionEcosystemApp.cpp in Sources */,
 			);
