@@ -1,8 +1,7 @@
 //
 //  Bloop.cpp
-//  NOC_9_05_EvolutionEcosystem
 //
-//  Created by Greg Kepler on 2/18/14.
+//  Created by Greg Kepler
 //
 //
 
@@ -58,7 +57,7 @@ Bloop* Bloop::reproduce()
     if( randFloat() < 0.0005 )
 	{
 		// Child is exact copy of single parent
-		DNA *childDNA = new DNA( *mDna );
+		DNA *childDNA = new DNA( *mDna );	// using C++ copy constructor
 		// Child DNA can mutate
 		childDNA->mutate(0.01);
 		return new Bloop( mLocation, childDNA );

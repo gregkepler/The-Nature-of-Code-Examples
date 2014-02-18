@@ -1,8 +1,7 @@
 //
 //  Food.cpp
-//  NOC_9_05_EvolutionEcosystem
 //
-//  Created by Greg Kepler on 2/18/14.
+//  Created by Greg Kepler
 //
 //
 

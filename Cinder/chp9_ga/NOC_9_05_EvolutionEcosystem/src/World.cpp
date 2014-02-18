@@ -1,10 +1,14 @@
 //
 //  World.cpp
-//  NOC_9_05_EvolutionEcosystem
 //
-//  Created by Greg Kepler on 2/17/14.
+//  Created by Greg Kepler
 //
+//	Evolution EcoSystem
 //
+//	The World we live in
+//	Has bloops and food
+//
+
 
 #include "cinder/app/AppNative.h"
 #include "cinder/Rand.h"
@@ -19,7 +23,6 @@ World::World( int num )
 {
 	// Start with initial food and creatures
     mFood = new Food( num );
-//    mBloops = new ArrayList<Bloop>();              // Initialize the arraylist
     for( int i = 0; i < num; i++ )
 	{
 		Vec2f l = randVec2f() * Vec2f( getWindowSize() );
@@ -53,7 +56,6 @@ void World::run()
 		if( b->dead() )
 		{
 			mBloops.erase( mBloops.begin() + i );
-//			mBloops.remove(i);
 			mFood->add( b->mLocation );
 		}
 		// Perhaps this bloop would like to make a baby?

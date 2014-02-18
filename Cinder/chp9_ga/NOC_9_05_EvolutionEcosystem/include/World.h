@@ -1,8 +1,7 @@
 //
 //  World.h
-//  NOC_9_05_EvolutionEcosystem
 //
-//  Created by Greg Kepler on 2/17/14.
+//  Created by Greg Kepler
 //
 //
 
