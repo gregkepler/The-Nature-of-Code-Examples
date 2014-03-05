@@ -1,3 +1,14 @@
+//
+//  Example 9-4: Face Interactive Selection
+//  The Nature of Code
+//
+//  Converted from Daniel Shiffman's Processing Examples
+//  Created by Greg Kepler
+//
+//	Interactive Selection
+//	http://www.genarts.com/karl/papers/siggraph91.html
+//
+
 #include "cinder/app/AppNative.h"
 #include "cinder/gl/gl.h"
 #include "cinder/gl/Texture.h"
@@ -40,6 +51,7 @@ void NOC_9_04_Faces_interactiveselectionApp::setup()
 	mButton = new Button( 15, 150, 160, 20, "evolve new generation" );
 }
 
+// If the button is clicked, evolve next generation
 void NOC_9_04_Faces_interactiveselectionApp::mouseDown( MouseEvent event )
 {
 	if( mButton->clicked( event.getPos() ) ) {
@@ -64,7 +76,6 @@ void NOC_9_04_Faces_interactiveselectionApp::update()
 
 void NOC_9_04_Faces_interactiveselectionApp::draw()
 {
-	// clear out the window with black
 	gl::clear( Color::white() );
 	gl::enableAlphaBlending();
 	
@@ -73,7 +84,7 @@ void NOC_9_04_Faces_interactiveselectionApp::draw()
 	mPopulation->rollover( mousePos );
 	
 	// Display some text
-	drawText( "Generation #:" + to_string( mPopulation->getGenerations() ), Vec2i( 15, 190 ) );
+	drawText( "Generation #:" + to_string( mPopulation->getGenerations() ), Vec2i( 15, 180 ) );
 	
 	// Display the button
 	mButton->display();

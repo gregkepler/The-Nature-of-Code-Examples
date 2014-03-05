@@ -13,7 +13,6 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-const int LEN = 20;			// Arbitrary length
 
  // Constructor (makes a random DNA)
 DNA::DNA()
@@ -21,7 +20,7 @@ DNA::DNA()
 	// DNA is random floating point values between 0 and 1 (!!)
 	Rand::randomize();
 	
-	mGenes.resize( LEN );
+	mGenes.resize( 1 );
     for( int i = 0; i < mGenes.size(); i++ )
 	{
 		mGenes[i] = randFloat( 0.0, 1.0 );
@@ -36,22 +35,6 @@ DNA::DNA( std::vector<float> genes )
 DNA::~DNA()
 {
 	mGenes.clear();
-}
-
-// Crossover
-// Creates new DNA sequence from two (this &
-DNA* DNA::crossover( const DNA* partner )
-{
-	std::vector<float> child;
-	child.resize( mGenes.size() );
-	
-	int crossover = randInt( mGenes.size() );
-    for (int i = 0; i < mGenes.size(); i++) {
-		if (i > crossover) child[i] = mGenes[i];
-		else               child[i] = partner->mGenes[i];
-    }
-    DNA *newgenes = new DNA( child );
-    return newgenes;
 }
 
 // Based on a mutation probability, picks a new random rotation

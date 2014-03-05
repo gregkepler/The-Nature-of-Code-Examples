@@ -1,8 +1,7 @@
 //
 //  Button.h
-//  NOC_9_04_Faces_interactiveselection
 //
-//  Created by Greg Kepler on 2/11/14.
+//  Created by Greg Kepler
 //
 //
 
@@ -13,10 +12,10 @@ class Button {
 	public:
 	Button( int x, int y, int w, int h, std::string s );
 	
-	void	display();
-	bool	rollover( ci::Vec2f mousePos );
-	bool	clicked( ci::Vec2f mousePos );
-	bool	released();
+	void			display();
+	bool			rollover( ci::Vec2f mousePos );
+	bool			clicked( ci::Vec2f mousePos );
+	bool			released();
 	
 	ci::Rectf		mRect;			// Button's rectangle
 	std::string		mTxt;			// Button's text
