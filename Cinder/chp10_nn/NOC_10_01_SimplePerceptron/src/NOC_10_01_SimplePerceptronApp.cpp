@@ -16,6 +16,7 @@ static const float ymax =  100.0;
 
 class NOC_10_01_SimplePerceptronApp : public AppNative {
   public:
+	void prepareSettings( Settings *settings );
 	void setup();
 	void mouseDown( MouseEvent event );	
 	void update();
@@ -28,15 +29,20 @@ class NOC_10_01_SimplePerceptronApp : public AppNative {
 	int					mCount;		// We will train the perceptron with one "Point" object at a time
 };
 
+void NOC_10_01_SimplePerceptronApp::prepareSettings( Settings *settings )
+{
+	settings->setWindowSize( Vec2f(640, 360 ) );
+}
+
 void NOC_10_01_SimplePerceptronApp::setup()
 {
 	// The perceptron has 3 inputs -- x, y, and bias
 	// Second value is "Learning Constant"
 	mPtron = new Perceptron(3, 0.00001);  // Learning Constant is low just b/c it's fun to watch, this is not necessarily optimal
 	
-	mTraining.resize( 2000 );
+//	mTraining.resize( 2000 );
 	// Create a random set of training points and calculate the "known" answer
-	for (int i = 0; i < mTraining.size(); i++) {
+	for (int i = 0; i < 2000; i++) {
 		float x = randFloat( xmin, xmax );
 		float y = randFloat( ymin, ymax );
 		int answer = 1;
@@ -66,7 +72,7 @@ void NOC_10_01_SimplePerceptronApp::draw()
 	gl::clear( Color::white() );
 	
 	gl::pushMatrices();
-	gl::translate( getWindowCenter() / 2.0 );
+	gl::translate( getWindowCenter() );
 	
 	// Draw the line
 	gl::lineWidth( 4.0 );
