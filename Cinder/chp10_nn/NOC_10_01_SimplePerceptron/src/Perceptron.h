@@ -1,14 +1,10 @@
 //
 //  Perceptron.h
-//  NOC_10_01_SimplePerceptron
-//
-//  Created by Greg Kepler on 2/25/14.
-//
 //
 
 class Perceptron {
-	std::vector<float> mWeights;
-	float mLearningConstant;          // learning constant
+	std::vector<float> mWeights;		// Vector of weights for inputs
+	float mLearningConstant;			// learning constant
 	
 public:
 	Perceptron( int n, float c );

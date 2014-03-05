@@ -1,9 +1,9 @@
 //
 //  Trainer.h
-//  NOC_10_01_SimplePerceptron
 //
-//  Created by Greg Kepler on 2/25/14.
-//
+//	A class to describe a training point
+//	Has an x and y, a "bias" (1) and known output
+//	Could also add a variable for "guess" but not required here
 //
 
 class Trainer {

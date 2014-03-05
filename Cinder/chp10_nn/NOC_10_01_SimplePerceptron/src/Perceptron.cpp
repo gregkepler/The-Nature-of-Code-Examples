@@ -1,9 +1,5 @@
 //
 //  Perceptron.cpp
-//  NOC_10_01_SimplePerceptron
-//
-//  Created by Greg Kepler on 2/25/14.
-//
 //
 
 #include "cinder/app/AppNative.h"
@@ -14,12 +10,13 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
+// Perceptron is created with n weights and learning constant
 Perceptron::Perceptron( int n, float c )
 {
 	mWeights.resize( n );
 	
     // Start with random weights
-    for (int i = 0; i < mWeights.size(); i++ ) {
+    for( int i = 0; i < mWeights.size(); i++ ){
 		mWeights[i] = randFloat( -1.0, 1.0 );
     }
     mLearningConstant = c;
@@ -29,6 +26,7 @@ Perceptron::Perceptron( int n, float c )
 // Weights are adjusted based on "desired" answer
 void Perceptron::train( std::vector<float> inputs, int desired )
 {
+//	console() << mWeights[0] << " " << mWeights[1] << " " << mWeights[2]  << endl;
 	// Guess the result
     int guess = feedforward( inputs );
     // Compute the factor for changing the weight based on the error

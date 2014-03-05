@@ -1,3 +1,16 @@
+//
+//  Example 10-1: Simple Perceptron
+//  The Nature of Code
+//
+//  Converted from Daniel Shiffman's Processing Examples
+//  Created by Greg Kepler
+//
+//	Simple Perceptron Example
+//	See: http://en.wikipedia.org/wiki/Perceptron
+
+//	Code based on text "Artificial Intelligence", George Luger
+//
+
 #include "cinder/app/AppNative.h"
 #include "cinder/gl/gl.h"
 #include "cinder/Rand.h"
@@ -18,14 +31,12 @@ class NOC_10_01_SimplePerceptronApp : public AppNative {
   public:
 	void prepareSettings( Settings *settings );
 	void setup();
-	void mouseDown( MouseEvent event );	
 	void update();
 	void draw();
 	float f( float x );
 	
-	vector<Trainer*>	mTraining;
-	Perceptron			*mPtron;
-	
+	vector<Trainer*>	mTraining;	// A list of points we will use to "train" the perceptron
+	Perceptron			*mPtron;	// A Perceptron object
 	int					mCount;		// We will train the perceptron with one "Point" object at a time
 };
 
@@ -40,16 +51,14 @@ void NOC_10_01_SimplePerceptronApp::setup()
 	// Second value is "Learning Constant"
 	mPtron = new Perceptron(3, 0.00001);  // Learning Constant is low just b/c it's fun to watch, this is not necessarily optimal
 	
-//	mTraining.resize( 2000 );
 	// Create a random set of training points and calculate the "known" answer
 	for (int i = 0; i < 2000; i++) {
 		float x = randFloat( xmin, xmax );
 		float y = randFloat( ymin, ymax );
 		int answer = 1;
-		if (y < f(x)) answer = -1;
+		if( y < f( x ) ) answer = -1;
 		mTraining.push_back( new Trainer( x, y, answer ) );
 	}
-	
 	mCount = 0;
 }
 
@@ -59,12 +68,11 @@ float NOC_10_01_SimplePerceptronApp::f( float x )
 	return 0.4 * x + 1;
 }
 
-void NOC_10_01_SimplePerceptronApp::mouseDown( MouseEvent event )
-{
-}
-
 void NOC_10_01_SimplePerceptronApp::update()
 {
+	// Train the Perceptron with one "training" point at a time
+	mPtron->train( mTraining[mCount]->mInputs, mTraining[mCount]->mAnswer );
+	mCount = ( mCount + 1) % mTraining.size();
 }
 
 void NOC_10_01_SimplePerceptronApp::draw()
@@ -96,11 +104,6 @@ void NOC_10_01_SimplePerceptronApp::draw()
 	gl::drawLine( Vec2f( x1, y1 ), Vec2f( x2, y2 ) );
 	
 	
-
-	// Train the Perceptron with one "training" point at a time
-	mPtron->train( mTraining[mCount]->mInputs, mTraining[mCount]->mAnswer );
-	mCount = ( mCount + 1) % mTraining.size();
-	
 	// Draw all the points based on what the Perceptron would "guess"
 	// Does not use the "known" correct answer
 	for( int i = 0; i < mCount; i++ )
@@ -108,7 +111,6 @@ void NOC_10_01_SimplePerceptronApp::draw()
 		int guess = mPtron->feedforward( mTraining[i]->mInputs );
 		ColorA fillColor = (guess > 0) ? ColorA( 1, 1, 1, 0 ) : ColorA::black();
 		gl::color( fillColor );
-		
 		gl::drawSolidEllipse( Vec2f( mTraining[i]->mInputs[0], mTraining[i]->mInputs[1] ), 4.0, 4.0 );
 		
 		gl::color( Color::black() );
