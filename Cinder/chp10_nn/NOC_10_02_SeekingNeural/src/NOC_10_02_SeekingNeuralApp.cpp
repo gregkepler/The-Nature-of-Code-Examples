@@ -36,15 +36,15 @@ void NOC_10_02_SeekingNeuralApp::setup()
 	
 	// Create the Vehicle (it has to know about the number of targets
 	// in order to configure its brain)
-	mVehicle = new Vehicle( mTargets.size(), randFloat( getWindowWidth() ), randFloat( getWindowHeight() ) );
+	mVehicle = new Vehicle( mTargets.size(), Vec2f( randFloat( getWindowWidth() ), randFloat( getWindowHeight() ) ) );
 }
 
 // Make a random ArrayList of targets to steer towards
 void NOC_10_02_SeekingNeuralApp::makeTargets() {
-	/*targets = new ArrayList<PVector>();
-	for (int i = 0; i < 8; i++) {
-		targets.add(new PVector(random(width), random(height)));
-	}*/
+	for (int i = 0; i < 8; i++)
+	{
+		mTargets.push_back( Vec2f( randFloat( getWindowWidth() ), randFloat( getWindowHeight() ) ) );
+	}
 }
 
 void NOC_10_02_SeekingNeuralApp::update()
@@ -53,8 +53,30 @@ void NOC_10_02_SeekingNeuralApp::update()
 
 void NOC_10_02_SeekingNeuralApp::draw()
 {
-	// clear out the window with black
-	gl::clear( Color( 0, 0, 0 ) ); 
+	gl::clear( Color::white() );
+	
+	// Draw a circle to show the Vehicle's goal
+	gl::color( Color::black() );
+	gl::drawSolidEllipse( mDesired, 18, 18);
+	
+	gl::color( ColorA8u( 0, 0, 0, 100 ) );
+	gl::lineWidth( 2.0 );
+	gl::drawStrokedEllipse( mDesired, 18, 18);
+	
+	// Draw the targets
+	for( Vec2f target : mTargets ) {
+		
+		gl::color( Color::black() );
+		gl::lineWidth( 2.0 );
+		gl::drawStrokedEllipse( target, 8.0, 8.0 );
+		gl::drawLine( Vec2f( target.x, target.y - 16.0 ), Vec2f( target.x, target.y + 16.0 ) );
+		gl::drawLine( Vec2f( target.x - 16.0, target.y ), Vec2f( target.x + 16.0, target.y ) );
+	}
+	
+	// Update the Vehicle
+	mVehicle->steer( mTargets );
+	mVehicle->update();
+	mVehicle->display();
 }
 
 CINDER_APP_NATIVE( NOC_10_02_SeekingNeuralApp, RendererGl )

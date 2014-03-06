@@ -13,6 +13,7 @@
 		00B784B50FF439BC000DE1D7 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B10FF439BC000DE1D7 /* AudioUnit.framework */; };
 		00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
 		11E87C5773B44C019EB81C68 /* NOC_10_02_SeekingNeuralApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC4D8B46E7624F99BE93A643 /* NOC_10_02_SeekingNeuralApp.cpp */; };
+		2CFC63CB18C8C40E004A0F8A /* Perceptron.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CFC63CA18C8C40E004A0F8A /* Perceptron.cpp */; };
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -29,6 +30,8 @@
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		2CFC63CA18C8C40E004A0F8A /* Perceptron.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Perceptron.cpp; path = ../src/Perceptron.cpp; sourceTree = "<group>"; };
+		2CFC63CC18C8C419004A0F8A /* Perceptron.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Perceptron.h; path = ../include/Perceptron.h; sourceTree = "<group>"; };
 		399FE7632F1D4034A57A7E9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C77C47B87DE4391B36F3B7B /* NOC_10_02_SeekingNeural_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = NOC_10_02_SeekingNeural_Prefix.pch; sourceTree = "<group>"; };
 		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
@@ -37,7 +40,7 @@
 		8D1107320486CEB800E47090 /* NOC_10_02_SeekingNeural.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NOC_10_02_SeekingNeural.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B78D27E898483D8A02B478 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
 		D75EA6C618C89E0200525657 /* Vehicle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Vehicle.cpp; path = ../src/Vehicle.cpp; sourceTree = "<group>"; };
-		D75EA6C718C89E0200525657 /* Vehicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vehicle.h; path = ../src/Vehicle.h; sourceTree = "<group>"; };
+		D75EA6C718C89E0200525657 /* Vehicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vehicle.h; path = ../include/Vehicle.h; sourceTree = "<group>"; };
 		DC4D8B46E7624F99BE93A643 /* NOC_10_02_SeekingNeuralApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = NOC_10_02_SeekingNeuralApp.cpp; path = ../src/NOC_10_02_SeekingNeuralApp.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +75,7 @@
 			children = (
 				DC4D8B46E7624F99BE93A643 /* NOC_10_02_SeekingNeuralApp.cpp */,
 				D75EA6C618C89E0200525657 /* Vehicle.cpp */,
+				2CFC63CA18C8C40E004A0F8A /* Perceptron.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -127,6 +131,7 @@
 				B0B78D27E898483D8A02B478 /* Resources.h */,
 				4C77C47B87DE4391B36F3B7B /* NOC_10_02_SeekingNeural_Prefix.pch */,
 				D75EA6C718C89E0200525657 /* Vehicle.h */,
+				2CFC63CC18C8C419004A0F8A /* Perceptron.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -214,6 +219,7 @@
 			files = (
 				D75EA6C818C89E0200525657 /* Vehicle.cpp in Sources */,
 				11E87C5773B44C019EB81C68 /* NOC_10_02_SeekingNeuralApp.cpp in Sources */,
+				2CFC63CB18C8C40E004A0F8A /* Perceptron.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
