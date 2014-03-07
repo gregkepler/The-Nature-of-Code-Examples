@@ -17,51 +17,32 @@ Perceptron::Perceptron( int n, float c )
 	
     // Start with random weights
     for( int i = 0; i < mWeights.size(); i++ ){
-		mWeights[i] = randFloat( -1.0, 1.0 );
+		mWeights[i] = randFloat( 0.0, 1.0 );
     }
     mLearningConstant = c;
 }
 
 // Function to train the Perceptron
 // Weights are adjusted based on "desired" answer
-void Perceptron::train( std::vector<float> inputs, int desired )
+void Perceptron::train( std::vector<Vec2f> forces, Vec2f error )
 {
-//	console() << mWeights[0] << " " << mWeights[1] << " " << mWeights[2]  << endl;
-	// Guess the result
-    int guess = feedforward( inputs );
-    // Compute the factor for changing the weight based on the error
-    // Error = desired output - guessed output
-    // Note this can only be 0, -2, or 2
-    // Multiply by learning constant
-    float error = desired - guess;
-    // Adjust weights based on weightChange * input
-    for( int i = 0; i < mWeights.size(); i++ )
+	for( int i = 0; i < mWeights.size(); i++ )
 	{
-		mWeights[i] += mLearningConstant * error * inputs[i];
+		mWeights[i] += mLearningConstant * error.x * forces[i].x;
+		mWeights[i] += mLearningConstant * error.y * forces[i].y;
+		mWeights[i] = constrain( mWeights[i], 0.0f, 1.0f );
     }
 }
 
 // Guess -1 or 1 based on input values
-int Perceptron::feedforward( vector<float> inputs )
+Vec2f Perceptron::feedforward( vector<Vec2f> forces )
 {
     // Sum all values
-    float sum = 0;
+    Vec2f sum = Vec2f::zero();
     for( int i = 0; i < mWeights.size(); i++ )
 	{
-		sum += inputs[i] * mWeights[i];
+		forces[i] *= mWeights[i];
+		sum += forces[i];
     }
-    // Result is sign of the sum, -1 or 1
-    return activate( sum );
-}
-
-int Perceptron::activate( float sum )
-{
-    if( sum > 0 ) return 1;
-    else return -1;
-}
-
-// Return weights
-std::vector<float> Perceptron::getWeights()
-{
-	return mWeights;
+    return sum;
 }

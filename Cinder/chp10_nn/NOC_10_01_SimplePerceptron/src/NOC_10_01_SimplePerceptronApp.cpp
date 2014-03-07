@@ -7,7 +7,7 @@
 //
 //	Simple Perceptron Example
 //	See: http://en.wikipedia.org/wiki/Perceptron
-
+//
 //	Code based on text "Artificial Intelligence", George Luger
 //
 

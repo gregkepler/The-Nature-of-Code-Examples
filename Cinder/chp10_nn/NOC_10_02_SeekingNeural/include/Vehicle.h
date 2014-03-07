@@ -16,9 +16,10 @@ class Vehicle {
 	float			r;
 	float			mMaxForce;			// Maximum steering force
 	float			mMaxSpeed;			// Maximum speed
+	ci::Vec2f		mDesired;
 	
 public:
-	Vehicle( int n, ci::Vec2f loc );
+	Vehicle( int n, ci::Vec2f loc, ci::Vec2f desired );
 	void		update();
 	void		applyForce( ci::Vec2f force );
 	void		steer( std::vector<ci::Vec2f> targets );

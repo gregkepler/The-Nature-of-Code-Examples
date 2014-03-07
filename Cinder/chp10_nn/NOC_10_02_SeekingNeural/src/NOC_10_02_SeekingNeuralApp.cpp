@@ -1,3 +1,13 @@
+//
+//  Example 10-2: Seaking Nueral
+//  The Nature of Code
+//
+//  Converted from Daniel Shiffman's Processing Examples
+//  Created by Greg Kepler
+//
+//  A Vehicle controlled by a Perceptron
+//
+
 #include "cinder/app/AppNative.h"
 #include "cinder/gl/gl.h"
 #include "cinder/Rand.h"
@@ -10,6 +20,7 @@ using namespace std;
 class NOC_10_02_SeekingNeuralApp : public AppNative {
   public:
 	void prepareSettings( Settings *settings );
+	void mouseDown( MouseEvent event );
 	void setup();
 	void update();
 	void draw();
@@ -36,11 +47,12 @@ void NOC_10_02_SeekingNeuralApp::setup()
 	
 	// Create the Vehicle (it has to know about the number of targets
 	// in order to configure its brain)
-	mVehicle = new Vehicle( mTargets.size(), Vec2f( randFloat( getWindowWidth() ), randFloat( getWindowHeight() ) ) );
+	mVehicle = new Vehicle( mTargets.size(), Vec2f( randFloat( getWindowWidth() ), randFloat( getWindowHeight() ) ), mDesired );
 }
 
 // Make a random ArrayList of targets to steer towards
 void NOC_10_02_SeekingNeuralApp::makeTargets() {
+	mTargets.clear();
 	for (int i = 0; i < 8; i++)
 	{
 		mTargets.push_back( Vec2f( randFloat( getWindowWidth() ), randFloat( getWindowHeight() ) ) );
@@ -54,12 +66,13 @@ void NOC_10_02_SeekingNeuralApp::update()
 void NOC_10_02_SeekingNeuralApp::draw()
 {
 	gl::clear( Color::white() );
+	gl::enableAlphaBlending();
 	
 	// Draw a circle to show the Vehicle's goal
-	gl::color( Color::black() );
+	gl::color( ColorA8u( 0, 0, 0, 100 ) );
 	gl::drawSolidEllipse( mDesired, 18, 18);
 	
-	gl::color( ColorA8u( 0, 0, 0, 100 ) );
+	gl::color( Color::black() );
 	gl::lineWidth( 2.0 );
 	gl::drawStrokedEllipse( mDesired, 18, 18);
 	
@@ -77,6 +90,11 @@ void NOC_10_02_SeekingNeuralApp::draw()
 	mVehicle->steer( mTargets );
 	mVehicle->update();
 	mVehicle->display();
+}
+
+void NOC_10_02_SeekingNeuralApp::mouseDown( MouseEvent event )
+{
+	makeTargets();
 }
 
 CINDER_APP_NATIVE( NOC_10_02_SeekingNeuralApp, RendererGl )

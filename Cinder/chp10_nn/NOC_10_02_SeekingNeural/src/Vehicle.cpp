@@ -1,9 +1,5 @@
 //
 //  Vehicle.cpp
-//  NOC_10_02_SeekingNeural
-//
-//  Created by Greg Kepler on 3/6/14.
-//
 //
 
 #include "cinder/app/AppNative.h"
@@ -15,7 +11,7 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-Vehicle::Vehicle( int n, Vec2f loc )
+Vehicle::Vehicle( int n, Vec2f loc, Vec2f desired )
 {
 	mBrain = new Perceptron( n, 0.001 );
 	mAcceleration = Vec2f( 0.0, 0.0 );
@@ -24,6 +20,7 @@ Vehicle::Vehicle( int n, Vec2f loc )
     r = 3.0;
     mMaxSpeed = 4.0;
     mMaxForce = 0.1;
+	mDesired = desired;
 }
 
 // Method to update location
@@ -51,19 +48,6 @@ void Vehicle::applyForce( Vec2f force )
 // STEER = DESIRED MINUS VELOCITY
 void Vehicle::steer( vector<Vec2f> targets )
 {
-    /*Vec2f desired = target - mLocation;  // A vector pointing from the location to the target
-    // Scale to maximum speed
-	// set mag are these 2 functions combined into 1 function
-	desired.normalize();
-	desired *= mMaxSpeed;
-	
-    // Steering = Desired minus velocity
-    Vec2f steer = desired - mVelocity;
-    steer.limit( mMaxForce );  // Limit to maximum steering force
-    
-    applyForce(steer);*/
-	
-	
 	// Make an array of forces
     vector<Vec2f> forces;
 	forces.resize( targets.size() );
@@ -80,8 +64,8 @@ void Vehicle::steer( vector<Vec2f> targets )
     applyForce(result);
     
     // Train the brain according to the error
-    Vec2f error = desired - mLocation;
-    mBrain.train( forces, error );
+    Vec2f error = mDesired - mLocation;
+    mBrain->train( forces, error );
 }
 
 // A method that calculates a steering force towards a target
@@ -89,8 +73,8 @@ void Vehicle::steer( vector<Vec2f> targets )
 Vec2f Vehicle::seek( Vec2f target )
 {
     Vec2f desired = target - mLocation;  // A vector pointing from the location to the target
-    // Scale to maximum speed
-	// set mag are these 2 functions combined into 1 function
+	
+    // Normalize desired and scale to maximum speed
 	desired.normalize();
 	desired *= mMaxSpeed;
 	
@@ -109,13 +93,14 @@ void Vehicle::display() {
 	gl::translate( mLocation );
 	gl::rotate( theta );
 	
-	gl::color( Color8u::gray( 127 ) );
+	gl::color( Color8u::gray( 175 ) );
 	gl::begin( GL_TRIANGLE_STRIP );
 	gl::vertex( Vec2f( 0.0, -r * 2.0 ) );
 	gl::vertex( Vec2f( -r, r * 2.0 ) );
 	gl::vertex( Vec2f( r, r * 2.0 ) );
 	gl::end();
 	
+	gl::lineWidth( 1.0 );
 	gl::color( Color8u::black() );
 	gl::begin( GL_LINE_LOOP );
 	gl::vertex( Vec2f( 0.0, -r * 2.0 ) );

@@ -26,7 +26,6 @@ Perceptron::Perceptron( int n, float c )
 // Weights are adjusted based on "desired" answer
 void Perceptron::train( std::vector<float> inputs, int desired )
 {
-//	console() << mWeights[0] << " " << mWeights[1] << " " << mWeights[2]  << endl;
 	// Guess the result
     int guess = feedforward( inputs );
     // Compute the factor for changing the weight based on the error
