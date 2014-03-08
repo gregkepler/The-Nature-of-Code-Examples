@@ -41,7 +41,6 @@ void NOC_10_02_SeekingNeuralApp::setup()
 	// The Vehicle's desired location
 	mDesired = Vec2f( getWindowCenter() );
 	
-	
 	// Create a list of targets
 	makeTargets();
 	
