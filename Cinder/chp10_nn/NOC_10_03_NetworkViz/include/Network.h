@@ -1,8 +1,7 @@
 //
 //  Network.h
-//  NOC_10_03_NetworkViz
 //
-//  Created by Greg Kepler on 3/8/14.
+//  Created by Greg Kepler
 //
 //
 
@@ -11,7 +10,7 @@
 
 class Network {
 	ci::Vec2i				mLocation;
-	std::vector<Neuron*>	mNeurons;
+	std::vector<Neuron*>	mNeurons;		 // The Network has a list of neurons
 	
 public:
 	Network( ci::Vec2i loc );

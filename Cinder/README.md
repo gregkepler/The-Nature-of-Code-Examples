@@ -39,3 +39,7 @@ If you're new to C++, you may be thrown off my some member variables with * in f
 #### MSA Physics
 * The source is included (in the src folder for the chapter) but may be out of date. The latest can be [found here](https://github.com/memo/ofxMSAPhysics)
 * The attraction class (MSAPhysicsAttraction.h) was rewritten to match toxi's attraction function. It's not perfect, but you get the point.
+
+### Chapter 10
+
+* Examples  10-3 and 10-4 utilize header guards and forward declaration since there is cyclacle inclusion. You can read more about include guards and forwards declaration [here](http://www.cplusplus.com/forum/articles/10627/) and [here](http://en.wikipedia.org/wiki/Include_guard) and [here](http://en.wikipedia.org/wiki/Forward_declaration).

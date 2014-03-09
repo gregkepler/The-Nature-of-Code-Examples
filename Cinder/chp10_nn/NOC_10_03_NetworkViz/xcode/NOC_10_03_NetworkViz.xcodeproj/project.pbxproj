@@ -39,11 +39,11 @@
 		8D1107320486CEB800E47090 /* NOC_10_03_NetworkViz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NOC_10_03_NetworkViz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACEF2E3A2FB1468B92ABB750 /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
 		D75EA6C918CB477400525657 /* Network.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Network.cpp; path = ../src/Network.cpp; sourceTree = "<group>"; };
-		D75EA6CA18CB477400525657 /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Network.h; path = ../src/Network.h; sourceTree = "<group>"; };
+		D75EA6CA18CB477400525657 /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Network.h; path = ../include/Network.h; sourceTree = "<group>"; };
 		D75EA6CC18CB47DC00525657 /* Neuron.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Neuron.cpp; path = ../src/Neuron.cpp; sourceTree = "<group>"; };
-		D75EA6CD18CB47DC00525657 /* Neuron.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Neuron.h; path = ../src/Neuron.h; sourceTree = "<group>"; };
+		D75EA6CD18CB47DC00525657 /* Neuron.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Neuron.h; path = ../include/Neuron.h; sourceTree = "<group>"; };
 		D75EA6CF18CB4ABC00525657 /* Connection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Connection.cpp; path = ../src/Connection.cpp; sourceTree = "<group>"; };
-		D75EA6D018CB4ABC00525657 /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Connection.h; path = ../src/Connection.h; sourceTree = "<group>"; };
+		D75EA6D018CB4ABC00525657 /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Connection.h; path = ../include/Connection.h; sourceTree = "<group>"; };
 		F24998E11CFA48A196EDF440 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

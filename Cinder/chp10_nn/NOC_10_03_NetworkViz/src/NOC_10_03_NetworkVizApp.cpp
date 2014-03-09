@@ -1,3 +1,13 @@
+//
+//  Example 10-3: Network Viz
+//  The Nature of Code
+//
+//  Converted from Daniel Shiffman's Processing Examples
+//  Created by Greg Kepler
+//
+//  A static drawing of a Neural Network
+//
+
 #include "cinder/app/AppNative.h"
 #include "cinder/gl/gl.h"
 #include "Network.h"
@@ -58,6 +68,8 @@ void NOC_10_03_NetworkVizApp::draw()
 {
 	if( mRunning ) return;
 	gl::clear( Color::white() );
+	
+	// Draw the Network
 	mNetwork->display();
 	mRunning = true;
 }
