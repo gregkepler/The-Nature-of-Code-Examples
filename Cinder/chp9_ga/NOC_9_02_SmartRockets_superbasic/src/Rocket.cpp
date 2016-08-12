@@ -13,6 +13,9 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
+// TODO: make RocketRef typedef
+//typedef shared_ptr<class Rocket> RocketRef;
+
 Rocket::Rocket( Vec2f l, DNA* const dna, Vec2f* const target )
 {
 	mGeneCounter = 0;

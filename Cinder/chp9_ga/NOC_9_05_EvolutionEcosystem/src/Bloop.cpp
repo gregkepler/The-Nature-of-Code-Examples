@@ -98,7 +98,7 @@ void Bloop::borders()
 // Method to display
 void Bloop::display()
 {
-	gl::color( ColorA( 0, 0, 0, mHealth / 100.0 ) );
+	gl::color( ColorA( 0, 0, 0, mHealth / 200.0 ) );
 	gl::drawSolidEllipse( mLocation, mRadius / 2.0, mRadius / 2.0 );
 	gl::drawStrokedEllipse( mLocation, mRadius / 2.0, mRadius / 2.0 );
 }
