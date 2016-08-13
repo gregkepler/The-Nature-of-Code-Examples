@@ -26,7 +26,7 @@ Population::Population( float m, int num, ci::Vec2f* const target, int lifetime 
 	for( int i = 0; i < mPopulation.size(); i++ )
 	{
 		Vec2f mLocation = Vec2f( getWindowWidth() / 2.0, getWindowHeight() + 20.0 );
-		mPopulation[i] = new Rocket( mLocation, new DNA( lifetime ), mTarget );
+		mPopulation[i] = std::make_shared<Rocket>( mLocation, new DNA( lifetime ), mTarget );
 	}
 }
 
@@ -82,8 +82,8 @@ void Population::reproduction()
 		int m = randInt( mMatingPool.size() );
 		int d = randInt( mMatingPool.size() );
 		// Pick two parents
-		Rocket *mom = mMatingPool[m];
-		Rocket *dad = mMatingPool[d];
+		RocketRef mom = mMatingPool[m];
+		RocketRef dad = mMatingPool[d];
 		// Get their genes
 		DNA *momgenes = mom->getDNA();
 		DNA *dadgenes = dad->getDNA();
@@ -94,8 +94,8 @@ void Population::reproduction()
 		// Fill the new population with the new child
 		Vec2f location = Vec2f( getWindowWidth() / 2.0, getWindowHeight() + 20.0 );
 		
-		delete mPopulation[i]; // get rid of the old rocket
-		mPopulation[i] = new Rocket( location, child, mTarget );
+		mPopulation[i].reset(); // get rid of the old rocket
+		mPopulation[i] = std::make_shared<Rocket>( location, child, mTarget );
     }
     mGenerations++;
 }
