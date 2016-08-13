@@ -38,7 +38,7 @@ class NOC_9_02_SmartRockets_superbasicApp : public AppNative {
 	void drawText( string str, Vec2i pos );
 	
 	int mLifetime;				// How long should each generation live
-	Population *mPopulation;	// Population
+	std::shared_ptr<Population> mPopulation;	// Population
 	int mLifeCounter;			// Timer for cycle of generation
 	Vec2f mTarget;				// Target location
 };
@@ -60,7 +60,7 @@ void NOC_9_02_SmartRockets_superbasicApp::setup()
 	
 	// Create a population with a mutation rate, and population max
 	float mutationRate = 0.01;
-	mPopulation = new Population( mutationRate, 50, &mTarget, mLifetime );
+	mPopulation = std::make_shared<Population>( mutationRate, 50, &mTarget, mLifetime );
 }
 
 // Move the target if the mouse is pressed

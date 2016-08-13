@@ -8,6 +8,8 @@
 #include "cinder/app/AppNative.h"
 #include "DNA.h"
 
+typedef std::shared_ptr<class Rocket> RocketRef;
+
 class Rocket {
 	// All of our physics stuff
 	ci::Vec2f	mLocation;
