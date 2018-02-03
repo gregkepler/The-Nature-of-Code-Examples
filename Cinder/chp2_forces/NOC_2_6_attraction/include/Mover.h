@@ -8,18 +8,21 @@
 
 #pragma once
 
-#include "cinder/app/AppBasic.h"
-
 class Mover {
 public:
-	Mover();
+	Mover():
+		mMass( 1.0f ),
+		mLocation( ci::vec2( 400.0f, 50.0f ) ),
+		mVelocity( ci::vec2( 1.0f, 0.0f ) ),
+		mAcceleration( ci::vec2() )
+	{};
 	
-	ci::Vec2f	mLocation, mVelocity, mAcceleration;
+	ci::vec2	mLocation, mVelocity, mAcceleration;
 	float		mMass;
 	
-	void applyForce( ci::Vec2f force );
+	void applyForce( ci::vec2 force );
 	void update();
 	void checkEdges();
 	void display();
-	void reset( ci::Vec2f loc );
+	void reset( ci::vec2 loc );
 };

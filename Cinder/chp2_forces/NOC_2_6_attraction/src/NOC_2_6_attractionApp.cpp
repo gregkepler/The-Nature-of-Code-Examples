@@ -6,7 +6,8 @@
 //  Created by Greg Kepler
 //
 
-#include "cinder/app/AppBasic.h"
+#include "cinder/app/App.h"
+#include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
 #include "Mover.h"
 #include "Attractor.h"
@@ -15,47 +16,61 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-class NOC_2_6_attractionApp : public AppBasic {
+class NOC_2_6_attractionApp : public App {
   public:
 	void prepareSettings( Settings *settings );
-	void setup();
-	void mouseDown( MouseEvent event );
-	void mouseUp( MouseEvent event );
-	void update();
-	void draw();
+	void setup() override;
+	void mouseDown( MouseEvent event ) override;
+	void mouseUp( MouseEvent event ) override;
+	void mouseMove( MouseEvent event ) override;
+	void mouseDrag( MouseEvent event ) override;
+	void update() override;
+	void draw() override;
 	
 	Mover		mMover;
 	Attractor	mAttractor;
+	vec2		mMousePos;
 };
 
-void NOC_2_6_attractionApp::prepareSettings( Settings *settings )
+void prepareSettings( NOC_2_6_attractionApp::Settings *settings )
 {
 	settings->setWindowSize( 800, 200 );
 }
 
 void NOC_2_6_attractionApp::setup()
 {
-	mAttractor = Attractor( Vec2f( getWindowWidth() / 2, getWindowHeight() / 2 ) );
+	mAttractor = Attractor( vec2( getWindowWidth() / 2, getWindowHeight() / 2 ) );
 }
 
 void NOC_2_6_attractionApp::mouseDown( MouseEvent event )
 {
-	mAttractor.clicked( getMousePos() );
+	mMousePos = event.getPos();
+	mAttractor.clicked( mMousePos );
 }
 
-void NOC_2_6_attractionApp::mouseUp(cinder::app::MouseEvent event)
+void NOC_2_6_attractionApp::mouseUp( MouseEvent event)
 {
 	mAttractor.stopDragging();
 }
 
+void NOC_2_6_attractionApp::mouseMove( MouseEvent event )
+{
+	mMousePos = event.getPos();
+}
+
+void NOC_2_6_attractionApp::mouseDrag( MouseEvent event )
+{
+	mMousePos = event.getPos();
+}
+
 void NOC_2_6_attractionApp::update()
 {
-	Vec2f force = mAttractor.attract( mMover );
+	vec2 force = mAttractor.attract( mMover );
 	mMover.applyForce( force );
 	mMover.update();
 	
-	mAttractor.drag( getMousePos() );
-	mAttractor.hover( getMousePos() );
+	mAttractor.drag( mMousePos );
+	mAttractor.hover( mMousePos );
 }
 
 void NOC_2_6_attractionApp::draw()
@@ -67,4 +82,4 @@ void NOC_2_6_attractionApp::draw()
 	mMover.display();
 }
 
-CINDER_APP_BASIC( NOC_2_6_attractionApp, RendererGl )
+CINDER_APP( NOC_2_6_attractionApp, RendererGl( RendererGl::Options().msaa( 16 ) ), prepareSettings )

@@ -6,25 +6,16 @@
 //
 //
 
-#include "cinder/app/AppBasic.h"
-#include "cinder/Color.h"
 #include "Mover.h"
 
 using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-Mover::Mover()
-{
-	mMass = 1;
-	mLocation = Vec2f( 400, 50 );
-	mVelocity = Vec2f( 1.0, 0.0 );
-	mAcceleration = Vec2f( 0.0, 0.0 );
-}
 
-void Mover::applyForce( Vec2f force )
+void Mover::applyForce( vec2 force )
 {
-	Vec2f f = force / mMass;
+	vec2 f = force / mMass;
 	mAcceleration += f;
 }
 
@@ -32,7 +23,7 @@ void Mover::update()
 {
 	mVelocity += mAcceleration;
 	mLocation += mVelocity;
-	mAcceleration *= 0;
+	mAcceleration *= 0.0f;
 }
 
 void Mover::checkEdges()
@@ -42,10 +33,10 @@ void Mover::checkEdges()
 	
 	if( mLocation.x > width ) {
 		mLocation.x = width;
-		mVelocity.x *= -1.0;
-    } else if( mLocation.x < 0.0 ) {
-		mVelocity.x *= -1.0;
-		mLocation.x = 0.0;
+		mVelocity.x *= -1.0f;
+    } else if( mLocation.x < 0.0f ) {
+		mVelocity.x *= -1.0f;
+		mLocation.x = 0.0f;
     }
 	
     if( mLocation.y > height ) {
@@ -56,15 +47,15 @@ void Mover::checkEdges()
 
 void Mover::display()
 {
-	gl::color( ColorA::gray( 0.0, 0.5 ) );
-	gl::drawSolidEllipse( mLocation, mMass * 8, mMass * 8 );
+	gl::color( ColorA::gray( 0.0f, 0.5f ) );
+	gl::drawSolidEllipse( mLocation, mMass * 8.0f, mMass * 8.0f );
 	
-	glLineWidth( 2.0 );
+	gl::lineWidth( 2.0f );
 	gl::color( Color::black() );
-	gl::drawStrokedEllipse( mLocation, mMass * 8, mMass * 8 );
+	gl::drawStrokedEllipse( mLocation, mMass * 8.0f, mMass * 8.0f );
 }
 
-void Mover::reset( ci::Vec2f loc )
+void Mover::reset( ci::vec2 loc )
 {
 	mLocation = loc;
 }
