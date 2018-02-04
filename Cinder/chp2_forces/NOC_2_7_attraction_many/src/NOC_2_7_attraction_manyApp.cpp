@@ -6,7 +6,8 @@
 //  Created by Greg Kepler
 //
 
-#include "cinder/app/AppBasic.h"
+#include "cinder/app/App.h"
+#include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
 #include "cinder/Rand.h"
 #include "Mover.h"
@@ -16,7 +17,7 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-class NOC_2_7_attraction_manyApp : public AppBasic {
+class NOC_2_7_attraction_manyApp : public App {
 public:
 	void prepareSettings( Settings *settings );
 	void setup();
@@ -28,7 +29,7 @@ public:
 	Attractor		mAttractor;
 };
 
-void NOC_2_7_attraction_manyApp::prepareSettings( Settings *settings )
+void prepareSettings( NOC_2_7_attraction_manyApp::Settings *settings )
 {
 	settings->setWindowSize( 800, 200 );
 }
@@ -42,13 +43,13 @@ void NOC_2_7_attraction_manyApp::setup()
 	{
 		mMovers.push_back( Mover( randFloat( 0.1, 2.0 ), randFloat( getWindowWidth() ), randFloat( getWindowHeight() ) ) );
 	}
-	mAttractor = Attractor( Vec2f( getWindowWidth() / 2, getWindowHeight() / 2 ) );
+	mAttractor = Attractor( vec2( getWindowWidth() / 2, getWindowHeight() / 2 ) );
 }
 
 void NOC_2_7_attraction_manyApp::update()
 {
 	for( int i = 0; i < mMovers.size(); i++ ) {
-		Vec2f force = mAttractor.attract( mMovers[i] );
+		vec2 force = mAttractor.attract( mMovers[i] );
 		mMovers[i].applyForce( force );
 		mMovers[i].update();
 	}
@@ -65,4 +66,4 @@ void NOC_2_7_attraction_manyApp::draw()
 	}
 }
 
-CINDER_APP_BASIC( NOC_2_7_attraction_manyApp, RendererGl )
+CINDER_APP( NOC_2_7_attraction_manyApp, RendererGl( RendererGl::Options().msaa( 16 ) ), prepareSettings )

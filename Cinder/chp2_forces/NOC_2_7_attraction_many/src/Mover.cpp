@@ -6,8 +6,6 @@
 //
 //
 
-#include "cinder/app/AppBasic.h"
-#include "cinder/Color.h"
 #include "cinder/Rand.h"
 #include "Mover.h"
 
@@ -19,14 +17,14 @@ Mover::Mover( float m, float x , float y ):
 	mAngle( 0 ), mAAcceleration( 0 ), mAVelocity( 0 )
 {
 	mMass = m;
-	mLocation = Vec2f( x, y );
-	mVelocity = Vec2f( randFloat( -1.0, 1.0 ), randFloat( -1.0, 1.0 ) );
-	mAcceleration = Vec2f( 0.0, 0.0 );
+	mLocation = vec2( x, y );
+	mVelocity = vec2( randFloat( -1.0f, 1.0f ), randFloat( -1.0f, 1.0f ) );
+	mAcceleration = vec2();
 }
 
-void Mover::applyForce( Vec2f force )
+void Mover::applyForce( vec2 force )
 {
-	Vec2f f = force / mMass;
+	vec2 f = force / mMass;
 	mAcceleration += f;
 }
 
@@ -35,7 +33,7 @@ void Mover::update()
 	mVelocity += mAcceleration;
 	mLocation += mVelocity;
 	
-	mAAcceleration = mAcceleration.x / 10.0;
+	mAAcceleration = mAcceleration.x / 10.0f;
 	mAVelocity += mAAcceleration;
 	mAVelocity = constrain( mAVelocity, -0.1f, 0.1f );
 	mAngle += mAVelocity;
@@ -45,17 +43,16 @@ void Mover::update()
 
 void Mover::display()
 {
-	float w = mMass * 16;
-	Rectf drawRect = Rectf( -w/2, -w/2, w/2, w/2 );
+	float w = mMass * 16.0;
+	Rectf drawRect = Rectf( -w/2.0f, -w/2.0f, w/2.0f, w/2.0f );
 	
-	glPushMatrix();
+	gl::ScopedMatrices scpMtrx;
 	gl::translate( mLocation );
-	gl::rotate( toDegrees( mAngle ) );
+	gl::rotate( mAngle );
 	
 	gl::color( ColorA8u::gray( 175, 200 ) );
 	gl::drawSolidRect( drawRect );
 	
 	gl::color( Color::black() );
 	gl::drawStrokedRect( drawRect );
-	glPopMatrix();
 }
